@@ -10,7 +10,7 @@ Este repositorio contiene todos los documentos y el código fuente para el Proye
 - `/Anteproyecto`: Documentación inicial del proyecto, propuestas y objetivos.
 - `/Capturas Despliegue`: Imágenes y capturas de pantalla del proceso de despliegue del sistema.
 - `/Entregas Tutor`: Documentos e informes entregados para revisión del tutor.
-- `/Gantt`: Diagrama de Gantt que muestra el cronograma y las fases del proyecto.
+- `/Gantt`: Versiones del Diagrama de Gantt que muestra el cronograma y las fases del proyecto.
 - `/TFG_Backend`: Código fuente y bibliotecas para la parte de backend del proyecto.
 - `/TFG_Frontend`: Código fuente y recursos para la interfaz de usuario.
 
