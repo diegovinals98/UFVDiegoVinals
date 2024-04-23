@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2023-12-01" view-index="0" gantt-divider-location="401" resource-divider-location="300" version="3.2.3247" locale="es_ES">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2023-12-01" view-index="0" gantt-divider-location="400" resource-divider-location="300" version="3.2.3247" locale="es_ES">
     <description/>
     <view zooming-state="default:8" id="gantt-chart">
-        <field id="tpd3" name="Nombre" width="200" order="0"/>
-        <field id="tpd4" name="Fecha de inicio" width="93" order="1"/>
-        <field id="tpd5" name="Fecha de fin" width="107" order="2"/>
+        <field id="tpd3" name="Nombre" width="192" order="0"/>
+        <field id="tpd4" name="Fecha de inicio" width="89" order="1"/>
+        <field id="tpd5" name="Fecha de fin" width="103" order="2"/>
         <option id="filter.completedTasks" value="false"/>
+        <option id="color.recent">
+            <![CDATA[#6699ff #eeeeee]]>
+        </option>
     </view>
     <view id="resource-table">
         <field id="0" name="Nombre" width="209" order="0"/>
@@ -40,71 +43,67 @@
             <depend id="8" type="2" difference="0" hardness="Strong"/>
             <depend id="21" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="1" name="Desarrollo Memoria" color="#8cb6ce" meeting="false" start="2024-02-01" duration="82" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true">
-            <task id="2" name="Tutoria 1: Introduccion, Objetivos, Plan de Desarrollo" color="#8cb6ce" meeting="false" start="2024-02-01" duration="15" complete="0" thirdDate="2024-01-26" thirdDate-constraint="0" expand="true">
+        <task id="1" name="Desarrollo Memoria" color="#6699ff" meeting="false" start="2024-02-01" duration="82" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true">
+            <task id="2" name="Tutoria 1: Introduccion, Objetivos, Plan de Desarrollo" color="#6699ff" meeting="false" start="2024-02-01" duration="15" complete="0" thirdDate="2024-01-26" thirdDate-constraint="0" expand="true">
                 <depend id="3" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="3" name="Tutoría 2: Investigación previa, Bibliografía" color="#8cb6ce" meeting="false" start="2024-02-22" duration="10" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
+            <task id="3" name="Tutoría 2: Investigación previa, Bibliografía" color="#6699ff" meeting="false" start="2024-02-22" duration="10" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
                 <notes>
                     <![CDATA[ Anexo A: Requisitos de Usuario]]>
                 </notes>
                 <depend id="4" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="4" name="Tutoría 3: Desarrollo de la solución Técnica" color="#8cb6ce" meeting="false" start="2024-03-07" duration="10" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
+            <task id="4" name="Tutoría 3: Desarrollo de la solución Técnica" color="#6699ff" meeting="false" start="2024-03-07" duration="10" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
                 <notes>
                     <![CDATA[, Anexo B: Diseño del SistemaRevisión del proyecto técnico.]]>
                 </notes>
                 <depend id="5" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="5" name="Tutoría 4: Resultados, Implicaciones Éticas e impacto Social, Mi Recorrido en la UFV, Conclusiones" color="#8cb6ce" meeting="false" start="2024-03-21" duration="11" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
+            <task id="5" name="Tutoría 4: Resultados, Implicaciones Éticas e impacto Social, Mi Recorrido en la UFV, Conclusiones" color="#6699ff" meeting="false" start="2024-03-21" duration="11" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
                 <notes>
                     <![CDATA[Anexo C: Manuales.
 El aplicativo debe funcionar y estar completo.]]>
                 </notes>
                 <depend id="6" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="6" name="Tutoría 5 Documentación Completa para revisión Aplicativo adaptado a las observaciones de la tutoría 4 Apto / No Apto" color="#8cb6ce" meeting="false" start="2024-04-05" duration="9" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
+            <task id="6" name="Tutoría 5 Documentación Completa para revisión Aplicativo adaptado a las observaciones de la tutoría 4 Apto / No Apto" color="#6699ff" meeting="false" start="2024-04-05" duration="9" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
                 <depend id="7" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="7" name="Entregar Tutores" color="#8cb6ce" meeting="false" start="2024-04-18" duration="9" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
+            <task id="7" name="Entregar Tutores" color="#6699ff" meeting="false" start="2024-04-18" duration="9" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
                 <depend id="14" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="14" name="Retoques Memoria" color="#8cb6ce" meeting="false" start="2024-05-01" duration="18" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true"/>
+            <task id="14" name="Entrega Final Memoria" color="#6699ff" meeting="false" start="2024-05-01" duration="18" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
+                <depend id="23" type="2" difference="0" hardness="Strong"/>
+            </task>
         </task>
-        <task id="21" name="Desarrollo Técnico" color="#8cb6ce" meeting="false" start="2024-02-01" duration="58" complete="0" thirdDate="2023-12-01" thirdDate-constraint="0" expand="true">
+        <task id="21" name="Desarrollo Técnico" color="#8cb6ce" meeting="false" start="2024-02-01" duration="82" complete="0" thirdDate="2023-12-01" thirdDate-constraint="0" expand="true">
             <task id="8" name="PT01: Analisis de Requisitos" color="#8cb6ce" meeting="false" start="2024-02-01" duration="5" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
                 <depend id="9" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="9" name="PT02: Diseño de Interfaz de Usuario" color="#8cb6ce" meeting="false" start="2024-02-08" duration="5" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
                 <depend id="10" type="2" difference="0" hardness="Strong"/>
-                <depend id="11" type="2" difference="0" hardness="Strong"/>
-            </task>
-            <task id="10" name="PT03: Diseño de Backend" color="#8cb6ce" meeting="false" start="2024-02-15" duration="21" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
                 <depend id="15" type="2" difference="0" hardness="Strong"/>
-                <task id="11" name="PT3.1: Configuración del Entorno del Servidor" color="#8cb6ce" meeting="false" start="2024-02-15" duration="4" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
-                    <depend id="12" type="2" difference="0" hardness="Strong"/>
-                </task>
-                <task id="12" name="PT3.2: Implementación de la Base de Datos" color="#8cb6ce" meeting="false" start="2024-02-21" duration="13" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
-                    <depend id="13" type="2" difference="0" hardness="Strong"/>
-                </task>
-                <task id="13" name="PT3.3: Desarrollo de API" color="#8cb6ce" meeting="false" start="2024-03-11" duration="4" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
-                    <depend id="16" type="2" difference="0" hardness="Strong"/>
-                </task>
             </task>
-            <task id="15" name="PT04: Diseño de Frontend" color="#000000" meeting="false" start="2024-03-15" duration="21" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
+            <task id="10" name="PT03: Diseño de Backend" color="#8cb6ce" meeting="false" start="2024-02-15" duration="30" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
+                <depend id="24" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="15" name="PT04: Diseño de Frontend" color="#8cb6ce" meeting="false" start="2024-02-15" duration="30" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
+                <depend id="24" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="24" name="PT5: Integración de UI con Backend" color="#8cb6ce" meeting="false" start="2024-03-28" duration="7" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
                 <depend id="19" type="2" difference="0" hardness="Strong"/>
-                <task id="16" name="PT4.1: Implementación de la Estructura Base del Frontend" color="#8cb6ce" meeting="false" start="2024-03-15" duration="2" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
-                    <depend id="17" type="2" difference="0" hardness="Strong"/>
-                </task>
-                <task id="17" name="PT4.2: Desarrollo de Pantallas y Navegación" color="#8cb6ce" meeting="false" start="2024-03-19" duration="15" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
-                    <depend id="18" type="2" difference="0" hardness="Strong"/>
-                </task>
-                <task id="18" name="PT4.3: Integración de la Interfaz de Usuario con el Backend" color="#8cb6ce" meeting="false" start="2024-04-09" duration="4" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true"/>
-            </task>
-            <task id="19" name="PT05: Pruebas y Calidad" color="#8cb6ce" meeting="false" start="2024-04-15" duration="3" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
                 <depend id="20" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="20" name="PT06: Preparación para el Lanzamiento" color="#8cb6ce" meeting="false" start="2024-04-18" duration="3" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true"/>
+            <task id="19" name="PT6: Pruebas y Calidad" color="#8cb6ce" meeting="false" start="2024-04-08" duration="5" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
+                <depend id="20" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="20" name="PT7: Preparación para el Lanzamiento" color="#8cb6ce" meeting="false" start="2024-04-15" duration="7" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true">
+                <depend id="22" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="22" name="Retoques y Entrga Final Codigo" color="#8cb6ce" meeting="false" start="2024-04-24" duration="23" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true">
+                <depend id="23" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="23" name="Fin PFG" color="#8cb6ce" meeting="true" start="2024-05-27" duration="0" complete="0" thirdDate="2024-02-01" thirdDate-constraint="0" expand="true"/>
         </task>
     </tasks>
     <resources>
