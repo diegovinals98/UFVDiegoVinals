@@ -17,6 +17,7 @@ Este repositorio contiene todos los documentos y el código fuente para el Proye
 ### Archivos:
 
 - `Anexo III - Plantilla Memoria PFG - Ingeniería 2023_24.docx`: Plantilla para la memoria del proyecto.
+- `Anexo III - Guía Memoria PFG.pdf`: Guia de como hacer la memoria del PFG.
 - `DiccionarioDatos-26Feb2014.pdf`: Descripción de la estructura de la base de datos.
 - `PFG_23-24.xlsx`: Hoja de cálculo para el seguimiento del proyecto.
 - `README.md`: Documentación y guía general del repositorio (este archivo).
