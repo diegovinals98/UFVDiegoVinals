@@ -9,7 +9,7 @@ Este repositorio contiene todos los documentos y el código fuente para el Proye
 - `/Actas`: Minutas de las reuniones con supervisores y otros encuentros del proyecto.
 - `/Anteproyecto`: Documentación inicial del proyecto, propuestas y objetivos.
 - `/Capturas Despliegue`: Imágenes y capturas de pantalla del proceso de despliegue del sistema.
-- `/Etrega 28 Abril`: PDF y DOC de la entrega realizada el 28 de Abril.
+- `/Entrega 28 Abril`: PDF y DOC de la entrega realizada el 28 de Abril.
 - `/Entregas Tutor`: Documentos e informes entregados para revisión del tutor.
 - `/Gantt`: Versiones del Diagrama de Gantt que muestra el cronograma y las fases del proyecto.
 - `/TFG_Backend`: Código fuente y bibliotecas para la parte de backend del proyecto.
