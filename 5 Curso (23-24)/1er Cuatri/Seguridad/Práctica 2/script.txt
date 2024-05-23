@@ -1,0 +1,51 @@
+#!/bin/sh
+# CREACION DE VARIABLES
+
+LAN="10.0.0.0/8"
+DMZ="20.0.0.0/8"
+# CREACION DE REGLAS FIREWALL
+
+echo  "Aplicando reglas de Firewall...\n"
+
+# FLUSH DE REGLAS
+
+iptables -F
+iptables -X
+iptables -Z
+iptables -t nat -F
+
+# Establecemos politicas por defecto (cerrado todo)
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+
+# Establecemos las reglas SSH (abierto)
+iptables -A FORWARD -s $LAN -d $DMZ -p tcp --dport 22 -j ACCEPT
+
+# Establecemos las regla para HTTP (Puerto 80)
+iptables -A FORWARD -s $LAN -d $DMZ -p tcp --dport 80 -j ACCEPT
+
+#Regla para que firewall tenga internet
+iptables -A OUTPUT -o eth0 -j ACCEPT
+iptables -A INPUT -i eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Regla para tener acceso a internet desde la LAN
+iptables -t  nat -A POSTROUTING -o eth0 -s $LAN -j MASQUERADE
+iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+iptables -A FORWARD -i eth2 -o eth0 -j ACCEPT
+
+# Regla para tener acceso a nuestro DNS desde fuera
+iptables -t nat -A PREROUTING -i eth0 -p tcp -d 172.20.10.2 --dport 8080 -j DNAT --to 20.0.0.27:80
+iptables -A FORWARD -i eth0 -o eth2 -p tcp -d 20.0.0.27 --dport 80 -j ACCEPT
+
+# Establecemos la regla para DNS (puerto 53)
+iptables -A FORWARD -s $LAN -d $DMZ -p udp --dport 53 -j ACCEPT
+
+# ESTABLECEMOS LAS RELACIONADAS
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+echo "Mostramos las reglas: \n"
+iptables -L
+
+# ----------------- FIN DEL SCRIPT ---------------------------------------
+
