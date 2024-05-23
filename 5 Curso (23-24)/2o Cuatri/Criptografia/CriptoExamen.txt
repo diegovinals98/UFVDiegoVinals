@@ -1,0 +1,44 @@
+Preguntas
+
+
+Tema 1
+¿Que es la criptografía?
+¿Que es la seguridad informatica? objetivos (ICD)
+¿Cuales de las siguientes herramientas no es para inverso multiplicativo?
+Cuerpo de Galois, que algoritmo lo usa: AES
+Modelo de Criptosistema: Modelo, saber que factores influyen. -> Simetrico, Asimétrico
+Modelo Criptosistema. KEM (Key encapsulation mechanisinm). Combinan esquemas simetrico y asimetrico. Modelo KEM/DEM .-> tema 4, pag 45
+
+
+Tema 2. (No entra nada de cripto analisis)
+¿Qué es la criptología? "como culturilla" > Criptografía + cirptoanalisis
+Definición metodos cifrado clasico. (Trasposicion y sustitucion) -> Tema 2 pag 7
+
+
+Tema 3.
+Generación del keystream, caracteristicas -> Tema 3 pag 15, 17
+DES. Data encryption standard. Los bits primero y ultimo determinan la fila, los bit de en medio determinan la columna -> Tema 3 pag 28
+Saberse las funciones de AES, son 4:
+	- SubBytes
+	- ShiftRows
+	- MixColumns
+	- AddRoundKey
+
+RSA, entra en ejercicio, conviene saberse teoría -> Tema 4 pag 18
+
+Preguntas varias
+¿Métodos clasicos de sustitución?
+Tecnicas de criptoanalisis
+Modos de operaciones
+Funciones Hash, en que se usan, verdadero falso
+Problemas de RSA
+
+Ejercicios
+Cifrar con RSA y Descifrar con RSA. (Esto son dos ejercicios) descrifrar: tema 4, pag 25
+Playfair cipher con clave : matriz 5x5 (i/j misma casilla en la matriz, no está la ñ)
+Cifrado Cesar
+DES. Data encryption standard. Los bits primero y ultimo determinan la fila, los bit de en medio determinan la columna, se busca en la tabla por fila y columna, se transforma el numero
+decimal de la tabla a binario 32 bits, 2^4 = 32 
+
+Resumen 10 preguntas tipo test, no restan
+5 ejercicios
