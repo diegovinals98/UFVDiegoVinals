@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{207D2B1E-11B3-4ED8-BC22-46322381B9BF}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.AlgoritmosDeOrdenacion PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AlgoritmosDeOrdenacion/Program.cs">
+    <Files>
+      <File FileName="AlgoritmosDeOrdenacion/Program.cs" Line="86" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AlgoritmosDeOrdenacion" expanded="True">
+            <Node name="AlgoritmosDeOrdenacion" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

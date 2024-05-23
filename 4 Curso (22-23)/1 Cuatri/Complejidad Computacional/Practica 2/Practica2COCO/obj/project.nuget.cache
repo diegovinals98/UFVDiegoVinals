@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "T8BMtXahSlKIya/wPmMX4HKjSj23sulQCS5iYx39/UWo1n+bwU0u5yAmKsZCq4B2js6h00ZBZktnrNkrUysypg==",
+  "success": true,
+  "projectFilePath": "/Users/diegovinals/Downloads/Practica2COCO/Practica2COCO.csproj",
+  "expectedPackageFiles": [
+    "/Users/diegovinals/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/diegovinals/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.31/microsoft.netcore.app.host.osx-x64.3.1.31.nupkg.sha512",
+    "/Users/diegovinals/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

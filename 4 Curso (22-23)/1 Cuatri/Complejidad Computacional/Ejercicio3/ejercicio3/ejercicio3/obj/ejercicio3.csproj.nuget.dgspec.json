@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/ejercicio3.csproj": {}
+  },
+  "projects": {
+    "/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/ejercicio3.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/ejercicio3.csproj",
+        "projectName": "ejercicio3",
+        "projectPath": "/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/ejercicio3.csproj",
+        "packagesPath": "/Users/diegovinals/.nuget/packages/",
+        "outputPath": "/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/diegovinals/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[3.1.30, 3.1.30]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

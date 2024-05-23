@@ -1,0 +1,15 @@
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\obj\Debug\net6.0\Insertion.csproj.AssemblyReference.cache
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\obj\Debug\net6.0\Insertion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\obj\Debug\net6.0\Insertion.AssemblyInfoInputs.cache
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\obj\Debug\net6.0\Insertion.AssemblyInfo.cs
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\obj\Debug\net6.0\Insertion.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\bin\Debug\net6.0\Insertion.exe
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\bin\Debug\net6.0\Insertion.deps.json
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\bin\Debug\net6.0\Insertion.runtimeconfig.json
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\bin\Debug\net6.0\Insertion.dll
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\bin\Debug\net6.0\Insertion.pdb
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\obj\Debug\net6.0\Insertion.dll
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\obj\Debug\net6.0\refint\Insertion.dll
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\obj\Debug\net6.0\Insertion.pdb
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\obj\Debug\net6.0\Insertion.genruntimeconfig.cache
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Insertion\Insertion\obj\Debug\net6.0\ref\Insertion.dll

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "kHIOqn4kTGkXgs6KqkNF0KqlvGYEd2U5pqRwWXcVhtt1cx+HJ7ZXe2tVXwNeGDkgNmaKVVgm+GBCAjCtp+VZAw==",
+  "success": true,
+  "projectFilePath": "/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/AlgoritmosDeOrdenacion/AlgoritmosDeOrdenacion/AlgoritmosDeOrdenacion.csproj",
+  "expectedPackageFiles": [
+    "/Users/diegovinals/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/diegovinals/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.31/microsoft.netcore.app.host.osx-x64.3.1.31.nupkg.sha512",
+    "/Users/diegovinals/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

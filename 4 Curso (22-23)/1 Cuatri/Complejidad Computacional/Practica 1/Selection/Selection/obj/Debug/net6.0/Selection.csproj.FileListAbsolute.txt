@@ -1,0 +1,15 @@
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\bin\Debug\net6.0\Selection.exe
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\bin\Debug\net6.0\Selection.deps.json
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\bin\Debug\net6.0\Selection.runtimeconfig.json
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\bin\Debug\net6.0\Selection.dll
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\bin\Debug\net6.0\Selection.pdb
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\obj\Debug\net6.0\Selection.csproj.AssemblyReference.cache
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\obj\Debug\net6.0\Selection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\obj\Debug\net6.0\Selection.AssemblyInfoInputs.cache
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\obj\Debug\net6.0\Selection.AssemblyInfo.cs
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\obj\Debug\net6.0\Selection.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\obj\Debug\net6.0\Selection.dll
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\obj\Debug\net6.0\refint\Selection.dll
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\obj\Debug\net6.0\Selection.pdb
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\obj\Debug\net6.0\Selection.genruntimeconfig.cache
+C:\Users\Carlos\OneDrive - UFV\UFV\3º Curso\1º Cuatrimestre\Complejidad Computacional\22-23\Practicas\Practica 1\Pruebas\Selection\Selection\obj\Debug\net6.0\ref\Selection.dll

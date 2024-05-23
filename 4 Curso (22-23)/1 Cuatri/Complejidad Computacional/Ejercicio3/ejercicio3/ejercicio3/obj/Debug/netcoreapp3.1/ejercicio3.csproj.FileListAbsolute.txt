@@ -1,0 +1,14 @@
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/obj/Debug/netcoreapp3.1/ejercicio3.csproj.AssemblyReference.cache
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/obj/Debug/netcoreapp3.1/ejercicio3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/obj/Debug/netcoreapp3.1/ejercicio3.AssemblyInfoInputs.cache
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/obj/Debug/netcoreapp3.1/ejercicio3.AssemblyInfo.cs
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/obj/Debug/netcoreapp3.1/ejercicio3.csproj.CoreCompileInputs.cache
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/bin/Debug/netcoreapp3.1/ejercicio3
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/bin/Debug/netcoreapp3.1/ejercicio3.deps.json
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/bin/Debug/netcoreapp3.1/ejercicio3.runtimeconfig.json
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/bin/Debug/netcoreapp3.1/ejercicio3.runtimeconfig.dev.json
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/bin/Debug/netcoreapp3.1/ejercicio3.dll
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/bin/Debug/netcoreapp3.1/ejercicio3.pdb
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/obj/Debug/netcoreapp3.1/ejercicio3.dll
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/obj/Debug/netcoreapp3.1/ejercicio3.pdb
+/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/obj/Debug/netcoreapp3.1/ejercicio3.genruntimeconfig.cache

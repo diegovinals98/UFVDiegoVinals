@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1700.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoritmosDeOrdenacion", "AlgoritmosDeOrdenacion\AlgoritmosDeOrdenacion.csproj", "{207D2B1E-11B3-4ED8-BC22-46322381B9BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{207D2B1E-11B3-4ED8-BC22-46322381B9BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207D2B1E-11B3-4ED8-BC22-46322381B9BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207D2B1E-11B3-4ED8-BC22-46322381B9BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207D2B1E-11B3-4ED8-BC22-46322381B9BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E4B0160-B041-4B99-A132-9EE1A5C46FCA}
+	EndGlobalSection
+EndGlobal

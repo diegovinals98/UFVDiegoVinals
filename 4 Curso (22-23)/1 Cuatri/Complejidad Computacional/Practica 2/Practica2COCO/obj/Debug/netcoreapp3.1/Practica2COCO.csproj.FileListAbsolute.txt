@@ -1,0 +1,41 @@
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.csprojAssemblyReference.cache
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.AssemblyInfoInputs.cache
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.AssemblyInfo.cs
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.csproj.CoreCompileInputs.cache
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.exe
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.deps.json
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.runtimeconfig.json
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.runtimeconfig.dev.json
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.dll
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.pdb
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.dll
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.pdb
+C:/Users/charl/OneDrive/UNIVERSIDAD TERCERO/COMPLEJIDAD COMPUTACIONAL/Practica 2/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.genruntimeconfig.cache
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.exe
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.deps.json
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.runtimeconfig.json
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.runtimeconfig.dev.json
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.dll
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.pdb
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.csproj.AssemblyReference.cache
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.AssemblyInfoInputs.cache
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.AssemblyInfo.cs
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.csproj.CoreCompileInputs.cache
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.dll
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.pdb
+C:/Users/Carlos/OneDrive - UFV/UFV/3º Curso/1º Cuatrimestre/Complejidad Computacional/22-23/Practicas/Practica 2/Prueba/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.genruntimeconfig.cache
+/Users/diegovinals/Downloads/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.csproj.AssemblyReference.cache
+/Users/diegovinals/Downloads/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.GeneratedMSBuildEditorConfig.editorconfig
+/Users/diegovinals/Downloads/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.AssemblyInfoInputs.cache
+/Users/diegovinals/Downloads/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.AssemblyInfo.cs
+/Users/diegovinals/Downloads/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.csproj.CoreCompileInputs.cache
+/Users/diegovinals/Downloads/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.dll
+/Users/diegovinals/Downloads/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.pdb
+/Users/diegovinals/Downloads/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO
+/Users/diegovinals/Downloads/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.deps.json
+/Users/diegovinals/Downloads/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.runtimeconfig.json
+/Users/diegovinals/Downloads/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.runtimeconfig.dev.json
+/Users/diegovinals/Downloads/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.dll
+/Users/diegovinals/Downloads/Practica2COCO/bin/Debug/netcoreapp3.1/Practica2COCO.pdb
+/Users/diegovinals/Downloads/Practica2COCO/obj/Debug/netcoreapp3.1/Practica2COCO.genruntimeconfig.cache

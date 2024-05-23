@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{1C02041B-7D4C-4AC9-BC65-E9E4CE96A779}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Practica2COCOextraordinaria/Program.cs">
+    <Files>
+      <File FileName="Practica2COCOextraordinaria/Program.cs" Line="16" Column="6" />
+      <File FileName="Practica2COCOextraordinaria/Voraz.cs" Line="16" Column="1" />
+      <File FileName="Practica2COCOextraordinaria/VueltaAtras.cs" Line="21" Column="43" />
+      <File FileName="Practica2COCOextraordinaria/Dinamico.cs" Line="11" Column="22" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Practica2COCOextraordinaria" expanded="True">
+            <Node name="Practica2COCOextraordinaria" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Practica2COCOextraordinaria PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

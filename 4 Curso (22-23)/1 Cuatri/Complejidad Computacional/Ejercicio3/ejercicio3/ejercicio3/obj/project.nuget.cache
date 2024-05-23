@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "iagxJRoEOxXqAKo+KgFZL5nATo2el98tJD5pvafebsfuq+wsdzmRLSd3eCLJrRPX8R6NxSqJH3e2qq3eY7fhwQ==",
+  "success": true,
+  "projectFilePath": "/Users/diegovinals/Library/CloudStorage/OneDrive-UFV/4 Curso (22-23)/1 Cuatri/Complejidad Computacional/Ejercicio3/ejercicio3/ejercicio3/ejercicio3.csproj",
+  "expectedPackageFiles": [
+    "/Users/diegovinals/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/diegovinals/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.30/microsoft.netcore.app.host.osx-x64.3.1.30.nupkg.sha512",
+    "/Users/diegovinals/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

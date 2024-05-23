@@ -1,0 +1,426 @@
+﻿using System;
+
+namespace AlgoritmosDeOrdenacion
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array1 = { 20, 9, 23, 13, 6, 18, 25, 17, 4, 8, 15, 22, 16, 3, 24, 21, 14, 12, 1, 5, 7, 11, 19, 2, 10 };
+			int[] array2 = { 1, 2, 3, 4, 20, 6, 7, 8, 24, 10, 11, 12, 14, 13, 15, 16, 17, 18, 19, 5, 21, 22, 23, 9, 25 };
+			int[] array3 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
+			int[] array4 = { 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+			int[] array5 = { 3, 8, 9, 6, 7, 5, 2, 3, 1, 4, 9, 7, 8, 10 };
+			double[] array6 = { 6.9, 7.7, 5.1, 7.5, 7.8, 5.5, 7.3, 5.8, 7.9, 6.1, 5.2, 6.4, 6.7, 7.4, 6.5, 6.8, 7.1, 5.9, 7.0, 6.0, 5.7, 5.4, 7.2, 7.6, 5.0, 5.3, 6.6, 8.0, 5.6, 6.2, 6.3 };
+			int[] array7 = { 130, 690, 1888, 2579, 1, 9179, 6313, 748, 1514, 8103, 4998, 7211, 5144, 9127, 5, 777, 1113, 19, 2, 9304, 9999, 981, 394, 805 };
+			string[] array8 = { "J", "G" , "M", "A", "N", "E" , "Z", "T", "B", "O", "D","C" };
+			int[] array9 ={ 772, 27, 257, 1391, 414, 1262, 301, 434, 145, 1374, 634, 291, 1278, 1161, 497, 833, 31, 1166, 1040, 892, 106, 1009, 1006, 183, 826, 743, 1495, 90, 152, 1385, 270, 1047, 733, 565, 1205, 1106, 362, 1067, 8, 139, 62, 1312, 462, 1168, 91, 1176, 556, 1399, 1271, 72, 433, 536, 1046, 230, 1474, 919, 880, 157, 1065, 542, 552, 1380, 42, 104, 282, 537, 364, 1202, 166, 1053, 846, 1325, 1345, 532, 760, 358, 1195, 439, 429, 1310, 1071, 126, 1232, 711, 347, 689, 684, 1110, 1307, 274, 477, 1294, 620, 745, 1377, 554, 778, 1447, 448, 839, 864, 323, 1142, 423, 1135, 1054, 807, 1020, 1145, 1237, 705, 488, 213, 1137, 221, 957, 987, 1042, 769, 863, 1043, 124, 325, 614, 669, 789, 1392, 500, 36, 359, 1170, 396, 1059, 156, 50, 1283, 337, 1428, 1222, 1155, 22, 665, 1164, 651, 209, 89, 1123, 16, 65, 316, 1035, 1451, 714, 737, 476, 761, 929, 980, 679, 817, 567, 147, 1342, 1378, 770, 158, 435, 518, 1263, 1355, 43, 458, 624, 338, 249, 1407, 140, 1272, 1153, 1034, 898, 1151, 265, 1203, 734, 1185, 1417, 955, 814, 1412, 751, 656, 744, 682, 116, 1305, 472, 1313, 924, 1024, 228, 1416, 1089, 73, 189, 469, 1228, 1075, 1260, 1434, 1406, 811, 1429, 1008, 702, 1078, 1442, 1362, 374, 1005, 610, 340, 1330, 911, 979, 330, 791, 914, 915, 927, 60, 1038, 995, 1041, 1493, 498, 1445, 933, 376, 1139, 1396, 696, 256, 843, 836, 251, 871, 1249, 633, 363, 1132, 1487, 1376, 605, 976, 345, 1187, 1114, 739, 309, 454, 335, 1346, 493, 602, 1275, 616, 390, 683, 1136, 1245, 1070, 424, 143, 988, 913, 416, 522, 1421, 1469, 18, 470, 1338, 1443, 779, 647, 650, 797, 708, 831, 164, 341, 37, 630, 1408, 1152, 888, 627, 392, 207, 508, 780, 1297, 1368, 1266, 1328, 1208, 823, 1149, 149, 738, 482, 293, 854, 438, 15, 1082, 105, 1088, 304, 1163, 835, 1191, 582, 1215, 40, 185, 1061, 113, 351, 551, 87, 334, 515, 71, 313, 777, 137, 443, 417, 404, 970, 1186, 1156, 1482, 710, 1084, 240, 342, 1007, 1167, 260, 117, 940, 910, 475, 1101, 96, 1498, 1062, 302, 30, 675, 813, 4, 1291, 284, 991, 336, 662, 1112, 21, 591, 375, 1327, 1241, 920, 631, 1279, 1299, 1276, 1218, 526, 402, 776, 1190, 1239, 1290, 194, 401, 694, 23, 1045, 34, 773, 1193, 306, 894, 308, 69, 899, 1298, 958, 1001, 956, 192, 1068, 373, 1289, 972, 1159, 805, 1282, 930, 310, 357, 1496, 180, 1111, 1121, 208, 377, 67, 861, 891, 1357, 225, 238, 1048, 388, 202, 712, 622, 829, 405, 1120, 1094, 905, 1301, 1012, 1315, 594, 6, 1113, 881, 314, 674, 974, 1470, 1087, 968, 514, 407, 1028, 280, 1221, 1494, 163, 486, 886, 840, 1484, 1051, 959, 88, 931, 226, 875, 707, 1178, 1365, 1464, 525, 517, 1213, 897, 452, 331, 174, 295, 984, 415, 1004, 818, 692, 319, 1375, 1098, 1497, 250, 1468, 690, 1270, 51, 1226, 53, 639, 1463, 175, 611, 563, 1302, 427, 676, 658, 960, 1032, 917, 598, 1340, 1175, 681, 403, 664, 1242, 170, 1300, 95, 264, 1316, 271, 848, 1128, 1074, 317, 394, 370, 300, 569, 754, 120, 592, 868, 1227, 442, 936, 1371, 371, 1115, 1011, 1350, 516, 1319, 385, 510, 992, 1206, 1247, 1109, 252, 1303, 229, 262, 278, 356, 82, 742, 575, 1140, 25, 1015, 54, 1210, 346, 918, 923, 947, 799, 245, 1181, 1314, 771, 343, 661, 24, 1204, 547, 366, 1295, 606, 1261, 786, 609, 436, 1231, 1124, 7, 691, 762, 153, 1099, 579, 1090, 35, 883, 713, 750, 155, 1108, 1500, 20, 1174, 1441, 203, 873, 608, 281, 1157, 387, 809, 1091, 635, 14, 1389, 982, 925, 1265, 246, 540, 101, 1248, 1016, 1025, 1250, 1173, 621, 1475, 1244, 726, 1296, 1100, 1382, 1144, 802, 946, 808, 121, 1490, 94, 236, 1085, 699, 1354, 1400, 247, 1413, 874, 1439, 1188, 267, 595, 19,
+ 399, 847, 586, 159, 568, 1235, 999, 232, 1419, 904, 266, 523, 529, 782, 576, 663, 1420, 148, 962, 1285, 698, 327, 239, 678, 176, 921, 5, 721, 1096, 305, 502, 695, 318, 1321, 97, 740, 333, 815, 1234, 219, 171, 397, 593, 393, 852, 287, 1216, 273, 585, 1424, 732, 1363, 856, 1415, 1119, 1489, 1000, 857, 903, 697, 1308, 413, 1073, 506, 172, 84, 144, 460, 128, 505, 224, 1426, 981, 1233, 756, 119, 1220, 188, 765, 1148, 1243, 151, 564, 1118, 1129, 963, 727, 1433, 944, 237, 307, 1063, 179, 1499, 538, 653, 1010, 68, 617, 673, 165, 467, 450, 456, 441, 941, 1458, 775, 908, 795, 55, 784, 767, 1057, 1390, 706, 1465, 507, 998, 1453, 10, 324, 200, 600, 964, 1251, 724, 1311, 994, 1055, 196, 1488, 1367, 276, 1079, 746, 99, 1343, 1066, 753, 29, 1230, 867, 939, 74, 570, 1466, 1280, 75, 1223, 916, 792, 1172, 320, 922, 657, 459, 584, 1334, 945, 768, 1281, 1183, 832, 566, 134, 26, 700, 1127, 849, 253, 820, 1309, 162, 1122, 214, 902, 685, 1348, 103, 332, 729, 1196, 1092, 666, 790, 1147, 1033, 173, 464, 177, 365, 1072, 481, 1060, 953, 216, 1457, 1344, 499, 1273, 983, 1332, 1103, 269, 292, 997, 1292, 3, 389, 315, 1388, 133, 32, 1058, 1177, 1414, 446, 384, 110, 1450, 759, 1086, 2, 1131, 546, 1146, 909, 1476, 966, 1197, 1209, 1410, 573, 1003, 1138, 860, 111, 391, 907, 1021, 197, 425, 901, 1438, 299, 1246, 496, 1446, 949, 862, 870, 824, 33, 1358, 977, 504, 12, 1331, 686, 1080, 928, 83, 437, 543, 842, 102, 191, 541, 1366, 1383, 289, 440, 1252, 1492, 912, 806, 1436, 1253, 1171, 349, 853, 1452, 146, 879, 283, 483, 670, 1356, 1150, 1486, 259, 412, 1467, 1018, 1274, 193, 1200, 1076, 539, 419, 408, 444, 1398, 1322, 855, 1394, 409, 719, 85, 718, 1397, 277, 1361, 645, 1097, 223, 285, 1026, 218, 1102, 535, 619, 52, 1162, 660, 201, 725, 1372, 1093, 70, 604, 723, 1169, 1379, 41, 79, 793, 445, 752, 521, 1491, 261, 487, 798, 1031, 948, 641, 1471, 1049, 142, 275, 961, 1479, 872, 973, 473, 1336, 1324, 827, 659, 800, 432, 11, 587, 1459, 1359, 241, 63, 329, 545, 1189, 581, 796, 607, 361, 1229, 1320, 615, 455, 509, 1064, 548, 211, 954, 672, 1418, 618, 558, 1225, 378, 640, 181, 17, 1386, 122, 368, 1485, 623, 1180, 61, 466, 524, 195, 1304, 66, 975, 125, 1019, 1154, 589, 1369, 1107, 731, 889, 1219, 967, 830, 844, 182, 1182, 985, 728, 601, 544, 112, 468, 1352, 965, 1335, 816, 76, 1014, 819, 138, 1477, 1364, 1306, 1069, 774, 893, 1104, 560, 234, 1264, 952, 787, 667, 555, 1393, 736, 115, 935, 583, 168, 204, 851, 596, 1117, 1404, 858, 822, 248, 1347, 687, 1409, 1423, 978, 328, 379, 688, 644, 990, 1160, 785, 109, 114, 503, 108, 1402, 741, 233, 1201, 132, 28, 420, 877, 722, 1236, 479, 758, 747, 9, 986, 1268, 590, 231, 704, 757, 279, 1143, 428, 937, 845, 629, 801, 549, 1473, 187, 906, 701, 501, 1257, 1449, 480, 135, 296, 495, 1212, 321, 1105, 810, 288, 123, 81, 1317, 312, 418, 297, 1430, 1036, 834, 1037, 339, 890, 78, 381, 571, 642, 130, 766, 1370, 386, 1044, 626, 876, 1411, 326, 258, 716, 447, 93, 1461, 1341, 636, 1472, 528, 160, 1427, 100, 971, 141, 400, 588, 794, 1267, 198, 1217, 1095, 1224, 869, 764, 613, 492, 1462, 577, 530, 838, 290, 344, 294, 1425, 580, 1269, 1255, 1381, 1029, 47, 352, 803, 1256, 1353, 1373, 49, 637, 561, 227, 943, 693, 950, 13, 59, 422, 859, 222, 896, 1287, 186, 720, 1023, 1323, 161, 206, 398, 154, 1277, 717, 1480, 303, 263, 1126, 220, 57, 298, 395, 1133, 430, 136, 703, 484, 360, 1454, 1039, 512, 763, 463, 485, 46, 1339, 1448, 951, 926, 272, 426, 1141, 1440, 1192, 572, 190, 77, 1326, 603, 749, 474, 1333, 788, 531, 932, 942, 350, 383, 449, 1134,
+ 1027, 184, 354, 169, 1435, 1405, 1422, 490, 519, 1288, 1077, 755, 56, 1030, 599, 1258, 38, 205, 837, 597, 550, 212, 562, 118, 1254, 643, 465, 841, 1384, 574, 86, 527, 411, 1022, 1329, 1052, 1116, 1483, 98, 92, 1460, 638, 1337, 1198, 900, 406, 866, 1293, 44, 625, 199, 451, 934, 884, 850, 1050, 1259, 1395, 215, 210, 1130, 1184, 1158, 520, 1179, 655, 1199, 938, 1002, 668, 559, 1403, 671, 431, 1455, 45, 1401, 471, 254, 129, 882, 235, 680, 821, 1125, 1286, 1214, 242, 612, 996, 367, 322, 1431, 1432, 533, 969, 709, 1284, 311, 1194, 553, 380, 167, 735, 64, 1349, 353, 781, 1165, 80, 677, 255, 461, 513, 1013, 286, 783, 491, 410, 107, 457, 372, 1360, 1211, 1, 646, 178, 1056, 1240, 1318, 127, 578, 748, 730, 654, 494, 534, 48, 1351, 131, 1444, 268, 628, 557, 804, 382, 989, 478, 421, 348, 878, 865, 453, 1081, 511, 1238, 895, 715, 812, 1437, 58, 355, 1083, 369, 648, 39, 652, 1481, 1017, 1478, 649, 217, 1387, 885, 1207, 993, 150, 828, 489, 825, 632, 244, 1456, 887, 243};
+
+			// Array 1
+			Console.Write("Algoritmo desordenado 1: ");
+			printArray(array1);
+			selectionSort(array1);
+			Console.Write("Algoritmo Ordenado 1: ");
+			printArray(array1);
+
+			// Array 2
+			Console.Write("Algoritmo desordenado 2: ");
+			printArray(array2);
+			selectionSort(array2);
+			Console.Write("Algoritmo Ordenado 2: ");
+			printArray(array2);
+
+			// Array 3
+			Console.Write("Algoritmo desordenado 3: ");
+			printArray(array3);
+			selectionSort(array3);
+			Console.Write("Algoritmo Ordenado 3: ");
+			printArray(array3);
+
+			// Array 4
+			Console.Write("Algoritmo desordenado 4: ");
+			printArray(array4);
+			selectionSort(array4);
+			Console.Write("Algoritmo Ordenado 4: ");
+			printArray(array4);
+
+			// Array 5
+			Console.Write("Algoritmo desordenado 5: ");
+			printArray(array5);
+			selectionSort(array5);
+			Console.Write("Algoritmo Ordenado 5: ");
+			printArray(array5);
+
+			// Array 6
+			/**Console.Write("Algoritmo desordenado 6: ");
+			printArray(array6);
+			selectionSort(array6);
+			Console.Write("Algoritmo Ordenado 6: ");
+			printArray(array6);
+			*/
+
+			// Array 7
+			Console.Write("Algoritmo desordenado 7: ");
+			printArray(array7);
+			selectionSort(array7);
+			Console.Write("Algoritmo Ordenado 7: ");
+			printArray(array7);
+
+			// Array 8
+			/**
+			Console.Write("Algoritmo desordenado 8: ");
+			printArray(array8);
+			selectionSort(array8);
+			Console.Write("Algoritmo Ordenado 8: ");
+			printArray(array8);
+			*/
+
+			// Array 9
+			Console.Write("Algoritmo desordenado 9: ");
+			printArray(array9);
+			selectionSort(array9);
+			Console.Write("Algoritmo Ordenado 2: ");
+			printArray(array9);
+ 
+
+
+			int[] arrayEjre = { 6, 133, 4, 9, 76, 1, 15 };
+			int sol = ejercicio(arrayEjre, 0, 6);
+			Console.Write("Solucion;");
+			Console.Write(sol);
+
+		}
+
+
+
+		static int ejercicio(int[] lista , int desde , int hasta)
+        {
+			if (desde < hasta)
+			{
+				int mitad = (desde + hasta) / 2;
+				int izq = ejercicio(lista, desde, mitad);
+				int der = ejercicio(lista, mitad + 1, hasta);
+				int valor = Merge(izq, der);
+				return valor;
+			}
+			else
+				return lista[desde];
+			
+        }
+
+		static int Merge(int izq, int der)
+        {
+
+			if (izq < der)
+			{
+				return der;
+			}
+			else
+				return izq;
+        }
+
+		// Imprimir el Array
+		static void printArray(int[] arr)
+		{
+			int n = arr.Length;
+			for (int i = 0; i < n; ++i)
+				Console.Write(arr[i] + " ");
+			Console.WriteLine();
+		}
+
+
+
+		// SELECTION SORT
+		static void selectionSort(int[] arr)
+		{
+			int n = arr.Length;
+
+			// One by one move boundary of unsorted subarray
+			for (int i = 0; i < n - 1; i++)
+			{
+				// Find the minimum element in unsorted array
+				int min_idx = i;
+				for (int j = i + 1; j < n; j++)
+					if (arr[j] < arr[min_idx])
+						min_idx = j;
+
+				// Swap the found minimum element with the first
+				// element
+				int temp = arr[min_idx];
+				arr[min_idx] = arr[i];
+				arr[i] = temp;
+			}
+		}
+
+
+		//BUBBLE SORT
+		static void bubbleSort(int[] arr)
+		{
+			int n = arr.Length;
+			for (int i = 0; i < n - 1; i++)
+				for (int j = 0; j < n - i - 1; j++)
+					if (arr[j] > arr[j + 1])
+					{
+						// swap temp and arr[i]
+						int temp = arr[j];
+						arr[j] = arr[j + 1];
+						arr[j + 1] = temp;
+					}
+		}
+
+
+		// INSERTION SORT
+		void insertionSort(int[] arr)
+		{
+			int n = arr.Length;
+			for (int i = 1; i < n; ++i)
+			{
+				int key = arr[i];
+				int j = i - 1;
+
+				// Move elements of arr[0..i-1],
+				// that are greater than key,
+				// to one position ahead of
+				// their current position
+				while (j >= 0 && arr[j] > key)
+				{
+					arr[j + 1] = arr[j];
+					j = j - 1;
+				}
+				arr[j + 1] = key;
+			}
+		}
+
+		void sort(int[] arr)
+		{
+			int n = arr.Length;
+			for (int i = 1; i < n; ++i)
+			{
+				int key = arr[i];
+				int j = i - 1;
+
+				// Move elements of arr[0..i-1],
+				// that are greater than key,
+				// to one position ahead of
+				// their current position
+				while (j >= 0 && arr[j] > key)
+				{
+					arr[j + 1] = arr[j];
+					j = j - 1;
+				}
+				arr[j + 1] = key;
+			}
+		}
+
+		// MERGE SORT
+		void merge(int[] arr, int l, int m, int r)
+		{
+			// Find sizes of two
+			// subarrays to be merged
+			int n1 = m - l + 1;
+			int n2 = r - m;
+
+			// Create temp arrays
+			int[] L = new int[n1];
+			int[] R = new int[n2];
+			int i, j;
+
+			// Copy data to temp arrays
+			for (i = 0; i < n1; ++i)
+				L[i] = arr[l + i];
+			for (j = 0; j < n2; ++j)
+				R[j] = arr[m + 1 + j];
+
+			// Merge the temp arrays
+
+			// Initial indexes of first
+			// and second subarrays
+			i = 0;
+			j = 0;
+
+			// Initial index of merged
+			// subarray array
+			int k = l;
+			while (i < n1 && j < n2)
+			{
+				if (L[i] <= R[j])
+				{
+					arr[k] = L[i];
+					i++;
+				}
+				else
+				{
+					arr[k] = R[j];
+					j++;
+				}
+				k++;
+			}
+
+			// Copy remaining elements
+			// of L[] if any
+			while (i < n1)
+			{
+				arr[k] = L[i];
+				i++;
+				k++;
+			}
+
+			// Copy remaining elements
+			// of R[] if any
+			while (j < n2)
+			{
+				arr[k] = R[j];
+				j++;
+				k++;
+			}
+		}
+
+		// Main function that
+		// sorts arr[l..r] using
+		// merge()
+		void mergeSort(int[] arr, int l, int r)
+		{
+			if (l < r)
+			{
+				// Find the middle
+				// point
+				int m = l + (r - l) / 2;
+
+				// Sort first and
+				// second halves
+				mergeSort(arr, l, m);
+				mergeSort(arr, m + 1, r);
+
+				// Merge the sorted halves
+				merge(arr, l, m, r);
+			}
+		}
+
+
+		// QUICKSORT
+
+		static void swap(int[] arr, int i, int j)
+		{
+			int temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+		}
+
+		/* This function takes last element as pivot, places
+			 the pivot element at its correct position in sorted
+			 array, and places all smaller (smaller than pivot)
+			 to left of pivot and all greater elements to right
+			 of pivot */
+		static int partition(int[] arr, int low, int high)
+		{
+
+			// pivot
+			int pivot = arr[high];
+
+			// Index of smaller element and
+			// indicates the right position
+			// of pivot found so far
+			int i = (low - 1);
+
+			for (int j = low; j <= high - 1; j++)
+			{
+
+				// If current element is smaller
+				// than the pivot
+				if (arr[j] < pivot)
+				{
+
+					// Increment index of
+					// smaller element
+					i++;
+					swap(arr, i, j);
+				}
+			}
+			swap(arr, i + 1, high);
+			return (i + 1);
+		}
+
+		/* The main function that implements QuickSort
+					arr[] --> Array to be sorted,
+					low --> Starting index,
+					high --> Ending index
+		   */
+		static void quickSort(int[] arr, int low, int high)
+		{
+			if (low < high)
+			{
+
+				// pi is partitioning index, arr[p]
+				// is now at right place
+				int pi = partition(arr, low, high);
+
+				// Separately sort elements before
+				// partition and after partition
+				quickSort(arr, low, pi - 1);
+				quickSort(arr, pi + 1, high);
+			}
+		}
+
+
+		// HEAP SORT
+		public void heapSort(int[] arr)
+		{
+			int N = arr.Length;
+
+			// Build heap (rearrange array)
+			for (int i = N / 2 - 1; i >= 0; i--)
+				heapify(arr, N, i);
+
+			// One by one extract an element from heap
+			for (int i = N - 1; i > 0; i--)
+			{
+				// Move current root to end
+				int temp = arr[0];
+				arr[0] = arr[i];
+				arr[i] = temp;
+
+				// call max heapify on the reduced heap
+				heapify(arr, i, 0);
+			}
+		}
+
+		// To heapify a subtree rooted with node i which is
+		// an index in arr[]. n is size of heap
+		void heapify(int[] arr, int N, int i)
+		{
+			int largest = i; // Initialize largest as root
+			int l = 2 * i + 1; // left = 2*i + 1
+			int r = 2 * i + 2; // right = 2*i + 2
+
+			// If left child is larger than root
+			if (l < N && arr[l] > arr[largest])
+				largest = l;
+
+			// If right child is larger than largest so far
+			if (r < N && arr[r] > arr[largest])
+				largest = r;
+
+			// If largest is not root
+			if (largest != i)
+			{
+				int swap = arr[i];
+				arr[i] = arr[largest];
+				arr[largest] = swap;
+
+				// Recursively heapify the affected sub-tree
+				heapify(arr, N, largest);
+			}
+		}
+
+
+
+
+
+	}
+
+
+}
+
+
