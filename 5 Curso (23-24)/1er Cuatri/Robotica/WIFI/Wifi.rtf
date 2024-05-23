@@ -1,0 +1,109 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2757
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red183\green111\blue179;\red24\green24\blue24;\red70\green137\blue204;
+\red194\green126\blue101;\red193\green193\blue193;\red89\green138\blue67;\red202\green202\blue202;\red140\green211\blue254;
+\red167\green197\blue152;\red67\green192\blue160;\red212\green214\blue154;\red66\green179\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c77255\c52549\c75294;\cssrgb\c12157\c12157\c12157;\cssrgb\c33725\c61176\c83922;
+\cssrgb\c80784\c56863\c47059;\cssrgb\c80000\c80000\c80000;\cssrgb\c41569\c60000\c33333;\cssrgb\c83137\c83137\c83137;\cssrgb\c61176\c86275\c99608;
+\cssrgb\c70980\c80784\c65882;\cssrgb\c30588\c78824\c69020;\cssrgb\c86275\c86275\c66667;\cssrgb\c30980\c75686\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 #include\cf4 \strokec4  \cf5 \strokec5 <ESP8266WiFi.h>\cf6 \cb1 \strokec6 \
+\cf2 \cb3 \strokec2 #include\cf4 \strokec4  \cf5 \strokec5 <WiFiClient.h>\cf6 \cb1 \strokec6 \
+\cf2 \cb3 \strokec2 #include\cf4 \strokec4  \cf5 \strokec5 <Wire.h>\cf6 \cb1 \strokec6 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb3 \strokec7 // Reemplaza con tus credenciales de red WiFi\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 const\cf6 \strokec6  \cf4 \strokec4 char\cf8 \strokec8 *\cf6 \strokec6  \cf9 \strokec9 ssid\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf5 \strokec5 "IOT_DEV"\cf6 \strokec6 ;\cb1 \
+\cf4 \cb3 \strokec4 const\cf6 \strokec6  \cf4 \strokec4 char\cf8 \strokec8 *\cf6 \strokec6  \cf9 \strokec9 password\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf5 \strokec5 "UFVINFIOT"\cf6 \strokec6 ;\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb3 \strokec7 // Direcci\'f3n IP y puerto del servidor al que te conectas\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 const\cf6 \strokec6  \cf4 \strokec4 char\cf8 \strokec8 *\cf6 \strokec6  \cf9 \strokec9 serverAddress\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf5 \strokec5 "127.0.0.1"\cf6 \strokec6 ;\cf7 \strokec7  // Reemplaza con la direcci\'f3n del servidor\cf6 \cb1 \strokec6 \
+\cf4 \cb3 \strokec4 const\cf6 \strokec6  \cf4 \strokec4 int\cf6 \strokec6  \cf9 \strokec9 serverPort\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf10 \strokec10 17010\cf6 \strokec6 ;\cf7 \strokec7  // Reemplaza con el puerto del servidor\cf6 \cb1 \strokec6 \
+\
+\cf4 \cb3 \strokec4 const\cf6 \strokec6  \cf4 \strokec4 int\cf6 \strokec6  \cf9 \strokec9 buttonPin\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf9 \strokec9 D2\cf6 \strokec6 ;\cb1 \
+\cf4 \cb3 \strokec4 int\cf6 \strokec6  \cf9 \strokec9 buttonState\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf10 \strokec10 0\cf6 \strokec6 ;\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 WiFiClient\cf6 \strokec6  \cf9 \strokec9 client\cf6 \strokec6 ;\cf7 \strokec7  // Declaraci\'f3n de la variable client en el \'e1mbito global\cf6 \cb1 \strokec6 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 void\cf6 \strokec6  \cf12 \strokec12 setup\cf6 \strokec6 () \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3   \cf12 \strokec12 pinMode\cf6 \strokec6 (\cf9 \strokec9 buttonPin\cf6 \strokec6 , \cf4 \strokec4 INPUT_PULLUP\cf6 \strokec6 );\cb1 \
+\
+\cb3   \cf9 \strokec9 Serial\cf6 \strokec6 .\cf12 \strokec12 begin\cf6 \strokec6 (\cf10 \strokec10 9600\cf6 \strokec6 );\cb1 \
+\cb3   \cf12 \strokec12 delay\cf6 \strokec6 (\cf10 \strokec10 10\cf6 \strokec6 );\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb3 \strokec7   // Con\'e9ctate a la red WiFi\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3   \cf9 \strokec9 WiFi\cf6 \strokec6 .\cf12 \strokec12 mode\cf6 \strokec6 (\cf13 \strokec13 WIFI_STA\cf6 \strokec6 );\cb1 \
+\cb3   \cf9 \strokec9 WiFi\cf6 \strokec6 .\cf12 \strokec12 begin\cf6 \strokec6 (\cf9 \strokec9 ssid\cf6 \strokec6 , \cf9 \strokec9 password\cf6 \strokec6 );\cb1 \
+\cb3   \cf2 \strokec2 while\cf6 \strokec6  (\cf9 \strokec9 WiFi\cf6 \strokec6 .\cf12 \strokec12 status\cf6 \strokec6 () \cf8 \strokec8 !=\cf6 \strokec6  \cf13 \strokec13 WL_CONNECTED\cf6 \strokec6 ) \{\cb1 \
+\cb3     \cf12 \strokec12 delay\cf6 \strokec6 (\cf10 \strokec10 1000\cf6 \strokec6 );\cb1 \
+\cb3     \cf9 \strokec9 Serial\cf6 \strokec6 .\cf12 \strokec12 println\cf6 \strokec6 (\cf5 \strokec5 "Conectando a WiFi..."\cf6 \strokec6 );\cb1 \
+\cb3   \}\cb1 \
+\cb3   \cf9 \strokec9 Serial\cf6 \strokec6 .\cf12 \strokec12 println\cf6 \strokec6 (\cf5 \strokec5 "Conexi\'f3n WiFi exitosa!"\cf6 \strokec6 );\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb3 \strokec7   // Abre una conexi\'f3n TCP al servidor\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3   \cf2 \strokec2 if\cf6 \strokec6 (\cf9 \strokec9 client\cf6 \strokec6 .\cf12 \strokec12 connect\cf6 \strokec6 (\cf9 \strokec9 serverAddress\cf6 \strokec6 , \cf9 \strokec9 serverPort\cf6 \strokec6 ))\{\cb1 \
+\cb3     \cf9 \strokec9 Serial\cf6 \strokec6 .\cf12 \strokec12 println\cf6 \strokec6 (\cf5 \strokec5 "Conexi\'f3n al servidor establecida"\cf6 \strokec6 );\cb1 \
+\cb3   \}\cf2 \strokec2 else\cf6 \strokec6 \{\cb1 \
+\cb3     \cf9 \strokec9 Serial\cf6 \strokec6 .\cf12 \strokec12 println\cf6 \strokec6 (\cf5 \strokec5 "Conexi\'f3n al servidor No establecida"\cf6 \strokec6 );\cb1 \
+\cb3   \}\cb1 \
+\cb3 \}\cb1 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 void\cf6 \strokec6  \cf12 \strokec12 loop\cf6 \strokec6 () \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3   \cb1 \
+\
+\
+\cb3   \cf9 \strokec9 buttonState\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf12 \strokec12 digitalRead\cf6 \strokec6 (\cf9 \strokec9 buttonPin\cf6 \strokec6 );\cf7 \strokec7  // Lee el estado del bot\'f3n\cf6 \cb1 \strokec6 \
+\
+\cb3   \cf2 \strokec2 if\cf6 \strokec6  (\cf9 \strokec9 buttonState\cf6 \strokec6  \cf8 \strokec8 ==\cf6 \strokec6  \cf4 \strokec4 LOW\cf6 \strokec6 ) \{\cf7 \strokec7  // Si el bot\'f3n se presiona (baja a LOW)\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb3 \strokec7     // Env\'eda un mensaje al servidor\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3     \cf11 \strokec11 String\cf6 \strokec6  \cf9 \strokec9 message\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf5 \strokec5 "Hi there!, (team name) at "\cf6 \strokec6  \cf12 \strokec12 +\cf6 \strokec6  \cf9 \strokec9 WiFi\cf6 \strokec6 .\cf12 \strokec12 localIP\cf6 \strokec6 ().\cf12 \strokec12 toString\cf6 \strokec6 () \cf12 \strokec12 +\cf6 \strokec6  \cf5 \strokec5 ":"\cf6 \strokec6  \cf12 \strokec12 +\cf6 \strokec6  \cf11 \strokec11 String\cf6 \strokec6 (\cf9 \strokec9 serverPort\cf6 \strokec6 ) \cf12 \strokec12 +\cf6 \strokec6  \cf5 \strokec5 " salutes you, oh mighty teacher"\cf6 \strokec6 ;\cb1 \
+\cb3     \cf4 \strokec4 int\cf6 \strokec6  \cf9 \strokec9 messageLength\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf9 \strokec9 message\cf6 \strokec6 .\cf12 \strokec12 length\cf6 \strokec6 ();\cb1 \
+\cb3     \cf11 \strokec11 uint16_t\cf6 \strokec6  \cf9 \strokec9 opcode\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf10 \strokec10 0x0001\cf6 \strokec6 ;\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb3 \strokec7     // Mensaje completo, OPCODE, PAYLOAD LENGHT, PAYLOAD (mensaje en si)\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3     \cf9 \strokec9 client\cf6 \strokec6 .\cf12 \strokec12 write\cf6 \strokec6 ((\cf4 \strokec4 const\cf6 \strokec6  \cf11 \strokec11 uint8_t\cf8 \strokec8 *\cf6 \strokec6 )\cf8 \strokec8 &\cf9 \strokec9 opcode\cf6 \strokec6 , \cf4 \strokec4 sizeof\cf6 \strokec6 (\cf9 \strokec9 opcode\cf6 \strokec6 ));\cb1 \
+\cb3     \cf9 \strokec9 client\cf6 \strokec6 .\cf12 \strokec12 write\cf6 \strokec6 ((\cf4 \strokec4 const\cf6 \strokec6  \cf11 \strokec11 uint8_t\cf8 \strokec8 *\cf6 \strokec6 )\cf8 \strokec8 &\cf9 \strokec9 messageLength\cf6 \strokec6 , \cf4 \strokec4 sizeof\cf6 \strokec6 (\cf9 \strokec9 messageLength\cf6 \strokec6 ));\cb1 \
+\cb3     \cf9 \strokec9 client\cf6 \strokec6 .\cf12 \strokec12 print\cf6 \strokec6 (\cf9 \strokec9 message\cf6 \strokec6 );\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb3 \strokec7     // Lee la respuesta del servidor\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3     \cf11 \strokec11 uint16_t\cf6 \strokec6  \cf9 \strokec9 responseOpcode\cf6 \strokec6 ;\cb1 \
+\cb3     \cf11 \strokec11 uint16_t\cf6 \strokec6  \cf9 \strokec9 responseLength\cf6 \strokec6 ;\cb1 \
+\cb3     \cf9 \strokec9 client\cf6 \strokec6 .\cf12 \strokec12 read\cf6 \strokec6 ((\cf11 \strokec11 uint8_t\cf8 \strokec8 *\cf6 \strokec6 )\cf8 \strokec8 &\cf9 \strokec9 responseOpcode\cf6 \strokec6 , \cf4 \strokec4 sizeof\cf6 \strokec6 (\cf9 \strokec9 responseOpcode\cf6 \strokec6 ));\cb1 \
+\cb3     \cf9 \strokec9 client\cf6 \strokec6 .\cf12 \strokec12 read\cf6 \strokec6 ((\cf11 \strokec11 uint8_t\cf8 \strokec8 *\cf6 \strokec6 )\cf8 \strokec8 &\cf9 \strokec9 responseLength\cf6 \strokec6 , \cf4 \strokec4 sizeof\cf6 \strokec6 (\cf9 \strokec9 responseLength\cf6 \strokec6 ));\cb1 \
+\cb3     \cb1 \
+\cb3     \cf2 \strokec2 if\cf6 \strokec6  (\cf9 \strokec9 responseOpcode\cf6 \strokec6  \cf8 \strokec8 ==\cf6 \strokec6  \cf10 \strokec10 0x0002\cf6 \strokec6 ) \{\cb1 \
+\cb3       \cf4 \strokec4 char\cf6 \strokec6  \cf9 \strokec9 responsePayload\cf6 \strokec6 [\cf9 \strokec9 responseLength\cf6 \strokec6 ];\cb1 \
+\cb3       \cf9 \strokec9 client\cf6 \strokec6 .\cf12 \strokec12 readBytes\cf6 \strokec6 (\cf9 \strokec9 responsePayload\cf6 \strokec6 , \cf9 \strokec9 responseLength\cf6 \strokec6 );\cb1 \
+\cb3       \cf9 \strokec9 Serial\cf6 \strokec6 .\cf12 \strokec12 print\cf6 \strokec6 (\cf5 \strokec5 "Respuesta del servidor: "\cf6 \strokec6 );\cb1 \
+\cb3       \cf9 \strokec9 Serial\cf6 \strokec6 .\cf12 \strokec12 println\cf6 \strokec6 (\cf9 \strokec9 responsePayload\cf6 \strokec6 );\cb1 \
+\cb3     \} \cf2 \strokec2 else\cf6 \strokec6  \{\cb1 \
+\cb3       \cf9 \strokec9 Serial\cf6 \strokec6 .\cf12 \strokec12 println\cf6 \strokec6 (\cf5 \strokec5 "Respuesta inesperada del servidor"\cf6 \strokec6 );\cb1 \
+\cb3     \}\cb1 \
+\cb3   \} \cb1 \
+\
+\cb3 \}\cb1 \
+\
+}

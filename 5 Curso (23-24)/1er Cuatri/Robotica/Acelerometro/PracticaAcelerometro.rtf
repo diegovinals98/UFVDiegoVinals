@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2757
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red183\green111\blue179;\red24\green24\blue24;\red70\green137\blue204;
+\red194\green126\blue101;\red193\green193\blue193;\red140\green211\blue254;\red202\green202\blue202;\red167\green197\blue152;
+\red89\green138\blue67;\red67\green192\blue160;\red212\green214\blue154;}
+{\*\expandedcolortbl;;\cssrgb\c77255\c52549\c75294;\cssrgb\c12157\c12157\c12157;\cssrgb\c33725\c61176\c83922;
+\cssrgb\c80784\c56863\c47059;\cssrgb\c80000\c80000\c80000;\cssrgb\c61176\c86275\c99608;\cssrgb\c83137\c83137\c83137;\cssrgb\c70980\c80784\c65882;
+\cssrgb\c41569\c60000\c33333;\cssrgb\c30588\c78824\c69020;\cssrgb\c86275\c86275\c66667;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 #include\cf4 \strokec4  \cf5 \strokec5 <SPI.h>\cf6 \cb1 \strokec6 \
+\cf2 \cb3 \strokec2 #include\cf4 \strokec4  \cf5 \strokec5 <Wire.h>\cf6 \cb1 \strokec6 \
+\cf2 \cb3 \strokec2 #include\cf4 \strokec4  \cf5 \strokec5 <MPU6050.h>\cf6 \cb1 \strokec6 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 const\cf6 \strokec6  \cf4 \strokec4 int\cf6 \strokec6  \cf7 \strokec7 misoPin\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf9 \strokec9 6\cf6 \strokec6 ;\cf10 \strokec10   // Define el pin MISO (D6)\cf6 \cb1 \strokec6 \
+\cf4 \cb3 \strokec4 const\cf6 \strokec6  \cf4 \strokec4 int\cf6 \strokec6  \cf7 \strokec7 mosiPin\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf9 \strokec9 7\cf6 \strokec6 ;\cf10 \strokec10   // Define el pin MOSI (D7)\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 MPU6050\cf6 \strokec6  \cf7 \strokec7 mpu\cf6 \strokec6 ;\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 void\cf6 \strokec6  \cf12 \strokec12 setup\cf6 \strokec6 () \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3   \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 begin\cf6 \strokec6 (\cf9 \strokec9 9600\cf6 \strokec6 );\cb1 \
+\cb3   \cf7 \strokec7 SPI\cf6 \strokec6 .\cf12 \strokec12 begin\cf6 \strokec6 ();\cb1 \
+\cb3  \cb1 \
+\cb3   \cf7 \strokec7 mpu\cf6 \strokec6 .\cf12 \strokec12 initialize\cf6 \strokec6 ();\cb1 \
+\cb3   \cf12 \strokec12 pinMode\cf6 \strokec6 (\cf7 \strokec7 misoPin\cf6 \strokec6 , \cf4 \strokec4 INPUT\cf6 \strokec6 );\cb1 \
+\cb3   \cf12 \strokec12 pinMode\cf6 \strokec6 (\cf7 \strokec7 mosiPin\cf6 \strokec6 , \cf4 \strokec4 OUTPUT\cf6 \strokec6 );\cb1 \
+\cb3 \}\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 void\cf6 \strokec6  \cf12 \strokec12 loop\cf6 \strokec6 () \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10   // Enviar datos cada 10 ms\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3   \cf12 \strokec12 delay\cf6 \strokec6 (\cf9 \strokec9 10\cf6 \strokec6 );\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10   // Verificar si hay datos disponibles en el terminal serial\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3   \cf2 \strokec2 if\cf6 \strokec6  (\cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 available\cf6 \strokec6 ()) \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10     // Si hay datos disponibles, leerlos y enviarlos por SPI\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3     \cf4 \strokec4 char\cf6 \strokec6  \cf7 \strokec7 data\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 read\cf6 \strokec6 ();\cb1 \
+\cb3     \cf11 \strokec11 byte\cf6 \strokec6  \cf7 \strokec7 receivedData\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf7 \strokec7 SPI\cf6 \strokec6 .\cf12 \strokec12 transfer\cf6 \strokec6 (\cf7 \strokec7 data\cf6 \strokec6 );\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10     // Imprimir datos recibidos si no son un valor dummy (0xFF)\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3     \cf2 \strokec2 if\cf6 \strokec6  (\cf7 \strokec7 receivedData\cf6 \strokec6  \cf8 \strokec8 !=\cf6 \strokec6  \cf9 \strokec9 0xFF\cf6 \strokec6 ) \{\cb1 \
+\cb3       \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 print\cf6 \strokec6 (\cf5 \strokec5 "Dato recibido desde SPI: "\cf6 \strokec6 );\cb1 \
+\cb3       \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 println\cf6 \strokec6 (\cf7 \strokec7 receivedData\cf6 \strokec6 );\cb1 \
+\cb3     \}\cb1 \
+\cb3   \} \cf2 \strokec2 else\cf6 \strokec6  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10     // Si no hay datos en el terminal serial, enviar un valor dummy (0xFF) por SPI\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3     \cf11 \strokec11 byte\cf6 \strokec6  \cf7 \strokec7 receivedData\cf6 \strokec6  \cf8 \strokec8 =\cf6 \strokec6  \cf7 \strokec7 SPI\cf6 \strokec6 .\cf12 \strokec12 transfer\cf6 \strokec6 (\cf9 \strokec9 0xFF\cf6 \strokec6 );\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10     // Imprimir datos recibidos si no son un valor dummy (0xFF)\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3     \cf2 \strokec2 if\cf6 \strokec6  (\cf7 \strokec7 receivedData\cf6 \strokec6  \cf8 \strokec8 !=\cf6 \strokec6  \cf9 \strokec9 0xFF\cf6 \strokec6 ) \{\cb1 \
+\cb3       \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 print\cf6 \strokec6 (\cf5 \strokec5 "Dato recibido desde SPI: "\cf6 \strokec6 );\cb1 \
+\cb3       \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 println\cf6 \strokec6 (\cf7 \strokec7 receivedData\cf6 \strokec6 );\cb1 \
+\cb3     \}\cb1 \
+\cb3   \}\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10   // Leer datos del aceler\'f3metro MPU6050\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3   \cf11 \strokec11 int16_t\cf6 \strokec6  \cf7 \strokec7 ax\cf6 \strokec6 , \cf7 \strokec7 ay\cf6 \strokec6 , \cf7 \strokec7 az\cf6 \strokec6 ;\cb1 \
+\cb3   \cf7 \strokec7 mpu\cf6 \strokec6 .\cf12 \strokec12 getAcceleration\cf6 \strokec6 (\cf8 \strokec8 &\cf7 \strokec7 ax\cf6 \strokec6 , \cf8 \strokec8 &\cf7 \strokec7 ay\cf6 \strokec6 , \cf8 \strokec8 &\cf7 \strokec7 az\cf6 \strokec6 );\cb1 \
+\cb3   \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 print\cf6 \strokec6 (\cf5 \strokec5 "Aceleraci\'f3n (X,Y,Z): "\cf6 \strokec6 );\cb1 \
+\cb3   \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 print\cf6 \strokec6 (\cf7 \strokec7 ax\cf6 \strokec6 );\cb1 \
+\cb3   \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 print\cf6 \strokec6 (\cf5 \strokec5 ", "\cf6 \strokec6 );\cb1 \
+\cb3   \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 print\cf6 \strokec6 (\cf7 \strokec7 ay\cf6 \strokec6 );\cb1 \
+\cb3   \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 print\cf6 \strokec6 (\cf5 \strokec5 ", "\cf6 \strokec6 );\cb1 \
+\cb3   \cf7 \strokec7 Serial\cf6 \strokec6 .\cf12 \strokec12 println\cf6 \strokec6 (\cf7 \strokec7 az\cf6 \strokec6 );\cb1 \
+\cb3 \}\cb1 \
+\
+}
