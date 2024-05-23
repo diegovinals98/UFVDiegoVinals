@@ -1,0 +1,116 @@
+# file opened: /Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/prueba.asm
+  1   0000              ; Practica 1
+  2   0000              ; Diego Vinals Lage
+  3   0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+  4   0000              		org $8000
+  5   8000
+  6   8000 F3           		di 								; Deshabilitar interrupciones
+  7   8001 31 00 00     		ld sp,0 						; Posicionar la pila al final de la memoria
+  8   8004 DD 21 64 80  		ld ix, pr1
+  9   8008
+ 10   8008 CD 23 80     bucP:   call LineasV 					; Llama a LineasV, que hace las lineas
+ 11   800B 18 00        		jr finBP						; Salta a finBP
+ 12   800D
+ 13   800D 06 40        finBP:	ld b, 64						; Carga 64 iteraciones de pausa
+ 14   800F CD 14 80     		call pausa 						; Llama a pausa
+ 15   8012
+ 16   8012 18 F4        		jr bucP 						; Salta al bucle principal
+ 17   8014
+ 18   8014 F5           pausa: 	push af							; Salva registros utilizados en la pila
+ 19   8015 D5           		push de
+ 20   8016
+ 21   8016 11 00 00     paus0:  ld de, 0 						; 0 lo mete en de
+ 22   8019 1B           paus1:	dec de 							; Decremento en 1 de "de"
+ 23   801A 7A           		ld a,d 							; Para comprobar si DE es 0000, D tiene que ser 0...
+ 24   801B B3           		or e 							; ... y E también
+ 25   801C 20 FB        		jr nz, paus1					; Si no lo es, sigue el bucle inteno
+ 26   801E 10 F6        		djnz paus0                      ; B=B-1 y cicla a bucle externo hasta que B sea 0
+ 27   8020
+ 28   8020 D1           		pop de 							; Recupera registros utilizados desde la pila
+ 29   8021 F1           		pop af
+ 30   8022
+ 31   8022 C9           		ret 							; Retorna al punto de llamada
+ 32   8023
+ 33   8023              // ---------------- FUNCION QUE PINTA LAS LINEAS VERTICALES -------------------------------//
+ 34   8023              LineasV:
+ 35   8023 F5           		push af							; Guarda los registros usados en la pila
+ 36   8024 C5           		push bc
+ 37   8025
+ 38   8025 06 00        		ld b,0 							; B lleva la cuenta de la coordenada X
+ 39   8027              buclebV:
+ 40   8027 DD 7E 00     		ld a,(ix)                       ; Carga el color de la columna en curso
+ 41   802A DD 23        		inc ix                          ; Incremento de XI, es decir, siguiente color
+ 42   802C CD 38 80     		call barraVert                  ; Pinta una barra vertical en X=B y Color=A
+ 43   802F 04           		inc b 							; Incremento de B, siguiente columna
+ 44   8030 78           		ld a,b 							; Compara si B es 32, si lo es, acaba el bucle, por que
+ 45   8031 FE 20        		cp 32							; hemos llegado al final
+ 46   8033 20 F2        		jr nz, buclebV 					; Si no, sigue el bucle
+ 47   8035
+ 48   8035 C1           		pop bc 							; Recupera los registros originales desde la pila
+ 49   8036 F1           		pop af
+ 50   8037 C9           		ret
+ 51   8038
+ 52   8038
+ 53   8038              // ---------------- FUNCION QUE PINTA UNA SOLA BARRA VERTICAL ---------------------------//
+ 54   8038              barraVert:
+ 55   8038 F5           		push af							; Salvamos registros usados
+ 56   8039 C5           		push bc
+ 57   803A
+ 58   803A 0E 17        		ld c,23							; C es la coordenada Y
+ 59   803C
+ 60   803C              bucVert:
+ 61   803C CD 46 80     		call cuadro 					; bucle de 31..0 en la coordenada Y
+ 62   803F 0D           		dec c
+ 63   8040 F2 3C 80     		jp p, bucVert 					; jp P salta si el SIGNO en Complemento a 2 es positivo
+ 64   8043
+ 65   8043 C1           		pop bc 							; Recuperamos el valor original de los registros
+ 66   8044 F1           		pop af
+ 67   8045
+ 68   8045 C9           		ret
+ 69   8046
+ 70   8046
+ 71   8046              // ---------------- FUNCION QUE PINTA UN SOLO CUADRO DE COLOR ---------------------------//
+ 72   8046              cuadro:
+ 73   8046 F5           		push af							; Salva registros usados
+ 74   8047 D5           		push de
+ 75   8048 E5           		push hl
+ 76   8049
+ 77   8049 26 00        		ld h,0 							; Empieza calculando Y*32
+ 78   804B 69           		ld l,c  						; Para multiplicar c (coord. Y) por 32, se usan sumas. Esto se puede hacer en un bucle también
+ 79   804C 29           		add hl, hl 						; ahora hl es 2*c
+ 80   804D 29           		add hl, hl 						; ahora hl es 4*c
+ 81   804E 29           		add hl, hl 						; ahora hl es 8*c
+ 82   804F 29           		add hl, hl 						; ahora hl 16*c
+ 83   8050 29           		add hl, hl 						; ahora hl 32*c
+ 84   8051
+ 85   8051 16 00        		ld d,0
+ 86   8053 58           		ld e,b    						; b Contiene el valor de la coordenada X -> Se carga en DE
+ 87   8054
+ 88   8054 19           		add hl, de 						; Ahora HL Contiene 32*y+X
+ 89   8055 11 00 58     		ld de, $5800 					; Se carga en DE la dirección base de la zona de atributos (colores)
+ 90   8058 19           		add hl, de 						; Ahora HL contiene $5800 + 32*Y + X, el valor buscado,
+ 91   8059
+ 92   8059 CB 27        		sla a 							; Ajuste de color para paper desplazando los bits a la zona de paper y bright
+ 93   805B CB 27        		sla a 							; mediante tres desplazamientos a la izquierda
+ 94   805D CB 27        		sla a 							; Esta secuencia es lo mismo que multiplicar por 8
+ 95   805F
+ 96   805F 77           		ld (hl),a 						; Transfiere a memoria de video apuntada por HL el valor del color sobre el PAPER y el bit de brillo
+ 97   8060
+ 98   8060 E1           		pop hl 							; Recupera registros desde la pila
+ 99   8061 D1           		pop de
+100   8062 F1           		pop af
+101   8063
+102   8063 C9           		ret 							; Retorno de la función
+103   8064
+104   8064
+105   8064              pr1
+105   8064 00 00 00 00   	db 0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7;
+105   8068 01 01 01 01
+105   806C 02 02 02 02
+105   8070 03 03 03 03
+105   8074 04 04 04 04
+105   8078 05 05 05 05
+105   807C 06 06 06 06
+105   8080 07 07 07 07
+106   8084
+# file closed: /Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/prueba.asm

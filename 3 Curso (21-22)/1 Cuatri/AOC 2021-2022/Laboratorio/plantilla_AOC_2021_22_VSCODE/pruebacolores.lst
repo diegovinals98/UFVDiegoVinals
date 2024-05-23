@@ -1,0 +1,120 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/pruebacolores.asm
+  1   0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+  2   0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+  3   8000
+  4   8000 F3           inicio: di
+  5   8001 31 00 00             ld sp, 0
+  6   8004
+  7   8004
+  8   8004              pintar:
+  9   8004 DD 2E 17             ld ixl, 23
+ 10   8007 DD 21 25 80          ld ix, colores
+ 11   800B 21 00 58             ld hl, $5800
+ 12   800E
+ 13   800E              franja:
+ 14   800E DD 7E 00             ld a, (ix)
+ 15   8011 FE 00                cp 0
+ 16   8013 28 0E                jr z,fin
+ 17   8015 47                   ld b , a ; numero de repeticiones a b
+ 18   8016 DD 7E 01             ld a, (ix + 1) ; en a cargo el color
+ 19   8019              cuadro:
+ 20   8019 77                   ld (hl), a
+ 21   801A 23                   inc hl
+ 22   801B 10 FC                djnz cuadro
+ 23   801D DD 23                inc ix
+ 24   801F DD 23                inc ix
+ 25   8021 18 EB                jr franja
+ 26   8023 18 FE        fin: jr fin
+ 27   8025
+ 28   8025              colores:
+ 29   8025 04 00                defb 4,0
+ 30   8027 04 08                defb 4,1*8
+ 31   8029 04 10                defb 4,2*8
+ 32   802B 04 18                defb 4,3*8
+ 33   802D 04 20                defb 4,4*8
+ 34   802F 04 28                defb 4,5*8
+ 35   8031 04 30                defb 4,6*8
+ 36   8033 04 38                defb 4,7*8
+ 37   8035 04 40                defb 4,8*8
+ 38   8037 04 08                defb 4,1*8
+ 39   8039 04 10                defb 4,2*8
+ 40   803B 04 18                defb 4,3*8
+ 41   803D 04 20                defb 4,4*8
+ 42   803F 04 28                defb 4,5*8
+ 43   8041 04 30                defb 4,6*8
+ 44   8043 04 38                defb 4,7*8
+ 45   8045 04 40                defb 4,8*8
+ 46   8047 04 08                defb 4,1*8
+ 47   8049 04 10                defb 4,2*8
+ 48   804B 04 18                defb 4,3*8
+ 49   804D 04 20                defb 4,4*8
+ 50   804F 04 28                defb 4,5*8
+ 51   8051 04 30                defb 4,6*8
+ 52   8053 04 38                defb 4,7*8
+ 53   8055 04 40                defb 4,8*8
+ 54   8057 04 08                defb 4,1*8
+ 55   8059 04 10                defb 4,2*8
+ 56   805B 04 18                defb 4,3*8
+ 57   805D 04 20                defb 4,4*8
+ 58   805F 04 28                defb 4,5*8
+ 59   8061 04 30                defb 4,6*8
+ 60   8063 04 38                defb 4,7*8
+ 61   8065 04 40                defb 4,8*8
+ 62   8067 04 08                defb 4,1*8
+ 63   8069 04 10                defb 4,2*8
+ 64   806B 04 18                defb 4,3*8
+ 65   806D 04 20                defb 4,4*8
+ 66   806F 04 28                defb 4,5*8
+ 67   8071 04 30                defb 4,6*8
+ 68   8073 04 38                defb 4,7*8
+ 69   8075 04 40                defb 4,8*8
+ 70   8077 04 08                defb 4,1*8
+ 71   8079 04 10                defb 4,2*8
+ 72   807B 04 18                defb 4,3*8
+ 73   807D 04 20                defb 4,4*8
+ 74   807F 04 28                defb 4,5*8
+ 75   8081 04 30                defb 4,6*8
+ 76   8083 04 38                defb 4,7*8
+ 77   8085 04 40                defb 4,8*8
+ 78   8087 04 08                defb 4,1*8
+ 79   8089 04 10                defb 4,2*8
+ 80   808B 04 18                defb 4,3*8
+ 81   808D 04 20                defb 4,4*8
+ 82   808F 04 28                defb 4,5*8
+ 83   8091 04 30                defb 4,6*8
+ 84   8093 04 38                defb 4,7*8
+ 85   8095 04 40                defb 4,8*8
+ 86   8097 04 08                defb 4,1*8
+ 87   8099 04 10                defb 4,2*8
+ 88   809B 04 18                defb 4,3*8
+ 89   809D 04 20                defb 4,4*8
+ 90   809F 04 28                defb 4,5*8
+ 91   80A1 04 30                defb 4,6*8
+ 92   80A3 04 38                defb 4,7*8
+ 93   80A5 04 40                defb 4,8*8
+ 94   80A7 04 08                defb 4,1*8
+ 95   80A9 04 10                defb 4,2*8
+ 96   80AB 04 18                defb 4,3*8
+ 97   80AD 04 20                defb 4,4*8
+ 98   80AF 04 28                defb 4,5*8
+ 99   80B1 04 30                defb 4,6*8
+100   80B3 04 38                defb 4,7*8
+101   80B5 04 40                defb 4,8*8
+102   80B7 04 08                defb 4,1*8
+103   80B9 04 10                defb 4,2*8
+104   80BB 04 18                defb 4,3*8
+105   80BD 04 20                defb 4,4*8
+106   80BF 04 28                defb 4,5*8
+107   80C1 04 30                defb 4,6*8
+108   80C3 04 38                defb 4,7*8
+109   80C5 04 40                defb 4,8*8
+110   80C7 04 08                defb 4,1*8
+111   80C9 04 10                defb 4,2*8
+112   80CB 04 18                defb 4,3*8
+113   80CD 04 20                defb 4,4*8
+114   80CF 04 28                defb 4,5*8
+115   80D1 04 30                defb 4,6*8
+116   80D3 04 38                defb 4,7*8
+117   80D5 04 40 00             defb 4,8*8,0
+118   80D8
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/pruebacolores.asm

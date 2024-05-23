@@ -1,0 +1,92 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/clase22Octubre.asm
+ 1    0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+ 2    0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+ 3    8000
+ 4    8000              inicio:
+ 5    8000 F3               di
+ 6    8001 31 00 00         ld sp, 0
+ 7    8004                  ; lectura de teclado
+ 8    8004                  ; se lee en el registro A
+ 9    8004                  ; bit n , a ; comprueba el bit n de a si es 0 o no, y modifica el flag z
+10    8004                  ; in a, (c) , instruccion para leer teclado, hay que hacer ld bc, puerto, y luego la instruccion in a , (c)
+11    8004
+12    8004
+13    8004                  ; leer la tecla A y D
+14    8004
+15    8004 21 10 58         ld hl, $5810
+16    8007
+17    8007              buclePrincipal:
+18    8007 01 FE FD         ld bc, $FDFE
+19    800A ED 78            in a, (c)
+20    800C CB 47            bit 0, a ; comprobamos la a
+21    800E 28 17            jr z, pintarA ; si se ha pulsado, z se modifica, y saltamos a pintar
+22    8010 ED 78            in a, (c)
+23    8012 CB 57            bit 2, a
+24    8014 28 1F            jr z, pintarD
+25    8016 ED 78            in a, (c)
+26    8018 CB 4F            bit 1, a  ; comprobar la s
+27    801A 28 27            jr z, pintarS ;
+28    801C 01 FE FB         ld bc, $FBFE
+29    801F ED 78            in a, (c)
+30    8021 CB 4F            bit 1, a  ; comprobar la s
+31    8023 28 2F            jr z, pintarW ;
+32    8025 18 E0            jr buclePrincipal ; si no se ha pintado no salta a pintar y continuamos en el bucle
+33    8027
+34    8027              pintarA:
+35    8027 3E 20            ld a , 4*8
+36    8029 36 00            ld (hl), 0
+37    802B 2B               dec hl
+38    802C 77               ld (hl), a
+39    802D
+40    802D              bucleEsperarA:
+41    802D ED 78            in a, (c)
+42    802F CB 47            bit 0, a        ; este bucle, espera a que se haya soltado la tecla
+43    8031 28 FA            jr z, bucleEsperarA
+44    8033 18 D2            jr buclePrincipal
+45    8035
+46    8035
+47    8035              pintarD:
+48    8035 3E 20            ld a , 4*8
+49    8037 36 00            ld (hl), 0
+50    8039 23               inc hl
+51    803A 77               ld (hl), a
+52    803B
+53    803B              bucleEsperarD:
+54    803B ED 78            in a, (c)
+55    803D CB 57            bit 2, a        ; este bucle, espera a que se haya soltado la tecla
+56    803F 28 FA            jr z, bucleEsperarD
+57    8041 18 C4            jr buclePrincipal
+58    8043
+59    8043              pintarS:
+60    8043 3E 20            ld a , 4*8
+61    8045 36 00            ld (hl), 0
+62    8047 11 20 00         ld de, 32
+63    804A 19               add hl, de
+64    804B 77               ld (hl), a
+65    804C
+66    804C              bucleEsperarS:
+67    804C ED 78            in a, (c)
+68    804E CB 4F            bit 1, a        ; este bucle, espera a que se haya soltado la tecla
+69    8050 28 FA            jr z, bucleEsperarS
+70    8052 18 B3            jr buclePrincipal
+71    8054
+72    8054              pintarW:
+73    8054 3E 20            ld a , 4*8
+74    8056 36 00            ld (hl), 0
+75    8058 11 20 00         ld de, 32
+76    805B ED 52            sbc hl, de
+77    805D 77               ld (hl), a
+78    805E
+79    805E              bucleEsperarW:
+80    805E ED 78            in a, (c)
+81    8060 CB 4F            bit 1, a        ; este bucle, espera a que se haya soltado la tecla
+82    8062 28 FA            jr z, bucleEsperarW
+83    8064 18 A1            jr buclePrincipal
+84    8066
+85    8066
+86    8066
+87    8066
+88    8066
+89    8066
+90    8066 18 FE        fin: jr fin
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/clase22Octubre.asm

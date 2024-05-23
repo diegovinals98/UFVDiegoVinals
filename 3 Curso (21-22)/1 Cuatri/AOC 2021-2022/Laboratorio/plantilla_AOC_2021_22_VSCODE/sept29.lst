@@ -1,0 +1,121 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/sept29.asm
+  1   0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+  2   0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+  3   8000
+  4   8000 F3           inicio:         di
+  5   8001 31 00 00                     ld sp, 0
+  6   8004 18 57                        jr bucle200Func
+  7   8006 06 02                        ld b, 2 ; La coordenada y
+  8   8008 0E 03                        ld c, 3 ; La coordenada x
+  9   800A 3E F4                        ld a , $F4 ; Color
+ 10   800C
+ 11   800C 26 00                        ld h, 0
+ 12   800E 68                           ld l, b
+ 13   800F
+ 14   800F 29                           add hl, hl      ;Multiplicacion sin bucle
+ 15   8010 29                           add hl, hl
+ 16   8011 29                           add hl, hl
+ 17   8012 29                           add hl, hl
+ 18   8013 29                           add hl, hl
+ 19   8014
+ 20   8014 16 00                        ld d, 0
+ 21   8016 59                           ld e, c
+ 22   8017 19                           add hl, de
+ 23   8018 11 00 58                     ld de , $5800
+ 24   801B 19                           add hl, de      ; en HL tenemos la direccion de memoria a la que corresponda las coordenadas x e y
+ 25   801C                              ; FBABCHJG F: Flash B:Brillo : ABC color HJG: Nada (BYTES PARA PINTAR)
+ 26   801C                              ; Verde brillante 0110 0000 $60
+ 27   801C                              ;ld (hl),a ; Pintamos el color en la direccion de memoria que contenga HL
+ 28   801C
+ 29   801C              ; --------------IF --------------
+ 30   801C                              ; Registro f es el registro bandera (Flag), no lo podemos modificar nosotros
+ 31   801C                              ; z -> la ultima operacion aritmetica o logica ha salido 0
+ 32   801C                              ; Se usa para comparar. Se hacen con restas. Con la a
+ 33   801C 06 0E                        ld b,14
+ 34   801E 0E 0C                        ld c, 12
+ 35   8020 3E 0B                        ld a , 11 ; Si c es mayor, hay carry
+ 36   8022 B9                           cp c  ; En este caso no se levanta ni el carry ni el z (cero) jrz, jrnz, jpz, jprz. CP hace lo mismo que la resta. pero no guarda el resultado en a
+ 37   8023 28 14                        jr z, else
+ 38   8025
+ 39   8025              ; -------------- switch --------------
+ 40   8025 3E 07                        ld a, 7
+ 41   8027 FE 01                        cp 1
+ 42   8029 20 02                        jr nz, comparar3
+ 43   802B                              ;codigo
+ 44   802B                              ; codigo
+ 45   802B 18 0C                        jr fin_switch
+ 46   802D
+ 47   802D FE 03        comparar3:      cp 3
+ 48   802F 20 02                        jr nz, comparar5
+ 49   8031                              ;codigo
+ 50   8031                              ;codigo
+ 51   8031 18 06                        jr fin_switch
+ 52   8033
+ 53   8033 FE 05        comparar5:      cp 5
+ 54   8035 20 02                        jr nz, default
+ 55   8037                              ;codigo
+ 56   8037                              ;codigo
+ 57   8037 18 00                        jr fin_switch
+ 58   8039
+ 59   8039              default:
+ 60   8039
+ 61   8039                              ;codigo
+ 62   8039                              ;codigo
+ 63   8039
+ 64   8039              fin_switch:
+ 65   8039
+ 66   8039
+ 67   8039
+ 68   8039              else:
+ 69   8039
+ 70   8039
+ 71   8039
+ 72   8039
+ 73   8039 21 00 58     for:    ld hl, $5800
+ 74   803C 3E 00                ld a, 0
+ 75   803E
+ 76   803E 36 F4        bucle:  ld (hl), $F4
+ 77   8040 23                   inc hl
+ 78   8041 3D                   dec a
+ 79   8042 20 FA                jr nz, bucle ; bucle con el registro a
+ 80   8044
+ 81   8044
+ 82   8044              ; ------------BUCLE 16 BITS ----------------
+ 83   8044 21 00 58     for2:   ld hl, $5800
+ 84   8047 01 00 03             ld bc, 768
+ 85   804A
+ 86   804A 36 F4        bucle2: ld (hl), $F4
+ 87   804C 23                   inc hl
+ 88   804D 0B                   dec bc
+ 89   804E
+ 90   804E 78                   ld a,b
+ 91   804F B1                   or c ; Es una operacion logica, por lo que altera los flags
+ 92   8050 20 F8                jr nz, bucle2
+ 93   8052
+ 94   8052              ; ---------- BUCLE SIN CONTAR (while) -------------
+ 95   8052 21 00 58     while: ld hl, $5800
+ 96   8055
+ 97   8055              bucle3:
+ 98   8055 36 F4                ld (hl), $F4
+ 99   8057 23                   inc hl
+100   8058 7C                   ld a , h
+101   8059 FE 5B                cp $5b
+102   805B 20 F8                jr nz, bucle3
+103   805D
+104   805D
+105   805D
+106   805D              ; Bucle 2000
+107   805D              bucle200Func
+108   805D 01 D0 07             ld bc, 2000
+109   8060              bucle2000:
+110   8060 0B                   dec bc
+111   8061 78                   ld a, B
+112   8062 B1                   or c
+113   8063 20 FB                jr nz, bucle2000
+114   8065
+115   8065
+116   8065              ;-------------------------------------------------------------------------------------------------
+117   8065 18 FE        fin:    jr fin          ; Bucle infinito
+118   8067
+119   8067
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/sept29.asm

@@ -1,0 +1,156 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/Clase27_Oct.asm
+  1   0000
+  2   0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+  3   0000                      SLDOPT COMMENT WPMEM, LOGPOINT, ASSERTION
+  4   0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+  5   8000
+  6   8000              inicio:
+  7   8000 F3                   di
+  8   8001 31 00 00             ld sp, 0
+  9   8004 FD 21 BB 80          ld iy, coorX
+ 10   8008 DD 21 BD 80          ld ix, dx
+ 11   800C              bucle:
+ 12   800C
+ 13   800C                      ;ld a ,0                con esto solo se mueve un solo cuadrado, pero el cuadrado es intermitente, por lo que
+ 14   800C                      ;call pintar            no nos sirve
+ 15   800C
+ 16   800C                      ; falta comprobar que hay cambio, pq si no hay cambio, no hacemos nada.
+ 17   800C                      ; tb falta borrar el restro del movimiento, solo se tiene q mover el cuadrado
+ 18   800C
+ 19   800C CD 47 80             call leerTecla
+ 20   800F
+ 21   800F                      ; if que comprueba si ha habido cambio en dy o dx
+ 22   800F 3E 00                ld a , 0
+ 23   8011 DD 4E 00             ld c , (ix)
+ 24   8014 B9                   cp c
+ 25   8015 20 0A                jr nz, mover
+ 26   8017 3E 00                ld a , 0
+ 27   8019 DD 4E 01             ld c , (ix + 1)
+ 28   801C B9                   cp c
+ 29   801D 20 02                jr nz, mover
+ 30   801F 28 EB                jr z, bucle
+ 31   8021
+ 32   8021              mover:
+ 33   8021 FD 46 00             ld b, (iy)
+ 34   8024 FD 4E 01             ld c, (iy + 1)
+ 35   8027 3E 00                ld a ,0
+ 36   8029 CD 8E 80             call pintar
+ 37   802C
+ 38   802C DD 7E 00             ld a, (ix)
+ 39   802F FD 86 00             add a, (iy)
+ 40   8032 FD 77 00             ld (iy), a      ; actualizamos la coordenada x
+ 41   8035 47                   ld b, a ; guardamos en b la posicion nueva de x
+ 42   8036
+ 43   8036 DD 7E 01             ld a, (ix + 1)  ; por aqui cambia el registro b de 1 a 0 por lo que hace que solo se pude avanzar 1 cuadrado
+ 44   8039 FD 86 01             add a, (iy + 1)
+ 45   803C 4F                   ld c, a         ; guardamos en c el valor de la posicion nueva en y
+ 46   803D FD 77 01             ld (iy + 1), a  ; actualizamos la coordenada y
+ 47   8040
+ 48   8040 3E 02                ld a , 2
+ 49   8042 CD 8E 80             call pintar     ; llamamos a pintar con las nuevas coordenadas
+ 50   8045 18 C5                jr bucle
+ 51   8047
+ 52   8047
+ 53   8047
+ 54   8047              ; ---------- FUNCION QUE LEE LAS TECLAS AWSD --------------------
+ 55   8047              leerTecla:
+ 56   8047 F5                   push af
+ 57   8048 C5                   push bc
+ 58   8049
+ 59   8049 DD 21 BD 80          ld ix, dx
+ 60   804D DD 36 00 00          ld (ix), 0
+ 61   8051 DD 36 01 00          ld (ix +1), 0
+ 62   8055              pulsadoW:
+ 63   8055 01 FE FB             ld bc, $FBFE
+ 64   8058 ED 78                in a, (c)
+ 65   805A CB 4F                bit 1, a  ; comprobar la w
+ 66   805C 20 06                jr nz, pulsadoA ; si no se ha pulsado, saltamos a ver si se ha pulsado la tecla A
+ 67   805E DD 35 01             dec (ix + 1)
+ 68   8061 CD A7 80             call esperarTecla
+ 69   8064
+ 70   8064              pulsadoA:
+ 71   8064 01 FE FD             ld bc, $FDFE
+ 72   8067 ED 78                in a, (c)
+ 73   8069 CB 47                bit 0, a ; comprobamos la a
+ 74   806B 20 06                jr nz, pulsadoS
+ 75   806D DD 35 00             dec (ix)
+ 76   8070 CD A7 80             call esperarTecla
+ 77   8073
+ 78   8073              pulsadoS:
+ 79   8073 ED 78                in a, (c)
+ 80   8075 CB 4F                bit 1, a  ; comprobar la s
+ 81   8077 20 06                jr nz, pulsadoD
+ 82   8079 DD 34 01             inc (ix + 1)
+ 83   807C CD A7 80             call esperarTecla
+ 84   807F
+ 85   807F              pulsadoD:
+ 86   807F ED 78                in a, (c)
+ 87   8081 CB 57                bit 2, a  ; comprobar la d
+ 88   8083 20 06                jr nz, noPulsado
+ 89   8085 DD 34 00             inc (ix)
+ 90   8088 CD A7 80             call esperarTecla
+ 91   808B
+ 92   808B              noPulsado:
+ 93   808B C1                   pop bc
+ 94   808C F1                   pop af
+ 95   808D C9                   ret
+ 96   808E
+ 97   808E
+ 98   808E              ; -------- Pinta un solo cuadro ---------
+ 99   808E              pintar:
+100   808E
+101   808E D5                   push de
+102   808F E5                   push hl
+103   8090
+104   8090 26 00                ld h, 0
+105   8092 69                   ld l, c
+106   8093
+107   8093 29                   add hl, hl
+108   8094 29                   add hl, hl
+109   8095 29                   add hl, hl
+110   8096 29                   add hl, hl
+111   8097 29                   add hl, hl
+112   8098
+113   8098 16 00                ld d, 0
+114   809A 58                   ld e ,b
+115   809B 19                   add hl, de
+116   809C 11 00 58             ld de, $5800
+117   809F 19                   add hl, de
+118   80A0
+119   80A0 87                   add a
+120   80A1 87                   add a
+121   80A2 87                   add a
+122   80A3
+123   80A3 77                   ld (hl), a
+124   80A4 E1                   pop hl
+125   80A5 D1                   pop de
+126   80A6 C9                   ret
+127   80A7
+128   80A7
+129   80A7              ; FUNCION QUE ESPERA A QUE NINGUNA TECLA ESTE PULSADA
+130   80A7              esperarTecla:
+131   80A7 F5                   push af
+132   80A8 C5                   push bc
+133   80A9
+134   80A9              iniciarScan:
+135   80A9 01 FE FE             ld bc, $FEFE
+136   80AC              sigueScan:
+137   80AC ED 78                in a, (c)
+138   80AE E6 1F                and 31
+139   80B0 FE 1F                cp 31
+140   80B2 20 F5                jr nz, iniciarScan
+141   80B4 CB 00                rlc b
+142   80B6 38 F4                jr c, sigueScan
+143   80B8
+144   80B8 C1                   pop bc
+145   80B9 F1                   pop af
+146   80BA C9                   ret
+147   80BB
+148   80BB
+149   80BB 00           coorX: db 0
+150   80BC 00           coorY: db 0
+151   80BD
+152   80BD 00           dx: db 0
+153   80BE 00           dy: db 0
+154   80BF
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/Clase27_Oct.asm

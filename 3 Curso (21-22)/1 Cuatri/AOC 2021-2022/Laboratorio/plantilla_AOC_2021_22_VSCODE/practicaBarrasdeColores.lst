@@ -1,0 +1,68 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/practicaBarrasdeColores.asm
+ 1    0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+ 2    0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+ 3    8000
+ 4    8000 F3           inicio: di
+ 5    8001 31 00 00             ld sp, 0
+ 6    8004
+ 7    8004              ;---------- Barras ----------------
+ 8    8004
+ 9    8004 DD 2E 08             ld ixl, 8
+10    8007
+11    8007 3E 00                ld a, 0
+12    8009              bucle:
+13    8009 CD 1A 80             call barras
+14    800C 3C                   inc a
+15    800D 3C                   inc a
+16    800E 3C                   inc a
+17    800F 3C                   inc a
+18    8010 3C                   inc a
+19    8011 3C                   inc a
+20    8012 3C                   inc a
+21    8013 3C                   inc a
+22    8014 DD 2D                dec ixl
+23    8016 20 F1                jr nz, bucle
+24    8018
+25    8018              ; ------ loop infinito ----------
+26    8018 18 FE        fin:    jr fin
+27    801A
+28    801A
+29    801A              ; ------ funcion que pinta barras de colores -----------
+30    801A              barras:
+31    801A DD 26 04             ld ixh, 4
+32    801D              azul:
+33    801D 0E 00                ld c, 0
+34    801F CD 34 80             call cuadro
+35    8022 0E 17                ld c, 23 ; corrdenadsa y
+36    8024 CD 2D 80             call vertical
+37    8027 04                   inc b
+38    8028 DD 25                dec ixh
+39    802A 20 F1                jr nz, azul
+40    802C C9                   ret
+41    802D
+42    802D              ; ------- Funcion que pinta barras verticales de 1 solo cuadrado ------
+43    802D              vertical:
+44    802D CD 34 80             call cuadro
+45    8030 0D                   dec c
+46    8031 20 FA                jr nz, vertical
+47    8033 C9                   ret
+48    8034
+49    8034              ; -------- Pinta un solo cuadro ---------
+50    8034 26 00        cuadro: ld h,0 							; Empieza calculando Y*32
+51    8036 69                   ld l,c 						; Para multiplicar c (coord. Y) por 32, se usan sumas. Esto se puede hacer en un bucle también
+52    8037 29                   add hl, hl 						; ahora hl es 2*c
+53    8038 29                   add hl, hl 						; ahora hl es 4*c
+54    8039 29                   add hl, hl 						; ahora hl es 8*c
+55    803A 29                   add hl, hl 						; ahora hl 16*c
+56    803B 29                   add hl, hl 						; ahora hl 32*c
+57    803C
+58    803C 16 00                ld d,0
+59    803E 58                   ld e,b    						; b Contiene el valor de la coordenada X -> Se carga en DE
+60    803F
+61    803F 19                   add hl, de 						; Ahora HL Contiene 32*y+X
+62    8040 11 00 58             ld de, $5800
+63    8043 19                   add hl, de
+64    8044
+65    8044 77                   ld (hl),a
+66    8045 C9                   ret
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/practicaBarrasdeColores.asm

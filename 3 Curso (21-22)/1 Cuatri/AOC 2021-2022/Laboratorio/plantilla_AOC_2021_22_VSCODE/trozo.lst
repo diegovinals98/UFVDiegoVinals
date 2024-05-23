@@ -1,0 +1,27 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/trozo.asm
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/trozo.asm(1): error: Label not found: batman
+ 1    0000 21 00 00         ld hl, batman
+ 2    0003 11 00 40         ld de, $4000
+ 3    0006 01 00 1B         ld bc, 6912
+ 4    0009
+ 5    0009              bucle:
+ 6    0009                  ; hara lo q sea
+ 7    0009                  ;ld a , (hl)
+ 8    0009                  ;ld (de), a
+ 9    0009                  ;inc de
+10    0009                  ;inc hl
+11    0009                  ;ld a, b
+12    0009                  ;or c
+13    0009                  ;jr nz, bucle  ; bucle que da 6912 vueltas
+14    0009                  ;jr fin
+15    0009 ED B0            ldir ; hl es la fuente, de es siempre el destino y bc es siempre la longitud
+16    000B                  ; ldir hace lo mismo que el bucle comentado, pero mas rapido, y no modifica el registro a ni los flags
+17    000B 3E 02            ld a, 2
+18    000D D3 FE            out ($fe), a
+19    000F 21 00 00         ld hl, $0000
+20    0012 11 00 00         ld de,  $0000
+21    0015 01 E8 FD         ld bc, 65000
+22    0018 ED B0            ldir ; para borrar la pantalla
+23    001A 3E 04            ld a ,4
+24    001C D3 FE            out ($fe) , a
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/trozo.asm

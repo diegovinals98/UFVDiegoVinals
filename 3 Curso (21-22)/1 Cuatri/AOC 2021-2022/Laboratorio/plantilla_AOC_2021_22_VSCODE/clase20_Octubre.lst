@@ -1,0 +1,18 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/clase20_Octubre.asm
+ 1    0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+ 2    0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+ 3    8000
+ 4    8000              inicio:
+ 5    8000 F3               di
+ 6    8001 31 00 00         ld sp, 0
+ 7    8004                  ;include "trozo.asm" ; para llamar a otro archivo, lo normal es que haya una funcion o datos, no lineas al azar
+ 8    8004                  ;in a, ($00FE)
+ 9    8004
+10    8004
+11    8004              fin:
+12    8004 18 FE            jr fin
+13    8006
+14    8006
+15    8006              incbin ; incluye un binario
+16    8006              batman: incbin "BATMAN.SCR"
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/clase20_Octubre.asm

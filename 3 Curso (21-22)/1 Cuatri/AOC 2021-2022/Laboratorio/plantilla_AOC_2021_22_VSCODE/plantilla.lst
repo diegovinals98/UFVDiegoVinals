@@ -1,0 +1,51 @@
+# file opened: /Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/plantilla.asm
+ 1    0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+ 2    0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+ 3    8000
+ 4    8000 F3           inicio:         di              ; Deshabilitar interrupciones
+ 5    8001 3E E6                        ld a, $E6       ; Establecer el puntero de pila en la parte alta de la memoria
+ 6    8003 21 EA 59                     ld HL, $5800 + 32*15 + 10
+ 7    8006 77                           ld (HL), a
+ 8    8007
+ 9    8007
+10    8007              ;--------------------------------------- BUCLES FOR --------------------------------------------
+11    8007              ; instruccion DJNZ <etiqueta>
+12    8007              ; esta instruccion solo funciona con el registro b, y le resta 1, si no ha llegado a 0 salta donde este la etiqueta
+/Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/plantilla.asm(13): warning: value 0xA98AC7 is truncated to 8bit value: 0xC7
+13    8007 3E C7                ld a, 11111111
+14    8009 06 40                ld b, 64
+15    800B 21 00 58             ld HL, $5800
+16    800E
+17    800E 77           bucle:  ld (HL) , a
+18    800F 23                   inc HL
+19    8010 10 FC                djnz bucle   ; Decrementa b y salta si no es 0
+20    8012              ;-------------------------------------------------------------------------------------------------
+21    8012              ;Código del estudiante
+22    8012
+23    8012
+24    8012              ;bucle:
+25    8012              ;        ld a , r                 ; el a es un registro acumulador
+26    8012              ;        out ($fe) , a           ; el b es un registro normal.
+27    8012              ;        jr bucle
+28    8012
+29    8012
+30    8012              ;-------------------------------------------------------------------------------------------------
+31    8012 18 FE        fin:    jr fin          ; Bucle infinito
+32    8014
+33    8014              rojo:   EQU 2
+34    8014              verde:  EQU 4
+35    8014
+36    8014              ; Las directivas le da pistas de como queremos que se comporte, NO GENERA CODIGO
+37    8014
+38    8014              ; Etiquetas: Son como un define en c. Es una manera de asociar constantes y ponerles un nombre. Estas tampoco generan codigo
+39    8014              ;       - Unicas partes que tienen que estar en la primera columna
+40    8014              ;       - Tienen que empezar por una letra
+41    8014              ;       - Ejemplo: fin, bucle, inicio
+42    8014              ;
+43    8014
+44    8014              ; Instrucciones: El repertorio de instrucciones de ensamblador en Z80
+45    8014              ;       - Si genera codigo
+46    8014
+47    8014
+48    8014              ;       - ld a, 5 instruccion de carga
+# file closed: /Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/plantilla.asm

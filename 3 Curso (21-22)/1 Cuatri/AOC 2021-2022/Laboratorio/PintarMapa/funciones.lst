@@ -1,0 +1,127 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/PintarMapa/funciones.asm
+  1   0000
+  2   0000
+  3   0000
+  4   0000
+  5   0000              ; ---- FUNCION QUE PINTA EL NIVEL 2 DE NIVELES_BASICOS, ix es la etiqueta del mapa -----------
+  6   0000              pintarMapa:
+  7   0000 0E 00                ld c, 0 ; posicion y
+  8   0002 06 00                ld b, 0 ; posicion x
+  9   0004
+ 10   0004 DD 56 00             ld d , (ix) ; tamaño en y del mapa
+ 11   0007 DD 5E 01             ld e, (ix + 1) ; tamaño en x del mapa
+ 12   000A              bucle3:
+ 13   000A              ; -------------- switch --------------
+ 14   000A DD 7E 05             ld a, (ix + 5)          ; Guardamos en a el primer cuadrado del mapa
+ 15   000D
+ 16   000D
+ 17   000D F5                   push af                 ; Metemos en la pila a, para guarda el cuadrado del mapa
+ 18   000E 78                   ld a , b                ; Metemos b (posicion del cuadrado) en a, para ver cuando se ha llegado al final de la fila
+ 19   000F BB                   cp e                    ; Si llegamos al final de la fila, (comparar con e, tamaño en x del mapa)
+ 20   0010 28 4C                jr z, cambiarFila       ; cambiamos de fila
+ 21   0012              volver:
+ 22   0012 F1                   pop af                  ; Sacamos de la pila a
+ 23   0013
+ 24   0013 F5                   push af                 ; metemos en la pila a
+ 25   0014 79                   ld a , c                ; Lo mismo que con el tamaño en x, pero en y
+ 26   0015 BA                   cp d                    ; Comparamos con el tamaño de y
+ 27   0016 28 4B                jr z, salirFuncion      ; Si hemos llegado a la ultima fila, salimos de la funcion, ya que hemos acabado
+ 28   0018 F1                   pop af                  ; Sacamos de la pila a
+ 29   0019
+ 30   0019 FE 08                cp $08                  ; Comparamos a con $08
+ 31   001B 20 02                jr nz, comparar3        ; si no es $08, saltamos a comparar el siguiente
+ 32   001D 18 34                jr fin_switch           ; si es $08, vamos al final del switch
+ 33   001F
+ 34   001F              comparar3:
+ 35   001F                      ; si es $40
+ 36   001F FE 40                cp $40                  ; Comparamos a con $40
+ 37   0021 20 09                jr nz, comparar5        ; Si no es $40, saltamos al siguiente a comparar
+ 38   0023 F5                   push af                 ; Si si que es 40, metemos a en una pila, para poder pintar
+ 39   0024 3E 07                ld a , 7                ; guardamos en a el color del cuadrado a pintar
+ 40   0026 CD 65 00             call pintar             ; llamamos a pintar con las coordenadas b y c, y el color a
+ 41   0029 F1                   pop af                  ; sacamos de la pila a
+ 42   002A 18 27                jr fin_switch           ; vamos al final del switch
+ 43   002C
+ 44   002C              comparar5:
+ 45   002C                      ; si es $10
+ 46   002C FE 10                cp $10                  ; Comparamos con $10
+ 47   002E 20 09                jr nz, comparar6        ; si no es $10, saltamos al siguiente a comparars
+ 48   0030 F5                   push af                 ; si si que es $10, metemos en la pila a, para guardar el cuadrado
+ 49   0031 3E 01                ld a , 1                ; Guardamos en a el color del cuadrado a pintar
+ 50   0033 CD 65 00             call pintar             ; Pintamos el cuadrado
+ 51   0036 F1                   pop af                  ; Sacamos de la pila a
+ 52   0037 18 1A                jr fin_switch           ; Vamos al final del switch
+ 53   0039
+ 54   0039              comparar6:
+ 55   0039                      ; si es $20
+ 56   0039 FE 20                cp $20                  ; Comparamos con $20
+ 57   003B 20 09                jr nz, comparar7        ; Si no es $20, saltamos al siguiente comparar
+ 58   003D F5                   push af                 ; Metemos en la pila a
+ 59   003E 3E 06                ld a , 6                ; Guardamos en a el color a pintar del cuadrado
+ 60   0040 CD 65 00             call pintar             ; Pintamos el cuadrado
+ 61   0043 F1                   pop af                  ; Sacamos de la pila
+ 62   0044 18 0D                jr fin_switch           ; Vamos al final del switch
+ 63   0046              comparar7:
+ 64   0046                      ; si es $80
+ 65   0046 FE 80                cp $80                  ; Comparamos con $80
+ 66   0048 20 09                jr nz, fin_switch       ; Si no es $80, vamos al final del switch
+ 67   004A F5                   push af                 ; Metemos en la pila a
+ 68   004B 3E 02                ld a , 2                ; Guardamos en a el color a pintar del cuadrado
+ 69   004D CD 65 00             call pintar             ; Pintamos el cuadrado
+ 70   0050 F1                   pop af                  ; Sacamos de la pila a
+ 71   0051 18 00                jr fin_switch           ; Vamos al final del switch
+ 72   0053
+ 73   0053
+ 74   0053              fin_switch:
+ 75   0053
+ 76   0053 04                   inc b                   ; Incrementamos b, que es la coordenada x del cuadrado a pinar
+ 77   0054 DD 23                inc ix                  ; Incrementamos ix
+ 78   0056 F5                   push af                 ; Metemos en la pila a
+ 79   0057 7C                   ld a , h                ; Metemos h en a, para comparar
+ 80   0058 FE 5B                cp $5b                  ; Comparamos con $5b
+ 81   005A F1                   pop af                  ; Sacamos de la pila af
+ 82   005B 20 AD                jr nz, bucle3           ; Si no hemos acabado el bucle, saltamos a bucle3, que es el bucle del while
+ 83   005D C9                   ret                     ; Si hemos acabado, retornamos a donde estabamos
+ 84   005E
+ 85   005E
+ 86   005E              cambiarFila:
+ 87   005E
+ 88   005E 06 00                ld b, 0                 ; Si hemos cambiado de fila,ponemos b en 0
+ 89   0060 0C                   inc c                   ; e incrementamos c (coordenada y)
+ 90   0061 18 AF                jr volver               ; saltamos a volver, donde estabamos antes de cambiar fila
+ 91   0063
+ 92   0063              salirFuncion:
+ 93   0063 F1                   pop af                  ; Sacamos de la pila a
+ 94   0064 C9                   ret                     ; Salimos de la funcion
+ 95   0065
+ 96   0065              ; -------- FUNCION QUE PINTA UN CUADRO EN LAS COORDENADAS B Y C, Y DE COLOR A---------
+ 97   0065              pintar:
+ 98   0065
+ 99   0065 D5                   push de
+100   0066 E5                   push hl
+101   0067
+102   0067 26 00                ld h, 0
+103   0069 69                   ld l, c
+104   006A
+105   006A 29                   add hl, hl
+106   006B 29                   add hl, hl
+107   006C 29                   add hl, hl
+108   006D 29                   add hl, hl
+109   006E 29                   add hl, hl
+110   006F
+111   006F 16 00                ld d, 0
+112   0071 58                   ld e ,b
+113   0072 19                   add hl, de
+114   0073 11 00 58             ld de, $5800
+115   0076 19                   add hl, de
+116   0077
+117   0077 87                   add a
+118   0078 87                   add a
+119   0079 87                   add a
+120   007A
+121   007A 77                   ld (hl), a
+122   007B E1                   pop hl
+123   007C D1                   pop de
+124   007D C9                   ret
+125   007E
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/PintarMapa/funciones.asm

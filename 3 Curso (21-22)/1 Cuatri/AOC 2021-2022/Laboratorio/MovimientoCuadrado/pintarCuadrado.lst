@@ -1,0 +1,163 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/MovimientoCuadrado/pintarCuadrado.asm
+  1   0000
+  2   0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+  3   0000                      SLDOPT COMMENT WPMEM, LOGPOINT, ASSERTION
+  4   0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+  5   8000
+  6   8000              inicio:
+  7   8000 F3                   di
+  8   8001 31 00 00             ld sp, 0
+  9   8004
+ 10   8004 FD 21 BB 80          ld iy, coorX            ; Guardamos en iy la coordenada x. iy + 1 sera la coordenada y
+ 11   8008 DD 21 BD 80          ld ix, dx               ; Guardamos en ix, dx. En ix + 1 guardamos dy
+ 12   800C
+ 13   800C              ; -------- BUCLE PRINCIPAL DEL PROGRMA -----------------
+ 14   800C
+ 15   800C              bucle:
+ 16   800C
+ 17   800C CD 47 80             call leerTecla          ; llamamos a la funcion leerTecla que comprueba si se ha tecleado una letra
+ 18   800F
+ 19   800F                      ; If para comprobar si ha habido cambio en dx o dy
+ 20   800F 3E 00                ld a , 0
+ 21   8011 DD 4E 00             ld c , (ix)
+ 22   8014 B9                   cp c
+ 23   8015 20 0A                jr nz, mover            ; Si ha habido cambio de dx, vamos a la funcion mover
+ 24   8017 3E 00                ld a , 0
+ 25   8019 DD 4E 01             ld c , (ix + 1)
+ 26   801C B9                   cp c
+ 27   801D 20 02                jr nz, mover
+ 28   801F 28 EB                jr z, bucle            ; Si no ha habido cambio, no pintamos y volvemos al principio del bucle
+ 29   8021
+ 30   8021
+ 31   8021
+ 32   8021
+ 33   8021              ; --------------- BUCLE QUE ACTUALIZA LAS COORDENADAS Y MUEVE EL CUADRADO --------------------
+ 34   8021
+ 35   8021              mover:
+ 36   8021                      ; Pintamos de negro
+ 37   8021 FD 46 00             ld b, (iy)
+ 38   8024 FD 4E 01             ld c, (iy + 1)
+ 39   8027 3E 00                ld a ,0
+ 40   8029 CD 8E 80             call pintar
+ 41   802C
+ 42   802C                      ; Actualizamos las coordenadas
+ 43   802C DD 7E 00             ld a, (ix)
+ 44   802F FD 86 00             add a, (iy)
+ 45   8032 FD 77 00             ld (iy), a              ; actualizamos la coordenada x
+ 46   8035 47                   ld b, a                 ; guardamos en b la posicion nueva de x
+ 47   8036
+ 48   8036 DD 7E 01             ld a, (ix + 1)          ; por aqui cambia el registro b de 1 a 0 por lo que hace que solo se pude avanzar 1 cuadrado
+ 49   8039 FD 86 01             add a, (iy + 1)
+ 50   803C 4F                   ld c, a                 ; guardamos en c el valor de la posicion nueva en y
+ 51   803D FD 77 01             ld (iy + 1), a          ; actualizamos la coordenada y
+ 52   8040
+ 53   8040                      ; Pintamos de rojo
+ 54   8040 3E 02                ld a , 2
+ 55   8042 CD 8E 80             call pintar             ; llamamos a pintar con las nuevas coordenadas
+ 56   8045 18 C5                jr bucle
+ 57   8047
+ 58   8047
+ 59   8047
+ 60   8047              ; ---------- FUNCION QUE LEE LAS TECLAS AWSD --------------------
+ 61   8047              leerTecla:
+ 62   8047 F5                   push af
+ 63   8048 C5                   push bc
+ 64   8049
+ 65   8049 DD 21 BD 80          ld ix, dx
+ 66   804D DD 36 00 00          ld (ix), 0
+ 67   8051 DD 36 01 00          ld (ix +1), 0
+ 68   8055              pulsadoW:
+ 69   8055 01 FE FB             ld bc, $FBFE
+ 70   8058 ED 78                in a, (c)
+ 71   805A CB 4F                bit 1, a                ; comprobar la w
+ 72   805C 20 06                jr nz, pulsadoA         ; si no se ha pulsado, saltamos a ver si se ha pulsado la tecla A
+ 73   805E DD 35 01             dec (ix + 1)            ; Si se ha pulsado, sumamos 1 al incremento dy
+ 74   8061 CD A7 80             call esperarTecla       ; Esperamos hasta que se deje de pulsar la tecla
+ 75   8064
+ 76   8064              pulsadoA:
+ 77   8064 01 FE FD             ld bc, $FDFE
+ 78   8067 ED 78                in a, (c)
+ 79   8069 CB 47                bit 0, a                ;comprobamos la a
+ 80   806B 20 06                jr nz, pulsadoS         ; Si no se ha pulsado saltamos a la siguiente tecla a comprobar
+ 81   806D DD 35 00             dec (ix)                ; Si se ha pulsado, restamos 1 a dx
+ 82   8070 CD A7 80             call esperarTecla       ; Esperemos hasta que se deje de pulsar la tecla
+ 83   8073
+ 84   8073              pulsadoS:
+ 85   8073 ED 78                in a, (c)
+ 86   8075 CB 4F                bit 1, a                ; Comprobamos si se ha pulsado la tecla s
+ 87   8077 20 06                jr nz, pulsadoD         ; Si no se ha pulsado, saltamos a la siguiente tecla a comprobar
+ 88   8079 DD 34 01             inc (ix + 1)            ; Si se ha pulsado, sumamos 1 a dy
+ 89   807C CD A7 80             call esperarTecla       ; Eseperamos a que se deje de pulsar la tecla
+ 90   807F
+ 91   807F              pulsadoD:
+ 92   807F ED 78                in a, (c)
+ 93   8081 CB 57                bit 2, a                ; Comprobamos si se ha pulsado la tecla d
+ 94   8083 20 06                jr nz, noPulsado        ; Si no se ha pulsado, saltamos a noPulsado, que sale de la funcion
+ 95   8085 DD 34 00             inc (ix)                ; Si se ha pulsado, sumamos 1 a dx
+ 96   8088 CD A7 80             call esperarTecla       ; Esperamos a que se deje de pulsar la tecla
+ 97   808B
+ 98   808B              noPulsado:
+ 99   808B C1                   pop bc                  ; Expulsamos de la pila los registros salvados al principio de la funcion
+100   808C F1                   pop af
+101   808D C9                   ret
+102   808E
+103   808E
+104   808E              ; -------- FUNCION QUE PINTA UN CUADRO EN LAS COORDENADAS B Y C, Y DE COLOR A---------
+105   808E              pintar:
+106   808E
+107   808E D5                   push de
+108   808F E5                   push hl
+109   8090
+110   8090 26 00                ld h, 0
+111   8092 69                   ld l, c
+112   8093
+113   8093 29                   add hl, hl
+114   8094 29                   add hl, hl
+115   8095 29                   add hl, hl
+116   8096 29                   add hl, hl
+117   8097 29                   add hl, hl
+118   8098
+119   8098 16 00                ld d, 0
+120   809A 58                   ld e ,b
+121   809B 19                   add hl, de
+122   809C 11 00 58             ld de, $5800
+123   809F 19                   add hl, de
+124   80A0
+125   80A0 87                   add a
+126   80A1 87                   add a
+127   80A2 87                   add a
+128   80A3
+129   80A3 77                   ld (hl), a
+130   80A4 E1                   pop hl
+131   80A5 D1                   pop de
+132   80A6 C9                   ret
+133   80A7
+134   80A7
+135   80A7              ;------------- FUNCION QUE ESPERA A QUE NINGUNA TECLA ESTE PULSADA ----------------
+136   80A7              esperarTecla:
+137   80A7 F5                   push af
+138   80A8 C5                   push bc
+139   80A9
+140   80A9              iniciarScan:
+141   80A9 01 FE FE             ld bc, $FEFE
+142   80AC              sigueScan:
+143   80AC ED 78                in a, (c)
+144   80AE E6 1F                and 31
+145   80B0 FE 1F                cp 31
+146   80B2 20 F5                jr nz, iniciarScan
+147   80B4 CB 00                rlc b
+148   80B6 38 F4                jr c, sigueScan
+149   80B8
+150   80B8 C1                   pop bc
+151   80B9 F1                   pop af
+152   80BA C9                   ret
+153   80BB
+154   80BB              ; ------------ ETIQUETAS --------------
+155   80BB
+156   80BB 00           coorX: db 0
+157   80BC 00           coorY: db 0
+158   80BD
+159   80BD 00           dx: db 0
+160   80BE 00           dy: db 0
+161   80BF
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/MovimientoCuadrado/pintarCuadrado.asm

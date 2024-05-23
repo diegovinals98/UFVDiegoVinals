@@ -1,0 +1,151 @@
+# file opened: /Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/ejercicio1.asm
+  1   0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+  2   0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+  3   8000
+  4   8000 F3           inicio: di
+  5   8001 31 00 00             ld sp, 0
+  6   8004
+  7   8004
+  8   8004              ; ---------- Barra Negra ------------
+  9   8004 06 00                ld b, 0 ; coordenada x
+ 10   8006 0E 00                ld c, 0
+ 11   8008 CD BB 80             call cuadro;
+ 12   800B 0E 17                ld c, 23 ; corrdenadsa y
+ 13   800D 3A CD 80             ld a, (colores)
+ 14   8010 CD B4 80             call vertical
+ 15   8013 04                   inc b
+ 16   8014 0E 17                ld c, 23 ; corrdenadsa y
+ 17   8016 CD B4 80             call vertical
+ 18   8019 04                   inc b ; coordenada x
+ 19   801A 0E 17                ld c, 23 ; corrdenadsa y
+ 20   801C CD B4 80             call vertical
+ 21   801F 04                   inc b
+ 22   8020 0E 17                ld c, 23 ; corrdenadsa y
+ 23   8022 CD B4 80             call vertical
+ 24   8025 04                   inc b
+ 25   8026              ;---------- Barra Azul ----------------
+ 26   8026
+ 27   8026 DD 26 04             ld ixh, 4
+ 28   8029              azul:
+ 29   8029 3A CE 80             ld a, (colores + 1)
+ 30   802C 0E 00                ld c, 0
+ 31   802E CD BB 80             call cuadro
+ 32   8031 0E 17                ld c, 23 ; corrdenadsa y
+ 33   8033 CD B4 80             call vertical
+ 34   8036 04                   inc b
+ 35   8037 DD 25                dec ixh
+ 36   8039 20 EE                jr nz, azul
+ 37   803B
+ 38   803B              ; --------- Barra Roja ------------
+ 39   803B
+ 40   803B DD 26 04             ld ixh, 4
+ 41   803E              rojo:
+ 42   803E 3A CF 80             ld a, (colores + 2)
+ 43   8041 0E 00                ld c, 0
+ 44   8043 CD BB 80             call cuadro
+ 45   8046 0E 17                ld c, 23 ; corrdenadsa y
+ 46   8048 CD B4 80             call vertical
+ 47   804B 04                   inc b
+ 48   804C DD 25                dec ixh
+ 49   804E 20 EE                jr nz, rojo
+ 50   8050
+ 51   8050              ; --------- Barra Rosa ----------
+ 52   8050 DD 26 04             ld ixh,4
+ 53   8053              rosa:
+ 54   8053 3A D0 80             ld a, (colores + 3)
+ 55   8056 0E 00                ld c, 0
+ 56   8058 CD BB 80             call cuadro
+ 57   805B 0E 17                ld c, 23 ; corrdenadsa y
+ 58   805D CD B4 80             call vertical
+ 59   8060 04                   inc b
+ 60   8061 DD 25                dec ixh
+ 61   8063 20 EE                jr nz, rosa
+ 62   8065
+ 63   8065              ; ----------- Barra Verde -----------
+ 64   8065 DD 26 04             ld ixh, 4
+ 65   8068
+ 66   8068              verde:
+ 67   8068 3A D1 80             ld a, (colores + 4)
+ 68   806B 0E 00                ld c, 0
+ 69   806D CD BB 80             call cuadro
+ 70   8070 0E 17                ld c, 23 ; corrdenadsa y
+ 71   8072 CD B4 80             call vertical
+ 72   8075 04                   inc b
+ 73   8076 DD 25                dec ixh
+ 74   8078 20 EE                jr nz, verde
+ 75   807A
+ 76   807A              ; ------------ Barra  Azul   -------------
+ 77   807A DD 26 04             ld ixh, 4
+ 78   807D              azul2:
+ 79   807D 3A D2 80             ld a, (colores + 5)
+ 80   8080 0E 00                ld c, 0
+ 81   8082 CD BB 80             call cuadro
+ 82   8085 0E 17                ld c, 23 ; corrdenadsa y
+ 83   8087 CD B4 80             call vertical
+ 84   808A 04                   inc b
+ 85   808B DD 25                dec ixh
+ 86   808D 20 EE                jr nz, azul2
+ 87   808F              ; ----------- Barra  Amarilla    ------------
+ 88   808F DD 26 04             ld ixh, 4
+ 89   8092              amarillo:
+ 90   8092
+ 91   8092 3A D3 80             ld a, (colores + 6)
+ 92   8095 0E 00                ld c, 0
+ 93   8097 CD BB 80             call cuadro
+ 94   809A 0E 17                ld c, 23 ; corrdenadsa y
+ 95   809C CD B4 80             call vertical
+ 96   809F 04                   inc b
+ 97   80A0 DD 25                dec ixh
+ 98   80A2 20 EE                jr nz, amarillo
+ 99   80A4              ; ------------ Barra Blanca----------
+100   80A4
+101   80A4 DD 26 04             ld ixh, 4
+102   80A7              blanco:
+103   80A7 3A D4 80             ld a, (colores + 7)
+104   80AA CD B4 80             call vertical
+105   80AD 04                   inc b
+106   80AE DD 25                dec ixh
+107   80B0 20 F5                jr nz, blanco
+108   80B2
+109   80B2              ; ------ loop infinito ----------
+110   80B2 18 FE        fin:    jr fin
+111   80B4
+112   80B4              ; ------- Funcion que pinta barras verticales de 1 solo cuadrado ------
+113   80B4              vertical:
+114   80B4 CD BB 80             call cuadro
+115   80B7 0D                   dec c
+116   80B8 20 FA                jr nz, vertical
+117   80BA C9                   ret
+118   80BB
+119   80BB
+120   80BB
+121   80BB              ; -------- Pinta un solo cuadro ---------
+122   80BB 26 00        cuadro: ld h,0 							; Empieza calculando Y*32
+123   80BD 69                   ld l,c 						; Para multiplicar c (coord. Y) por 32, se usan sumas. Esto se puede hacer en un bucle también
+124   80BE 29                   add hl, hl 						; ahora hl es 2*c
+125   80BF 29                   add hl, hl 						; ahora hl es 4*c
+126   80C0 29                   add hl, hl 						; ahora hl es 8*c
+127   80C1 29                   add hl, hl 						; ahora hl 16*c
+128   80C2 29                   add hl, hl 						; ahora hl 32*c
+129   80C3
+130   80C3 16 00                ld d,0
+131   80C5 58                   ld e,b    						; b Contiene el valor de la coordenada X -> Se carga en DE
+132   80C6
+133   80C6 19                   add hl, de 						; Ahora HL Contiene 32*y+X
+134   80C7 11 00 58             ld de, $5800
+135   80CA 19                   add hl, de
+136   80CB
+137   80CB 77                   ld (hl),a
+138   80CC C9                   ret
+139   80CD
+140   80CD
+141   80CD              colores:
+142   80CD 00                   db $00
+143   80CE 48                   db $48
+144   80CF 50                   db $50
+145   80D0 58                   db $58
+146   80D1 60                   db $60
+147   80D2 68                   db $68
+148   80D3 70                   db $70
+149   80D4 78                   db $78
+# file closed: /Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/ejercicio1.asm

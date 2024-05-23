@@ -1,0 +1,75 @@
+# file opened: /Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/1oct.asm
+ 1    0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+ 2    0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+ 3    8000
+ 4    8000 F3           inicio: di
+ 5    8001 31 00 00             ld sp, 0
+ 6    8004
+ 7    8004                      ; en la pila solo podemos poner registros de 16 bits. B no, BC si
+ 8    8004                      ; Resta uno al punero de pila (sp), y pone el registro mas alto
+ 9    8004                      ; le vuelve a restar uno al puntero de pila, y pone el otro registro.
+10    8004                      ; la pila crece hacia abajo
+11    8004                      ; NO DESBALANCEAR LA PILA
+12    8004 01 FF 00             ld bc ,$FF
+13    8007 C5                   push bc
+14    8008 E1                   pop hl
+15    8009
+16    8009 06 0E                ld b, 14
+17    800B 21 00 58             ld hl, $5800
+18    800E              b1:
+/Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/1oct.asm(19): warning: value 0x803B is truncated to 8bit value: 0x3B
+19    800E 36 3B                ld (hl), (color)
+20    8010 23                   inc hl
+21    8011 10 FB                djnz b1
+22    8013
+23    8013 3E 0B                ld a, 11 ;
+/Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/1oct.asm(24): warning: value 0x803C is truncated to 8bit value: 0x3C
+24    8015 06 3C                ld b, (cy)
+/Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/1oct.asm(25): warning: value 0x803D is truncated to 8bit value: 0x3D
+25    8017 0E 3D                ld c, (cx)
+26    8019              bucle:
+27    8019 CD 20 80             call escribeXY
+28    801C 10 FB                djnz bucle
+29    801E                      ; llamar a funciones
+30    801E
+31    801E                      ; VARIABLES
+32    801E                      ; Definicion de variables
+33    801E
+34    801E 18 FE        fin: jr fin
+35    8020
+36    8020              ; las funciones acaban con la instruccion ret
+37    8020              ; vuelve a lo que le ha llamado
+38    8020              ; para llamar a una funcion call
+39    8020              escribeXY:
+40    8020 F5               push af
+41    8021 D5               push de
+42    8022 E5               push hl
+43    8023 26 00            ld h,0
+44    8025 68               ld l,b
+45    8026 29               add hl, hl 						; ahora hl es 2*c
+46    8027 29               add hl, hl 						; ahora hl es 4*c
+47    8028 29               add hl, hl 						; ahora hl es 8*c
+48    8029 29               add hl, hl 						; ahora hl 16*c
+49    802A 29               add hl, hl
+50    802B
+51    802B 16 00            ld d, 0
+52    802D 59               ld e, c
+53    802E 19               add hl, de
+54    802F 11 00 58         ld de , $5800
+55    8032 19               add hl, de
+56    8033 87               add a
+57    8034 87               add a
+58    8035 87               add a
+59    8036 77               ld (hl), a
+60    8037
+61    8037 E1               pop hl
+62    8038 D1               pop de
+63    8039 F1               pop af
+64    803A
+65    803A C9               ret
+66    803B
+67    803B              ; las variables tiene que estar en un espacio donde no llegue el contador de programa
+68    803B 06           color: defb 6
+69    803C 15           cy: defb 21
+70    803D 02           cx: db 2
+# file closed: /Users/diegovinals/Downloads/plantilla_AOC_2021_22_VSCODE/1oct.asm

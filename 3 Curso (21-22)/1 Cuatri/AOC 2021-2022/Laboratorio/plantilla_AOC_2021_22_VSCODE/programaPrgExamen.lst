@@ -1,0 +1,51 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/programaPrgExamen.asm
+ 1    0000
+ 2    0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+ 3    0000                      SLDOPT COMMENT WPMEM, LOGPOINT, ASSERTION
+ 4    0000                      org $8000
+ 5    8000 F3                   di
+ 6    8001 31 00 00             ld sp,0
+ 7    8004
+ 8    8004 CD 1B 80             call transferErase
+ 9    8007 CD 00 C0             call $C000
+10    800A
+11    800A 18 FE        fin: jr fin
+12    800C
+13    800C              ; RUTINA 1
+14    800C              sumaV:
+15    800C 21 41 80             ld hl, numeros
+16    800F AF                   xor a
+17    8010              bucle:
+18    8010 86                   add a, (hl)
+19    8011 23                   inc hl
+20    8012 CB 6F                bit 5, a
+21    8014 C2 1A 80             jp nz, salir
+22    8017 C3 10 80             jp bucle
+23    801A C9           salir:  ret
+24    801B              finBucle:
+25    801B
+26    801B              ; RUTINA 2
+27    801B
+28    801B              transferErase:
+29    801B 21 0C 80             ld hl, sumaV
+30    801E 11 00 C0             ld de, $C000
+31    8021 01 0F 00             ld bc, finBucle-sumaV
+32    8024 ED B0                ldir
+33    8026 DD 21 10 80          ld ix, bucle
+34    802A AF                   xor a
+35    802B DD 77 00             ld (ix + 0), a
+36    802E DD 77 01             ld (ix + 1), a
+37    8031 DD 77 02             ld (ix + 2), a
+38    8034 DD 77 03             ld (ix + 3), a
+39    8037 DD 77 04             ld (ix + 4), a
+40    803A DD 77 05             ld (ix + 5), a
+41    803D DD 77 06             ld (ix + 6), a
+42    8040 C9                   ret
+43    8041
+44    8041              ; DATOS
+45    8041
+46    8041              numeros:
+47    8041 07 03 0C 09          db 7,3,12,9,2,1,14,4,5
+47    8045 02 01 0E 04
+47    8049 05
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/programaPrgExamen.asm

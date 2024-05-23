@@ -1,0 +1,84 @@
+# file opened: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/clase6_oct.asm
+ 1    0000                      DEVICE ZXSPECTRUM48     ; Esto es una directiva
+ 2    0000                      org $8000               ; Programa ubicado a partir de $8000 = 32768. ESTO TAMBIEN ES UNA DIRECTIVA
+ 3    8000 F3           inicio: di
+ 4    8001 31 00 00             ld sp, 0
+ 5    8004 18 15                jr pintar
+ 6    8006
+ 7    8006 06 0A                ld b, tamT
+ 8    8008 DD 21 5E 80          ld ix, array ; array2 esta en ix + 10 y resulyado en ix + 20
+ 9    800C
+10    800C              bucle:
+11    800C DD 4E 00             ld c, (ix)
+12    800F DD 7E 0A             ld a, (ix + tamT)
+13    8012 81                   add c
+14    8013 DD 77 14             ld (ix + tamT + tamT), a
+15    8016 DD 23                inc ix
+16    8018 10 F2                djnz bucle
+17    801A
+18    801A
+19    801A              finsumar:
+20    801A 78                   ld a , b ; resultado en a y en b
+21    801B
+22    801B              pintar:
+23    801B DD 21 49 80          ld ix, argentina
+24    801F 21 00 58             ld hl, $5800
+25    8022
+26    8022              franja:
+27    8022 DD 7E 00             ld a, (ix)
+28    8025 FE 00                cp 0
+29    8027 28 11                jr z,fin
+30    8029 47                   ld b , a ; numero de repeticiones a b
+31    802A DD 7E 01             ld a, (ix + 1) ; en a cargo el color
+32    802D              cuadro:
+33    802D 77                   ld (hl), a
+34    802E 23                   inc hl
+35    802F 10 FC                djnz cuadro
+36    8031 DD 23                inc ix
+37    8033 DD 23                inc ix
+38    8035 CD 3C 80             call pausa
+39    8038 18 E8                jr franja
+40    803A 18 FE        fin: jr fin
+41    803C
+42    803C              pausa:
+43    803C F5                   push af
+44    803D C5                   push bc
+45    803E
+46    803E 01 FF 5F             ld bc, $5FFF
+47    8041              btonto:
+48    8041 0B                   dec bc
+49    8042 78                   ld a , b
+50    8043 B1                   or c
+51    8044 20 FB                jr nz, btonto
+52    8046 C1                   pop bc
+53    8047 F1                   pop af
+54    8048 C9                   ret
+55    8049
+56    8049              ; tabla de datos
+57    8049              argentina:
+58    8049 80 28                defb 128,5*8
+59    804B 20 38                defb 32,7*8
+60    804D 0F 38                defb 15,7*8
+61    804F 02 30                defb 2, 6*8
+62    8051 0F 38                defb 15, 7*8
+63    8053 0F 38                defb 15,7*8
+64    8055 02 30                defb 2, 6*8
+65    8057 0F 38                defb 15, 7*8
+66    8059 20 38                defb 32,7*8
+67    805B 80 28 00             defb 128,5*8,0   ; bandera de argentina
+68    805E
+69    805E
+70    805E
+71    805E 01 02 03 04  array: defb 1,2,3,4,5,6,7,8,9,10
+71    8062 05 06 07 08
+71    8066 09 0A
+72    8068 0A 09 08 07  array2: defb 10,9,8,7,6,5,4,3,2,1
+72    806C 06 05 04 03
+72    8070 02 01
+73    8072 00 00 00 00  resultado: defb 0,0,0,0,0,0,0,0,0,0
+73    8076 00 00 00 00
+73    807A 00 00
+74    807C
+75    807C              tamT: EQU 10
+76    807C
+# file closed: /Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/AOC 2021-2022/Laboratorio/plantilla_AOC_2021_22_VSCODE/clase6_oct.asm
