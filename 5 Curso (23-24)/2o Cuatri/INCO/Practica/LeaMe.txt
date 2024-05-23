@@ -1,0 +1,5 @@
+	1.	Abrir Google Colab
+	2.	Abrir cuaderno de Python
+	3.	Elegir el Algoritmo correspondiente
+	4.	Entorno de ejecucion
+	5.	Ejecutar todas
