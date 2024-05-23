@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"></meta>
+  <title>Clasificacion</title>
+  
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'partido_suelto.css' %}">
+  </link>
+  <!-- Enlaza la hoja de estilos externa -->
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <!-- Incluye el archivo navbar.html -->
+    <h1 class="text-center centroClasificacion">Añadir Partido</h1>
+
+    <div class="container">
+      <form action="{% url 'anadir_partido' partido_id=partido.id %}" method="post">
+			{% csrf_token %}
+			
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h3>{{ partido.equipolocal }} </h3>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <input type="text" class="form-control" id="local" name="resultado_local" required>
+                    </div>
+
+                    <div class="col-lg-1">
+                        <h3>-</h3>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <input type="text" class="form-control" id="vis" name="resultado_visitante" required>
+                    </div>
+                    <div class="col-lg-3">
+                        <h3>{{ partido.equipovisitante }} </h3>
+                    </div>
+
+
+
+                </div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary" name="submit_button" value="Enviar Resultado">Enviar Resultado</button>
+			</div>
+		</form>
+        
+	</div>
+    
+</body>
+</html>

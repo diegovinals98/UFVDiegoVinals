@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"></meta>
+  <title>Clasificacion</title>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'iniciosesion.css' %}">
+  </link>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'partido_suelto.css' %}">
+  </link>
+  <!-- Enlaza la hoja de estilos externa -->
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <!-- Incluye el archivo navbar.html -->
+    <h1 class="text-center centroClasificacion">Información del Partido</h1>
+    
+    <h2 class="text-center centroClasificacion">Jornada 7</h2>
+    <h3 class="text-center centroClasificacion">Lugar: {{ partido.lugar }}</h3>
+    <div class="marcador text-center">
+    
+		<h1 class="equipo-local">{{ partido.equipolocal }} </h1>
+		<div class="goles">
+			<span class="goles-local">{{ partido.goleslocal }}</span>
+			<span>-</span>
+			<span class="goles-visitante">{{ partido.golesvisitante }}</span>
+		</div>
+		<h1 class="equipo-visitante">{{ partido.equipovisitante }}</h1>
+		
+	</div>
+    <h3 class="text-center centroClasificacion">Árbitro: {{partido.arbitro}}</h3>
+    {% csrf_token %}
+
+    {% if arbitro == 4 %}
+    <form method="post" action="{% url 'reclamar' partido.id %}">
+      {% csrf_token %}
+      <button type="submit" class="">Reclamar</button>
+    </form>
+    {% endif %}
+    
+    
+</body>
+</html>

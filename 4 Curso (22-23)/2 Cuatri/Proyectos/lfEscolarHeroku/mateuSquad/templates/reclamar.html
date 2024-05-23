@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Clasificacion</title>
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'partido_suelto.css' %}">
+  <!-- Enlaza la hoja de estilos externa -->
+  
+  <style>
+    /* Estilos en línea para el formulario */
+    .form-container {
+      margin: 50px auto;
+      max-width: 800px;
+      padding: 30px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .form-container h1 {
+      margin-bottom: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+    }
+    
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .form-container input[type="text"],
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #333;
+    }
+    
+    .form-container input[type="text"]:focus,
+    .form-container textarea:focus {
+      border-color: #008CBA;
+    }
+    
+    .form-container button[type="submit"] {
+      background-color: #008CBA;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .form-container button[type="submit"]:hover {
+      background-color: #0077A3;
+    }
+  </style>
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <!-- Incluye el archivo navbar.html -->
+    <div class="form-container">
+      <h1>Formulario de Reclamaciones</h1>
+        
+      <form method="post" action="{% url 'reclamar' partido.id %}">
+        {% csrf_token %}
+          <label for="username">Jornada: 7</label>
+  
+          <label for="username">{{ partido.equipolocal }} vs  {{ partido.equipovisitante }}</label>
+          {% if nombre %}
+          <label for="entrnador">Entrenador: {{ nombre }} {{ apellidos }}</label>
+          {% endif %}
+          <label for="email">¿Que desea reclamar?</label>
+          <input type="text" id="motivo" name="motivo" required>
+  
+          <label for="password">Justificación:</label>
+          <textarea class="form-control" id="Justificacion" name="Justificacion" rows="3"></textarea>
+
+  
+          <button type="submit" name="submit_button">Enviar Reclamación</button>
+        </form>
+        
+      </div>
+    
+</body>
+</html>

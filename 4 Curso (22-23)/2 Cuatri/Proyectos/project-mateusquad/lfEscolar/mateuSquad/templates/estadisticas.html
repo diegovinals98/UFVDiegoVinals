@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"></meta>
+
+  <title>Estadisticas</title>
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'estadisticas.css' %}"
+  ></link>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <h1 class="centroClasificacion" style="font-family: 'Bebas Neue', cursive; font-size: 70px; ">Estadisticas</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="col text-center tituloTablas" style="font-family: 'Bebas Neue', cursive;background-color: #aec3ee;  ">Pichichi</div>
+
+        <div class="row">
+          <table class=" table table-striped ">
+            <thead class="thead-light ">
+              <tr class="text-center">
+                <th class= "text-center" scope="col">Equipo</th>
+                <th class= "text-center" scope="col">Nombre</th>
+                <th class= "text-center" scope="col">Goles</th>
+              </tr>
+            </thead>
+
+            <tbody class="text-center">
+            
+
+              {% for pichichi in pichichi %}
+
+              <tr class="text-center">
+                <td>{{ pichichi.equipo }}</td>
+
+                <td>{{ pichichi.nombrejugador }}</td>
+                <td>{{ pichichi.goles }}</td>
+              </tr>
+
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="col text-center tituloTablas" style="font-family: 'Bebas Neue', cursive; background-color: #aec3ee; ">Zamora</div>
+
+        <div class="row">
+          <table class="table table-striped">
+            <thead class="thead-light">
+              <tr>
+                <th class= "text-center" scope="col">Equipo</th>
+                <th class= "text-center" scope="col">Nombre</th>
+                <th class= "text-center" scope="col">Goles Enc.</th>
+              </tr>
+            </thead>
+
+            <tbody class= "text-center">
+              {% for zamora in zamora %}
+
+              <tr>
+                <td>{{ zamora.equipo }}</td>
+                <td>{{ zamora.nombrejugador }}</td>
+                <td>{{ zamora.golesencajados }}</td>
+              </tr>
+
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="col text-center tituloTablas" style="font-family: 'Bebas Neue', cursive; background-color: #aec3ee;">Asistencias</div>
+
+        <div class="row">
+          <table class="table table-striped">
+            <thead class="thead-light">
+              <tr>
+                <th class= "text-center" scope="col">Equipo</th>
+                <th class= "text-center" scope="col">Nombre</th>
+                <th class= "text-center" scope="col">Asistencias</th>
+              </tr>
+            </thead>
+
+
+            <tbody class= "text-center">
+              {% for asistencia in asistencias %}
+              <tr>
+                <td>{{ asistencia.equipo }}</td>
+                <td>{{ asistencia.nombrejugador }}</td>
+                <td>{{ asistencia.asistencias }}</td>
+              </tr>
+
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

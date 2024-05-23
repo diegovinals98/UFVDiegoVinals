@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Iniciar sesión</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Enlace a los archivos de Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'iniciosesion.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+  
+
+</head>
+<body>
+    <div class="container">
+        <img src="{% static '/media/logo.jpeg' %}" class="mx-auto d-block logo" alt="Logo de mi aplicación" >
+    </div>
+    
+	<div class="container mt-5 ">
+		<form class="border p-3 rounded " action="{% url 'inicioSesion' %}" method="POST">
+			{% csrf_token %}
+			<h1 class="text-center mb-4" style="font-family: 'Bebas Neue', cursive; font-size: 70px; ">Iniciar sesión</h1>
+			<div class="form-group">
+				<label for="username">Usuario:</label>
+				<input type="text" class="form-control" id="username" name="username" required>
+			</div>
+			<div class="form-group">
+				<label for="password">Contraseña:</label>
+				<input type="password" class="form-control" id="password" name="password" required>
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-success">Iniciar sesión</button>
+			</div>
+			{% if error_message %}
+			<div class="alert alert-danger" role="alert">
+		  	{{ error_message }}
+			</div>
+	  		{% endif %}
+		</form>
+
+		
+
+        <div class="container mt-5 links">
+            <p>¿No tienes cuenta?</p><a href="{% url 'registro' %}">Registrate aqui!</a>
+        </div>
+	</div>
+</body>
+</html>

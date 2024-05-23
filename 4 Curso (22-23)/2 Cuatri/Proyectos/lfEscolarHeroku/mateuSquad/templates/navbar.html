@@ -1,0 +1,51 @@
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <link rel="stylesheet" type="text/css" href="{% static 'iniciosesion.css' %}">
+
+<nav class="navbar navbar-default navbar-center">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- Agrega el botón para dispositivos móviles -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'clasificacion' %}">lfEscolar</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav nav-links">
+                <li><a href="{% url 'clasificacion' %}">Clasificación</a></li>
+                <li><a href="{% url 'partidos' %}">Ver partidos</a></li>
+                <li><a href="{% url 'estadisticas' %}">Estadísticas</a></li>
+                <li><a href="{% url 'sobre_nosotros' %}">Sobre nosotros</a></li>
+            </ul>
+
+
+        
+            <ul class="nav navbar-nav navbar-right">  
+                {% if arbitro == 1 %}
+                <li><a href="">ÁRBITRO</a></li>
+                {% endif %}
+                {% if arbitro == 2 %}
+                <li><a href="">JUGADOR</a></li>
+                {% endif %}
+                {% if arbitro == 3 %}
+                <li><a href="">SEGUIDOR</a></li>
+                {% endif %}
+                {% if arbitro == 4 %}
+                <li><a href="">ENTRENADOR</a></li>
+                {% endif %}
+                {% if nombre %}
+                <li><a href="">{{ nombre }} {{ apellidos }}</a></li>
+                {% endif %}
+                <li><a href="{% url 'inicioSesion' %}">Cerrar Sesion</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

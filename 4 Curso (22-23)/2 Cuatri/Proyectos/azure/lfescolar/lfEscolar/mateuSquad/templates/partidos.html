@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Partidos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'partidos.css' %}">
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+
+    <h1 class="centroClasificacion  text-center" style="font-family: 'Bebas Neue', cursive; font-size: 70px; ">Partidos</h1>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col text-center tituloTablas" style="font-family: 'Bebas Neue', cursive;">Partidos por jugar</div>
+          <div class="row">
+            {% for partido in partidosNoJugados %}
+            <form method="post" action="{% url 'anadir_partido' partido.id %}" class="formularioPartidos">
+              {% csrf_token %}
+              <div class="col-12 ">
+                <p class="nombrePartido text-center">{{ partido.equipolocal }} vs {{ partido.equipovisitante }} </p>
+                <p class="text-center">Lugar: {{ partido.lugar }}</p>
+                <p class="text-center">Fecha: {{ partido.fecha }}</p>
+                <p class="text-center">Hora: {{ partido.hora }}</p>
+                {% if arbitro == 1 %}
+                  <button type="submit" class="text-center btn btn-success">Añadir Resultado</button>
+                {% endif %}
+                
+                
+              </div>
+            </form>
+            {% endfor %}
+            </div>
+        </div>
+
+    
+        <div class="col-md-6">
+          <div class="col text-center tituloTablas" style="font-family: 'Bebas Neue', cursive;">Partidos Disputados</div>
+          <div class="row">
+            {% for partido in partidosJugados %}
+            <form method="post" action="{% url 'partido_suelto' partido.id %}">
+              {% csrf_token %}
+              <div class="col-12 ">
+                <p class="nombrePartido text-center">{{ partido.equipolocal }} vs {{ partido.equipovisitante }}</p>
+                <p class="text-center">Lugar: {{ partido.lugar }}</p>
+                <button type="submit" class="text-center btn btn-success">Ver Resultado</button>
+              </div>
+            </form>
+            {% endfor %}
+            </div>
+        </div>
+      
+    </div>
+    </div>
+  </body>
+</html>

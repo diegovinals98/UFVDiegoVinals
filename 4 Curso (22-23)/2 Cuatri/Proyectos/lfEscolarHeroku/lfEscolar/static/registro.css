@@ -1,0 +1,84 @@
+/* Estilo para el formulario de registro */
+.register-form {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #aaa;
+}
+
+.register-form h2 {
+  margin-top: 0;
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+}
+
+.selectRegistro{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  background-color: #f2f2f2;
+}
+
+
+.register-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.register-form button[type="submit"] {
+  padding: 10px;
+  background-color: #008CBA;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.register-form button[type="submit"]:hover {
+  background-color: #0077a3;
+}
+
+.register-form .links {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.register-form .links a {
+  color: #008CBA;
+  text-decoration: none;
+}
+
+.register-form .links a:hover {
+  text-decoration: underline;
+}
+
+
+.logo {
+  margin-top: 50px;
+  width: 100px;
+}

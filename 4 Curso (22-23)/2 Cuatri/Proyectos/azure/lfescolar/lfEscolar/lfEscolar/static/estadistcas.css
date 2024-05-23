@@ -1,0 +1,17 @@
+.col {
+    /*border: 1px solid #ccc;*/
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.table {
+    
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+
+.tituloTablas{
+    font-size: 30px;
+}

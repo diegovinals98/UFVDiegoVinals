@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"></meta>
+  <title>Clasificacion</title>
+  <!-- Enlaza la hoja de estilos externa -->
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <!-- Incluye el archivo navbar.html -->
+
+  <div>
+    <h1 class="centroClasificacion col" style="font-family: 'Bebas Neue', cursive; font-size: 70px; ">Clasificación</h1>
+    <table class="table table-striped tabla-pichichi">
+      <thead>
+        <tr>
+          <th class="tabla text-center">Posicion</th>
+
+          <th class="tabla text-center">Equipo</th>
+
+          <th class="tabla text-center">PG</th>
+
+          <th class="tabla text-center">PE</th>
+
+          <th class="tabla text-center">PP</th>
+
+          <th class="tabla text-center">GF</th>
+
+          <th class="tabla text-center">GC</th>
+
+          <th class="tabla text-center">DG</th>
+
+          <th class="tabla text-center">Puntos</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+
+        {% for equipo in equipos %}
+
+        <tr class="text-center">
+
+          <td> {{ forloop.counter }}</td>
+          <td>{{ equipo.nombre }}</td>
+
+          <td>{{ equipo.pg }}</td>
+
+          <td>
+            {{ equipo.pe }}
+          </td>
+
+          <td>
+            {{ equipo.pp }}
+          </td>
+
+          <td>
+            {{ equipo.gf }}
+          </td>
+
+          <td>
+            {{ equipo.gc }}
+          </td>
+
+          <td>
+            {{ equipo.dg }}
+          </td>
+
+          <td>{{ equipo.puntos }}</td>
+        </tr>
+
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

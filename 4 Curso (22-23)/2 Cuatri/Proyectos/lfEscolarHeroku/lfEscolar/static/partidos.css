@@ -1,0 +1,28 @@
+.col {
+    /*border: 1px solid #ccc;*/
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.table {
+    
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+
+
+.tituloTablas{
+    font-size: 30px;
+}
+
+.partidoSuelto{
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.nombrePartido{
+    font-size: 20px;
+    margin-top: 10px;
+}

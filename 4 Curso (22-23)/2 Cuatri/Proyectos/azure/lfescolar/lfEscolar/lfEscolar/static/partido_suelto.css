@@ -1,0 +1,63 @@
+
+
+
+.marcador {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	padding: 20px;
+	margin: auto;
+}
+
+.equipo-local {
+	margin-right: 20px;
+}
+
+.equipo-visitante {
+	margin-left: 20px;
+}
+
+.goles {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	font-size: 3em;
+	margin: 0 20px;
+}
+
+.goles span {
+	margin: 0 10px;
+}
+
+form {
+    background-color: #e0e0e0;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+h1 {
+    margin-top: 0;
+}
+input[type="text"], input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+.navbar .nav-links li a :active{
+    background-color: #008CBA;
+    color: black;
+}
+
+.logoNav{
+    width: 20px;
+}
