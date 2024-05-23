@@ -1,0 +1,92 @@
+<html>
+    <header>
+        <title>
+            Formulario
+        </title>
+        <link rel="stylesheet" href="../CSS/principal.css">
+        <script src = "../JS/script.js"></script>
+        <meta charset="utf-8">
+    </header>
+
+    <body>
+        <div id="titulo">
+            <h1>Internet of Things</h1>
+        </div>
+
+        <div class="menu">
+                <ul>
+                    <li>
+                        <a class="active" href="../index.html" id="menuIzquierda">Principal</a>
+                    </li>
+                    <li>
+                        <a href="../PUBLIC/about.html">Sobre Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="../PUBLIC/news.html">Noticas</a>
+                    </li>
+                    <li>
+                        <a href="../PUBLIC/form.html" style="background-color: green; border-top-right-radius: 15px;
+                        border-bottom-right-radius: 15px;">Formulario</a>
+                    </li>
+
+                </ul> 
+        </div>
+
+        <div class = "formulario">
+            <h2>Formulario</h2>
+            <form  action="submit">
+                <div>
+                    <label>Nombre: </label>
+                    <input class = "inputT" id = "nombre" type="text"></input>
+                </div>
+                
+                <div>
+                    <label>Apellidos:</label>
+                    <input id="apellidos" class = "inputT" type="text"></input>
+                </div>
+
+                <div>
+                    <label>Fecha de Nacimiento:</label>
+                    <input type="date" id="FechaNac">
+                </div>
+
+                <div>
+                    <label>Email:</label>
+                    <input id="email" type="email"></input>
+                </div>
+
+                <div>
+                    <label>Hobbies:</label>
+                    <input type="text" name="" id="hobbies">
+                </div>
+
+                <div>
+                    <label>Estudios:</label>
+                    <input type="text" id="estudios">
+                </div>
+
+                <div>
+                    <label>Deporte Favorito:</label>
+                    <input type="text" id="deportes">
+                </div>
+
+                <div>
+                    <label>Sexo:</label>
+                    <input type="radio" id="Mujer">
+                    <label class="Genero" name = "Sexo" value = "Mujer">Mujer</label>
+                    <input type="radio" id="Hombre">
+                    <label class="Genero" name = "Sexo" value = "Varón">Varón</label>
+                    
+                </div>
+
+                <button id= "boton" onclick='return pulsarBoton()'>Enviar</button>
+            </form>
+
+        </div>
+    </body>
+
+    <div class="footer"> 
+	    <hr>       
+	<p>Esta pagina fue creada por Diego Vinals para la clase de Fundamentos de la Ingenieria Informartica</p>
+    </div>
+</html>

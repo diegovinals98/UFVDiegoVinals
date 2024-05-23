@@ -1,0 +1,160 @@
+<html>
+    <header>
+        <title>
+            Sobre nosotros
+        </title>
+        <link rel="stylesheet" href="../CSS/principal.css">
+        <script src = "../JS/script.js"></script>
+        <meta charset="utf-8">
+    </header>
+
+    <body>
+        <div id="titulo">
+            <h1>Sobre nosotros</h1>
+        </div>
+
+        <div class="menu">
+                <ul>
+                    <li>
+                        <a class="active" href="../index.html" id = "menuIzquierda">Principal</a>
+                    </li>
+                    <li>
+                        <a href="../PUBLIC/about.html" style="background-color: green;">Sobre Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="../PUBLIC/news.html">Noticias</a>
+                    </li>
+                    <li>
+                        <a href="../PUBLIC/form.html" class="menuDerecha">Formulario</a>
+                    </li>
+
+                </ul> 
+        </div>
+
+
+        <div>
+            <h1>
+                Quien soy?
+            </h1>
+
+            <p>
+                Soy Diego Vinals, tengo 21 años y soy de Madrid. He vivido toda mi vida en Madrid excepto estos ultimos
+                tres años que he estado viviendo en Dallas, Texas. Me fui cuando acabe 2 de Bachillerato a hacer la carrera, pero no me guso
+                y por eso me he vuelto a España.
+            </p>
+          
+            <p>
+               Me gusta mucho la musica y por eso he hecho una tabla sobre mis grupos favoritos. A la derecha, hay una tabla para que la rellenes con datos de tus grupos o artistas favoritos.
+            </p>
+
+            <!-- Tabla-->
+            <table class="tabla" id="tabla1">
+                <caption style="font: bold;">Mis grupos favoritos</caption>
+                <tr>
+                    <th>Grupo</th>
+                    <th>Estilo de Musica</th>
+                    <th>Año de Fundacion</th>
+                    <th>Numero de Albunes</th>
+                    <th>Numero de Integrantes</th>
+                </tr>
+
+                <tr>
+                    <td>Metallica</td>
+                    <td>Thrash Metal</td>
+                    <td>1981</td>
+                    <td>10</td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td>Slipknot</td>
+                    <td>Nu-Metal</td>
+                    <td>1995</td>
+                    <td>6</td>
+                    <td>9</td>
+                </tr>
+
+                <tr>
+                    <td>Gojira</td>
+                    <td>Nu-Metal</td>
+                    <td>1996</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td>Slayer</td>
+                    <td>Thrash-Metal</td>
+                    <td>1981</td>
+                    <td>10</td>
+                    <td>4</td>
+
+                <tr>
+                    <td>Iron Maiden</td>
+                    <td>Heavy Metal</td>
+                    <td>1975</td>
+                    <td>16</td>
+                    <td>6</td>
+                </tr>
+
+                <tr>
+                    <td>Sabaton</td>
+                    <td>Power Metal</td>
+                    <td>1999</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td>AC/DC</td>
+                    <td>Hard Rock</td>
+                    <td>1973</td>
+                    <td>16</td>
+                    <td>5</td>
+                </tr>
+            </table>
+
+            <table class="tabla" id="tabla2">
+                <caption>Tu tabla de Grupos/Artistas favoritos</caption>
+                
+                <tr>
+                    <th>Grupo</th>
+                    <th>Estilo de Musica</th>
+                    <th>Año de Fundacion</th>
+                    <th>Numero de Albunes</th>
+                    <th>Numero de Miembros</th>
+                </tr>
+             
+                <tbody id="tablas"></tbody>
+
+            </table>
+            
+
+            <form action="" style=" float: left;">
+                <h2>Datos a introducir</h2>
+
+                <label for="">Grupo</label>
+                <input type="text" name="" id="grupo">
+
+                <label for="">Estilo de Musica</label>
+                <input type="text" name="" id="estilo">
+
+                <label for="">Año de Fundacion</label>
+                <input type="text" name="" id="año">
+
+                <label for="">Numero de Albunes</label>
+                <input type="text" name="" id="Albunes">
+
+                <label for="">Numero de Miembros</label>
+                <input type="text" name="" id="miembros">
+
+                <button id="boton2" onclick='anadirAlaTabla(); return false;'>Añadir a la Tabla</button>
+            </form>
+        </div>
+    </body>
+
+    <div class="footer"> 
+	    <hr>       
+	<p>Esta pagina fue creada por Diego Vinals para la clase de Fundamentos de la Ingenieria Informartica</p>
+    </div>
+</html>

@@ -1,0 +1,22 @@
+01   0000             		output "teclado.bin" 
+02   0000             
+03   0000             		org	$8000
+04   8000 F3          		di
+05   8001             
+06   8001 01 FE BF    		ld bc, $BFFE
+07   8004 3E 00       		ld a,0
+08   8006             
+09   8006 D3 FE       b1:  	out ($FE) , a
+10   8008 ED 78       		in a, (c)
+11   800A CB 4F       		bit 1,a
+12   800C 28 04       		jr z, pulsado
+13   800E 3E 00       		ld a, 0 
+14   8010 18 F4       		jr b1
+15   8012             
+16   8012 3E 02       pulsado: ld a,2
+17   8014 18 F0       		jr b1
+
+Value    Label
+------ - -----------------------------------------------------------
+0x8006   b1
+0x8012   pulsado

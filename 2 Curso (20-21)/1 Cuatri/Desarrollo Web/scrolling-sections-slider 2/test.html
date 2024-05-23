@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/master.css">
+  <link rel="stylesheet" href="css/lightbox.min.css">
+  <link rel="stylesheet" href="scrolling-sections-slider 2/css/main.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/lightbox-plus-jquery.min.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/parallax.js"></script>
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <script src="scrolling-sections-slider 2/js/main.js"></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <title>Practica Final Parallax</title>
+</head>
+
+
+
+<body data-spy="scroll" data-target="#NavBarDiego" data-offset="167">
+
+  <nav id="NavBarDiego" class="fixed-top navbar navbar-expand-lg navbar-light bg-light ">
+    <button id="botonNavBar" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu"  aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="menu bi bi-menu-button-wide-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z"/>
+          <path fill-rule="evenodd" d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h13A1.5 1.5 0 0 0 16 3.5v-2A1.5 1.5 0 0 0 14.5 0h-13zm1 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm9.927.427l.396.396a.25.25 0 0 0 .354 0l.396-.396A.25.25 0 0 0 13.396 2h-.792a.25.25 0 0 0-.177.427z"/>
+        </svg>
+      </span>
+    </button>
+
+    <svg class = "musica d-none d-lg-block" width="1.5em" height="1.5em" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Apple Music icon</title><path d="M23.997 6.124c0-.738-.065-1.47-.24-2.19-.317-1.31-1.062-2.31-2.18-3.043C21.003.517 20.373.285 19.7.164c-.517-.093-1.038-.135-1.564-.15-.04-.003-.083-.01-.124-.013H5.988c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208c-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.802.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03c.525 0 1.048-.034 1.57-.1.823-.106 1.597-.35 2.296-.81.84-.553 1.472-1.287 1.88-2.208.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536-.142-.773.227-1.624 1.038-2.022.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516.014-.063.02-.13.02-.193 0-1.815 0-3.63-.002-5.443 0-.062-.01-.125-.026-.185-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.326.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.443-.088.664-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z"/></svg>
+    <h4 class="text-center practicafinal animate__animated animate__backInLeft">Practica Final</h4>
+    <svg class = "d-block d-lg-none" width="1.5em" height="1.5em" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Apple Music icon</title><path d="M23.997 6.124c0-.738-.065-1.47-.24-2.19-.317-1.31-1.062-2.31-2.18-3.043C21.003.517 20.373.285 19.7.164c-.517-.093-1.038-.135-1.564-.15-.04-.003-.083-.01-.124-.013H5.988c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208c-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.802.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03c.525 0 1.048-.034 1.57-.1.823-.106 1.597-.35 2.296-.81.84-.553 1.472-1.287 1.88-2.208.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536-.142-.773.227-1.624 1.038-2.022.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516.014-.063.02-.13.02-.193 0-1.815 0-3.63-.002-5.443 0-.062-.01-.125-.026-.185-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.326.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.443-.088.664-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z"/></svg>
+    <div class="collapse navbar-collapse " id="navbarMenu">
+
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item hvr-underline-from-center">
+          <a id="home" class="nav-link grenze active" href="#carouselHome">
+            <svg class = "icono animate__bounceIn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+              <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+            </svg>
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item hvr-underline-from-center">
+          <a id="gruposNav" class="nav-link grenze" href="#grupos" onclick="return false;" >
+            <svg class = "icono animate__bounceIn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-music-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-.5 4.11a1 1 0 0 0-1.196-.98l-1.5.3A1 1 0 0 0 8 4.41v5.786A2.572 2.572 0 0 0 7 10c-.5 0-.974.134-1.338.377-.36.24-.662.628-.662 1.123s.301.883.662 1.123c.364.243.839.377 1.338.377.5 0 .974-.134 1.338-.377.36-.24.662-.628.662-1.123V6.41l2.5-.5v-1.8z"/>
+            </svg>
+
+            Grupos
+          </a>
+        </li>
+
+
+        <li class="nav-item hvr-underline-from-center">
+          <a id="conciertosNav" class="nav-link grenze" onclick="return false;" href="#conciertos">
+            <svg class = "icono animate__bounceIn" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="1em" height="1em" viewBox="0 0 489.589 489.589" style="fill: currentColor"
+            xml:space="preserve">
+
+            <path d="M484.536,30.412c-1.034,3.078-2.545,6.233-4.652,9.279c-7.39,10.654-18.507,15.733-24.838,11.343
+            c-3.896-2.707-5.046-8.383-3.635-14.827c-6.448,1.404-12.127,0.258-14.836-3.645c-4.384-6.324,0.701-17.44,11.35-24.832
+            c3.041-2.108,6.199-3.625,9.28-4.652l-1.698-1.687L427.246,0l-10.531,10.545c0.204,12.864-5.843,27.475-17.549,39.17
+            c-11.698,11.7-26.305,17.751-39.177,17.544l-0.705,0.709c7.942,9.993,5.113,26.908-6.645,39.649l-97.701,99.254
+            c-16.212-1.154-40.134-7.153-48.211-15.222c-15.333-15.333-3.178-38.175,25.773-48.339c12.693-4.462,31.346-12.728,48.71-17.909
+            l-95.248-0.21l-25.812,109.717l-79.421-17.376L0.782,363.311l90.57-47.548l-1.03,1.026c3.675,1.671,7.206,3.45,10.614,5.289
+            c-7.065,8.54-6.696,21.16,1.305,29.154l36.904,36.9c8.421,8.432,22.019,8.464,30.529,0.185c3.274,5.55,4.829,8.984,4.829,8.984
+            l2.136-2.132l-49.56,94.419l145.77-79.928l-17.895-81.815l108.21-25.455l-0.204-94.904c-5.186,17.288-13.397,35.814-17.833,48.445
+            c-10.167,28.95-33.014,41.093-48.338,25.776c-7.979-7.987-13.914-31.387-15.156-47.634l99.048-100.611
+            c12.819-11.066,29.378-13.393,38.992-5.171c-0.673-13.188,5.422-28.427,17.532-40.539c12.712-12.711,28.85-18.755,42.467-17.334
+            l9.137-9.137L487.43,33.31L484.536,30.412z"/>
+
+          </svg>
+
+          Conciertos
+
+        </a>
+      </li>
+
+      <li class="nav-item hvr-underline-from-center">
+        <a id="contactoNavBar" class="nav-link grenze" href="#contacto" onclick="return false;" >
+          <svg class = "icono animate__bounceIn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+          Contacto</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div id="section1" class="section">
+      <span>1. Viewport height section</span>
+  </div>
+
+  <div id="section2" class="section">
+      <span>2. Long section</span>
+  </div>
+
+  <div id="section3" class="section">
+      <span>3. Short section</span>
+  </div>
+
+  <div id="section4" class="section">
+      <span>4. Viewport height section</span>
+  </div>
+
+
+
+<footer>
+  <div class="container-fluid">
+    <div class="col-12 footer">
+      <div class="row">
+        <p class="col-12 col-md-6 text-center ">© 2020 Copyright: Diego Vinals Lage</p>
+        <p class="col-12 col-md-6 text-center ">Curso: 2ºA</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./js/skrollr.min.js"></script>
+<!-- <script src="scrolling-sections-slider 2/js/main.js"></script> -->
+
+
+</body>
+
+</html>

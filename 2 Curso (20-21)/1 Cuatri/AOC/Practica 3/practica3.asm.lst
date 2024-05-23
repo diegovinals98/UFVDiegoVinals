@@ -1,0 +1,142 @@
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/OrganizacionYarquitectura/Practica 3/practica3.asm(14): error: Illegal instruction: 		in ix, (c)
+001   0000             // Comprobar si se esta pulsando la tecla z		
+002   0000             
+003   0000             		output "teclado.bin" 
+004   0000             
+005   0000             		org	$8000
+006   8000 F3          		di
+007   8001             
+008   8001 01 FE FE    		ld bc, $FEFE
+009   8004 31 00 00    		ld sp,0 						; Posicionar la pila al final de la memoria
+010   8007 DD 21 00 00 		ld ix, 0
+011   800B             
+012   800B             b1:  	
+013   800B DD 21 00 00 		ld ix,0;
+014   800F             		in ix, (c)
+015   800F CB 4F       		bit 1,a
+016   8011 28 06       		jr z, pulsadoZ
+017   8013 DD 21 00 00 		ld ix, 0 
+018   8017 18 F2       		jr b1
+019   8019             
+020   8019 DD 21 00 00 pulsadoZ: ld ix,0
+021   801D 18 00       		jr bucP
+022   801F             		
+023   801F             
+024   801F             
+025   801F CD 3A 80    bucP:    call LineasV 					; Llama a LineasV, que hace las lineas				
+026   8022 18 E7       		jr b1						; Salta a finBP
+027   8024             	
+028   8024 06 40       finBP: 	ld b, 64						; Carga 64 iteraciones de pausa
+029   8026 CD 2B 80    		call pausa 						; Llama a pausa
+030   8029             
+031   8029 18 F4       		jr bucP 						; Salta al bucle principal
+032   802B             
+033   802B F5          pausa:  	push af							; Salva registros utilizados en la pila
+034   802C D5          		push de
+035   802D             
+036   802D 11 00 00    paus0:   ld de, 0 						; 0 lo mete en de
+037   8030 1B          paus1: 	dec de 							; Decremento en 1 de "de"
+038   8031 7A          		ld a,d 							; Para comprobar si DE es 0000, D tiene que ser 0...
+039   8032 B3          		or e 							; ... y E también
+040   8033 20 FB       		jr nz, paus1					; Si no lo es, sigue el bucle inteno
+041   8035 10 F6       		djnz paus0                      ; B=B-1 y cicla a bucle externo hasta que B sea 0
+042   8037             
+043   8037 D1          		pop de 							; Recupera registros utilizados desde la pila
+044   8038 F1          		pop af
+045   8039             
+046   8039 C9          		ret 							; Retorna al punto de llamada
+047   803A             
+048   803A             // ---------------- FUNCION QUE PINTA LAS LINEAS VERTICALES -------------------------------//
+049   803A             LineasV:  
+050   803A F5          		push af							; Guarda los registros usados en la pila
+051   803B C5          		push bc
+052   803C             
+053   803C 06 00       		ld b,0 							; B lleva la cuenta de la coordenada X
+054   803E             buclebV: 		
+055   803E DD 7E 00    		ld a,(ix)                       ; Carga el color de la columna en curso
+056   8041 DD 23       		inc ix                          ; Incremento de XI, es decir, siguiente color
+057   8043 CD 4F 80    		call barraVert                  ; Pinta una barra vertical en X=B y Color=A
+058   8046 04          		inc b 							; Incremento de B, siguiente columna
+059   8047 78          		ld a,b 							; Compara si B es 32, si lo es, acaba el bucle, por que 
+060   8048 FE 20       		cp 32							; hemos llegado al final
+061   804A 20 F2       		jr nz, buclebV 					; Si no, sigue el bucle
+062   804C             
+063   804C C1          		pop bc 							; Recupera los registros originales desde la pila
+064   804D F1          		pop af
+065   804E C9          		ret
+066   804F             
+067   804F             
+068   804F             // ---------------- FUNCION QUE PINTA UNA SOLA BARRA VERTICAL ---------------------------//
+069   804F             barraVert:   
+070   804F F5          		push af							; Salvamos registros usados
+071   8050 C5          		push bc
+072   8051             
+073   8051 0E 17       		ld c,23							; C es la coordenada Y
+074   8053             
+075   8053             bucVert:  
+076   8053 CD 5D 80    		call cuadro 					; bucle de 31..0 en la coordenada Y
+077   8056 0D          		dec c
+078   8057 F2 53 80    		jp p, bucVert 					; jp P salta si el SIGNO en Complemento a 2 es positivo
+079   805A             
+080   805A C1          		pop bc 							; Recuperamos el valor original de los registros
+081   805B F1          		pop af
+082   805C             
+083   805C C9          		ret 	
+084   805D             
+085   805D             
+086   805D             // ---------------- FUNCION QUE PINTA UN SOLO CUADRO DE COLOR ---------------------------//
+087   805D             cuadro:   				
+088   805D F5          		push af							; Salva registros usados
+089   805E D5          		push de
+090   805F E5          		push hl
+091   8060             
+092   8060 26 00       		ld h,0 							; Empieza calculando Y*32
+093   8062 69          		ld l,c  						; Para multiplicar c (coord. Y) por 32, se usan sumas. Esto se puede hacer en un bucle también
+094   8063 29          		add hl, hl 						; ahora hl es 2*c
+095   8064 29          		add hl, hl 						; ahora hl es 4*c
+096   8065 29          		add hl, hl 						; ahora hl es 8*c
+097   8066 29          		add hl, hl 						; ahora hl 16*c
+098   8067 29          		add hl, hl 						; ahora hl 32*c 
+099   8068             		
+100   8068 16 00       		ld d,0
+101   806A 58          		ld e,b    						; b Contiene el valor de la coordenada X -> Se carga en DE
+102   806B             
+103   806B 19          		add hl, de 						; Ahora HL Contiene 32*y+X
+104   806C 11 00 58    		ld de, $5800 					; Se carga en DE la dirección base de la zona de atributos (colores)
+105   806F 19          		add hl, de 						; Ahora HL contiene $5800 + 32*Y + X, el valor buscado, 
+106   8070             
+107   8070 CB 27       		sla a 							; Ajuste de color para paper desplazando los bits a la zona de paper y bright
+108   8072 CB 27       		sla a 							; mediante tres desplazamientos a la izquierda
+109   8074 CB 27       		sla a 							; Esta secuencia es lo mismo que multiplicar por 8
+110   8076             
+111   8076 77          		ld (hl),a 						; Transfiere a memoria de video apuntada por HL el valor del color sobre el PAPER y el bit de brillo
+112   8077             
+113   8077 E1          		pop hl 							; Recupera registros desde la pila
+114   8078 D1          		pop de
+115   8079 F1          		pop af
+116   807A             
+117   807A C9          		ret 							; Retorno de la función
+118   807B             
+119   807B             
+119   807B             pr1 
+120   807B              	db 0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7;
+120   807B 0000000001010101020202020303030304040404050505050606060607070707
+121   809B             
+122   809B             		
+123   809B             
+
+Value    Label
+------ - -----------------------------------------------------------
+0x800B   b1
+0x8019   pulsadoZ
+0x801F   bucP
+0x803A   LineasV
+0x8024 X finBP
+0x802B   pausa
+0x802D   paus0
+0x8030   paus1
+0x803E   buclebV
+0x804F   barraVert
+0x8053   bucVert
+0x805D   cuadro
+0x807B X pr1

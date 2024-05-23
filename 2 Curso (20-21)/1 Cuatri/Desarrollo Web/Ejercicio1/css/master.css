@@ -1,0 +1,113 @@
+@media (min-width: 0px){
+  .titulo{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+  }
+
+  div img {
+    border-radius: 15px;
+  }
+
+  .kea{
+    text-align: center;
+    background-color: black;
+    color: red;
+    margin-bottom: 1px;
+    border-radius: 15px;
+  }
+
+  .mop {
+    text-align: center;
+    background-color: #792327;
+    color: #8b7c8e;
+    margin-bottom: 1px;
+    border-radius: 15px;
+  }
+
+  .ajfa {
+    text-align: center;
+    background-color: #cbc5c6;
+    color: #bfc593;
+    margin-bottom: 1px;
+    border-radius: 15px;
+  }
+
+  .ba {
+    text-align: center;
+    background-color: black;
+    color: #75727f;
+    margin-bottom: 1px;
+    border-radius: 15px;
+  }
+
+  .col-xl-6{
+    margin-bottom: 20px;
+  }
+}
+
+
+
+/*Small devices (landscape phones, 576px and up)  sm */
+@media (min-width: 576px) {
+
+
+
+}
+
+/* Medium devices (tablets, 768px and up)  md*/
+@media (min-width: 768px) {
+  .nombre {
+    margin-top: 5px;
+  }
+
+  .kea{
+    text-align: left;
+    background-color: white;
+    color: black;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+  }
+  .mop{
+    text-align: left;
+    background-color: white;
+    color: black;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+  }
+  .ajfa{
+    text-align: left;
+    background-color: white;
+    color: black;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+  }
+  .ba {
+    text-align: left;
+    background-color: white;
+    color: black;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+  }
+
+  .textoParrafo {
+    margin-top: 5%;
+  }
+}
+
+/* Large devices (desktops, 992px and up)  lg */
+@media (min-width: 992px) {
+
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)  xl */
+@media (min-width: 1200px) {
+
+  .textoParrafo {
+    margin-top: 0%;
+  } 
+}

@@ -1,0 +1,65 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": []
+  },
+  "packageFolders": {
+    "/Users/diegovinals/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 0/Pr0VS/PR0/PR0/PR0.csproj",
+      "projectName": "PR0",
+      "projectPath": "/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 0/Pr0VS/PR0/PR0/PR0.csproj",
+      "packagesPath": "/Users/diegovinals/.nuget/packages/",
+      "outputPath": "/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 0/Pr0VS/PR0/PR0/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/diegovinals/.config/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

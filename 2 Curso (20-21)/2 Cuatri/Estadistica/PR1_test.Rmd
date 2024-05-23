@@ -1,0 +1,15 @@
+---
+title: "PR1test"
+author: "Diego Vinals"
+date: 26/3/2021
+output: html_document
+---
+
+1- Objetivo del Trabajo
+Esto es un estudio de estadistica descriptiva de los datos
+
+```(r)
+library(wooldridge)
+data(hp)
+
+```

@@ -1,0 +1,124 @@
+001   0000             ; Practica 1
+002   0000             ; Diego Vinals Lage
+003   0000             
+004   0000             		org $8000
+005   8000             		output "practica1.bin"
+006   8000             
+007   8000 F3          		di 								; Deshabilitar interrupciones
+008   8001 31 00 00    		ld sp,0 						; Posicionar la pila al final de la memoria
+009   8004 DD 21 64 80 		ld ix, pr1 
+010   8008             
+011   8008 CD 23 80    bucP:    call LineasV 					; Llama a LineasV, que hace las lineas				
+012   800B 18 00       		jr finBP						; Salta a finBP
+013   800D             	
+014   800D 06 40       finBP: 	ld b, 64						; Carga 64 iteraciones de pausa
+015   800F CD 14 80    		call pausa 						; Llama a pausa
+016   8012             
+017   8012 18 F4       		jr bucP 						; Salta al bucle principal
+018   8014             
+019   8014 F5          pausa:  	push af							; Salva registros utilizados en la pila
+020   8015 D5          		push de
+021   8016             
+022   8016 11 00 00    paus0:   ld de, 0 						; 0 lo mete en de
+023   8019 1B          paus1: 	dec de 							; Decremento en 1 de "de"
+024   801A 7A          		ld a,d 							; Para comprobar si DE es 0000, D tiene que ser 0...
+025   801B B3          		or e 							; ... y E también
+026   801C 20 FB       		jr nz, paus1					; Si no lo es, sigue el bucle inteno
+027   801E 10 F6       		djnz paus0                      ; B=B-1 y cicla a bucle externo hasta que B sea 0
+028   8020             
+029   8020 D1          		pop de 							; Recupera registros utilizados desde la pila
+030   8021 F1          		pop af
+031   8022             
+032   8022 C9          		ret 							; Retorna al punto de llamada
+033   8023             
+034   8023             // ---------------- FUNCION QUE PINTA LAS LINEAS VERTICALES -------------------------------//
+035   8023             LineasV:  
+036   8023 F5          		push af							; Guarda los registros usados en la pila
+037   8024 C5          		push bc
+038   8025             
+039   8025 06 00       		ld b,0 							; B lleva la cuenta de la coordenada X
+040   8027             buclebV: 		
+041   8027 DD 7E 00    		ld a,(ix)                       ; Carga el color de la columna en curso
+042   802A DD 23       		inc ix                          ; Incremento de XI, es decir, siguiente color
+043   802C CD 38 80    		call barraVert                  ; Pinta una barra vertical en X=B y Color=A
+044   802F 04          		inc b 							; Incremento de B, siguiente columna
+045   8030 78          		ld a,b 							; Compara si B es 32, si lo es, acaba el bucle, por que 
+046   8031 FE 20       		cp 32							; hemos llegado al final
+047   8033 20 F2       		jr nz, buclebV 					; Si no, sigue el bucle
+048   8035             
+049   8035 C1          		pop bc 							; Recupera los registros originales desde la pila
+050   8036 F1          		pop af
+051   8037 C9          		ret
+052   8038             
+053   8038             
+054   8038             // ---------------- FUNCION QUE PINTA UNA SOLA BARRA VERTICAL ---------------------------//
+055   8038             barraVert:   
+056   8038 F5          		push af							; Salvamos registros usados
+057   8039 C5          		push bc
+058   803A             
+059   803A 0E 17       		ld c,23							; C es la coordenada Y
+060   803C             
+061   803C             bucVert:  
+062   803C CD 46 80    		call cuadro 					; bucle de 31..0 en la coordenada Y
+063   803F 0D          		dec c
+064   8040 F2 3C 80    		jp p, bucVert 					; jp P salta si el SIGNO en Complemento a 2 es positivo
+065   8043             
+066   8043 C1          		pop bc 							; Recuperamos el valor original de los registros
+067   8044 F1          		pop af
+068   8045             
+069   8045 C9          		ret 	
+070   8046             
+071   8046             
+072   8046             // ---------------- FUNCION QUE PINTA UN SOLO CUADRO DE COLOR ---------------------------//
+073   8046             cuadro:   				
+074   8046 F5          		push af							; Salva registros usados
+075   8047 D5          		push de
+076   8048 E5          		push hl
+077   8049             
+078   8049 26 00       		ld h,0 							; Empieza calculando Y*32
+079   804B 69          		ld l,c  						; Para multiplicar c (coord. Y) por 32, se usan sumas. Esto se puede hacer en un bucle también
+080   804C 29          		add hl, hl 						; ahora hl es 2*c
+081   804D 29          		add hl, hl 						; ahora hl es 4*c
+082   804E 29          		add hl, hl 						; ahora hl es 8*c
+083   804F 29          		add hl, hl 						; ahora hl 16*c
+084   8050 29          		add hl, hl 						; ahora hl 32*c 
+085   8051             		
+086   8051 16 00       		ld d,0
+087   8053 58          		ld e,b    						; b Contiene el valor de la coordenada X -> Se carga en DE
+088   8054             
+089   8054 19          		add hl, de 						; Ahora HL Contiene 32*y+X
+090   8055 11 00 58    		ld de, $5800 					; Se carga en DE la dirección base de la zona de atributos (colores)
+091   8058 19          		add hl, de 						; Ahora HL contiene $5800 + 32*Y + X, el valor buscado, 
+092   8059             
+093   8059 CB 27       		sla a 							; Ajuste de color para paper desplazando los bits a la zona de paper y bright
+094   805B CB 27       		sla a 							; mediante tres desplazamientos a la izquierda
+095   805D CB 27       		sla a 							; Esta secuencia es lo mismo que multiplicar por 8
+096   805F             
+097   805F 77          		ld (hl),a 						; Transfiere a memoria de video apuntada por HL el valor del color sobre el PAPER y el bit de brillo
+098   8060             
+099   8060 E1          		pop hl 							; Recupera registros desde la pila
+100   8061 D1          		pop de
+101   8062 F1          		pop af
+102   8063             
+103   8063 C9          		ret 							; Retorno de la función
+104   8064             
+105   8064             
+105   8064             pr1 
+106   8064              	db 0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7;
+106   8064 0000000001010101020202020303030304040404050505050606060607070707
+107   8084             
+108   8084             
+
+Value    Label
+------ - -----------------------------------------------------------
+0x8064   pr1
+0x8008   bucP
+0x8023   LineasV
+0x800D   finBP
+0x8014   pausa
+0x8016   paus0
+0x8019   paus1
+0x8027   buclebV
+0x8038   barraVert
+0x803C   bucVert
+0x8046   cuadro

@@ -1,0 +1,140 @@
+#######################################
+# Syntax Coloring For Compluino-03
+#######################################
+
+#######################################
+# Class (KEYWORD1)
+#######################################
+
+Compluino_03	KEYWORD1
+
+#######################################
+# Datatypes (KEYWORD2)
+#######################################
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+inicia	KEYWORD2
+
+para	KEYWORD2
+avanza	KEYWORD2
+retrocede	KEYWORD2
+mueve	KEYWORD2
+gira_derecha	KEYWORD2
+gira_izquierda	KEYWORD2
+gira	KEYWORD2
+mueve_motor	KEYWORD2
+
+borra_oled	KEYWORD2
+escribe_oled	KEYWORD2
+escribe_2x_oled	KEYWORD2
+escribe_oled_sensor	KEYWORD2
+escribe_oled_pot	KEYWORD2
+escribe_oled_ldr	KEYWORD2
+escribe_oled_pulsador	KEYWORD2
+escribe_oled_suelo_D	KEYWORD2
+escribe_oled_suelo_I	KEYWORD2
+escribe_oled_suelo_DD	KEYWORD2
+escribe_oled_suelo_ID	KEYWORD2
+escribe_oled_distancia	KEYWORD2
+escribe_oled_brujula	KEYWORD2
+escribe_oled_int	KEYWORD2
+
+beep	KEYWORD2
+doble_beep	KEYWORD2
+enciende_altavoz	KEYWORD2
+apaga_altavoz	KEYWORD2
+
+lee_sensor	KEYWORD2
+lee_pot	KEYWORD2
+lee_ldr	KEYWORD2
+lee_pulsador	KEYWORD2
+lee_suelo_d	KEYWORD2
+lee_suelo_i	KEYWORD2
+lee_suelo_dd	KEYWORD2
+lee_suelo_id	KEYWORD2
+lee_distancia	KEYWORD2
+
+espera_pulsador	KEYWORD2
+espera_pulsador_mensaje	KEYWORD2
+espera_pulsador_soltar	KEYWORD2
+estado_pulsador	KEYWORD2
+
+enciende	KEYWORD2
+apaga	KEYWORD2
+brillo_rgb	KEYWORD2
+
+lee_brujula	KEYWORD2
+
+espera_segundos	KEYWORD2
+espera_milisegundos	KEYWORD2
+
+pos_servo	KEYWORD2
+lee_pos_servo	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+PIN_SERVO	LITERAL1
+PIN_PULSADOR	LITERAL1
+PIN_EN	LITERAL1
+PIN_MOTOR_D	LITERAL1
+PIN_MOTOR_I	LITERAL1
+PIN_US	LITERAL1
+PIN_ALTAVOZ	LITERAL1
+PIN_RGB_ROJO	LITERAL1
+PIN_RGB_AZUL	LITERAL1
+PIN_RGB_VERDE	LITERAL1
+PIN_MISO	LITERAL1
+PIN_LED	LITERAL1
+PIN_SENSOR_DD	LITERAL1
+PIN_SENSOR_ID	LITERAL1
+PIN_POT	LITERAL1
+PIN_LDR	LITERAL1
+PIN_SUELO_D	LITERAL1
+PIN_SUELO_I	LITERAL1
+
+REF_POT	LITERAL1
+REF_LDR	LITERAL1
+REF_PULSADOR	LITERAL1
+REF_SUELO_D	LITERAL1
+REF_SUELO_I	LITERAL1
+REF_SUELO_DD	LITERAL1
+REF_SUELO_ID	LITERAL1
+REF_DISTANCIA	LITERAL1
+REF_BRUJULA	LITERAL1
+
+T_NORMAL	LITERAL1
+T_GRANDE	LITERAL1
+
+PULSADO	LITERAL1
+NO_PULSADO	LITERAL1
+
+RGB	LITERAL1
+RGB_NEGRO	LITERAL1
+RGB_ROJO	LITERAL1
+RGB_VERDE	LITERAL1
+RGB_AZUL	LITERAL1
+RGB_MAGENTA	LITERAL1
+RGB_CIAN	LITERAL1
+RGB_AMARILLO	LITERAL1
+RGB_BLANCO	LITERAL1
+
+BLANCO	LITERAL1
+NEGRO	LITERAL1
+
+DO4	LITERAL1
+RE4	LITERAL1
+MI4	LITERAL1
+FA4	LITERAL1
+SOL4	LITERAL1
+LA4	LITERAL1
+SI4	LITERAL1
+
+FALSE	LITERAL1
+TRUE	LITERAL1
+
+SERVO	LITERAL1

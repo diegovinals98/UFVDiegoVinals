@@ -1,0 +1,5 @@
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/2 Cuatri/Sistemas Operativos/PR1/Practica1.c(17): error: [STRUCT] Illegal structure name
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/2 Cuatri/Sistemas Operativos/PR1/Practica1.c(26): error: Duplicate label: char
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/2 Cuatri/Sistemas Operativos/PR1/Practica1.c(43): error: [IF] Forward reference
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/2 Cuatri/Sistemas Operativos/PR1/Practica1.c(52): error: [IF] Forward reference
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/2 Cuatri/Sistemas Operativos/PR1/Practica1.c(129): error: Unexpected end of file

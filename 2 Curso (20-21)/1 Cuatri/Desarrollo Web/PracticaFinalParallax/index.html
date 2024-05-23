@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/master.css">
+  <link rel="stylesheet" href="css/lightbox.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/lightbox-plus-jquery.min.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/parallax.js"></script>
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <script src="js/snap.js"></script>
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <title>Practica Final Parallax</title>
+</head>
+
+
+
+<body data-spy="scroll" data-target="#NavBarDiego" data-offset="167">
+
+  <nav id="NavBarDiego" class="fixed-top navbar navbar-expand-lg navbar-light bg-light ">
+    <button id="botonNavBar" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu"  aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="menu bi bi-menu-button-wide-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z"/>
+          <path fill-rule="evenodd" d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h13A1.5 1.5 0 0 0 16 3.5v-2A1.5 1.5 0 0 0 14.5 0h-13zm1 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm9.927.427l.396.396a.25.25 0 0 0 .354 0l.396-.396A.25.25 0 0 0 13.396 2h-.792a.25.25 0 0 0-.177.427z"/>
+        </svg>
+      </span>
+    </button>
+
+    <svg class = "musica d-none d-lg-block" width="1.5em" height="1.5em" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Apple Music icon</title><path d="M23.997 6.124c0-.738-.065-1.47-.24-2.19-.317-1.31-1.062-2.31-2.18-3.043C21.003.517 20.373.285 19.7.164c-.517-.093-1.038-.135-1.564-.15-.04-.003-.083-.01-.124-.013H5.988c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208c-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.802.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03c.525 0 1.048-.034 1.57-.1.823-.106 1.597-.35 2.296-.81.84-.553 1.472-1.287 1.88-2.208.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536-.142-.773.227-1.624 1.038-2.022.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516.014-.063.02-.13.02-.193 0-1.815 0-3.63-.002-5.443 0-.062-.01-.125-.026-.185-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.326.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.443-.088.664-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z"/></svg>
+    <h4 class="text-center practicafinal animate__animated animate__backInLeft">Practica Final</h4>
+    <svg class = "d-block d-lg-none" width="1.5em" height="1.5em" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Apple Music icon</title><path d="M23.997 6.124c0-.738-.065-1.47-.24-2.19-.317-1.31-1.062-2.31-2.18-3.043C21.003.517 20.373.285 19.7.164c-.517-.093-1.038-.135-1.564-.15-.04-.003-.083-.01-.124-.013H5.988c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208c-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.802.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03c.525 0 1.048-.034 1.57-.1.823-.106 1.597-.35 2.296-.81.84-.553 1.472-1.287 1.88-2.208.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536-.142-.773.227-1.624 1.038-2.022.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516.014-.063.02-.13.02-.193 0-1.815 0-3.63-.002-5.443 0-.062-.01-.125-.026-.185-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.326.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.443-.088.664-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z"/></svg>
+    <div class="collapse navbar-collapse " id="navbarMenu">
+
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item hvr-underline-from-center">
+          <a id="home" class="nav-link grenze active" href="#carouselHome">
+            <svg class = "icono animate__bounceIn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+              <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+            </svg>
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item hvr-underline-from-center">
+          <a id="gruposNav" class="nav-link grenze" href="#grupos" onclick="return false;" >
+            <svg class = "icono animate__bounceIn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-music-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-.5 4.11a1 1 0 0 0-1.196-.98l-1.5.3A1 1 0 0 0 8 4.41v5.786A2.572 2.572 0 0 0 7 10c-.5 0-.974.134-1.338.377-.36.24-.662.628-.662 1.123s.301.883.662 1.123c.364.243.839.377 1.338.377.5 0 .974-.134 1.338-.377.36-.24.662-.628.662-1.123V6.41l2.5-.5v-1.8z"/>
+            </svg>
+
+            Grupos
+          </a>
+        </li>
+
+
+        <li class="nav-item hvr-underline-from-center">
+          <a id="conciertosNav" class="nav-link grenze" onclick="return false;" href="#conciertos">
+            <svg class = "icono animate__bounceIn" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="1em" height="1em" viewBox="0 0 489.589 489.589" style="fill: currentColor"
+            xml:space="preserve">
+
+            <path d="M484.536,30.412c-1.034,3.078-2.545,6.233-4.652,9.279c-7.39,10.654-18.507,15.733-24.838,11.343
+            c-3.896-2.707-5.046-8.383-3.635-14.827c-6.448,1.404-12.127,0.258-14.836-3.645c-4.384-6.324,0.701-17.44,11.35-24.832
+            c3.041-2.108,6.199-3.625,9.28-4.652l-1.698-1.687L427.246,0l-10.531,10.545c0.204,12.864-5.843,27.475-17.549,39.17
+            c-11.698,11.7-26.305,17.751-39.177,17.544l-0.705,0.709c7.942,9.993,5.113,26.908-6.645,39.649l-97.701,99.254
+            c-16.212-1.154-40.134-7.153-48.211-15.222c-15.333-15.333-3.178-38.175,25.773-48.339c12.693-4.462,31.346-12.728,48.71-17.909
+            l-95.248-0.21l-25.812,109.717l-79.421-17.376L0.782,363.311l90.57-47.548l-1.03,1.026c3.675,1.671,7.206,3.45,10.614,5.289
+            c-7.065,8.54-6.696,21.16,1.305,29.154l36.904,36.9c8.421,8.432,22.019,8.464,30.529,0.185c3.274,5.55,4.829,8.984,4.829,8.984
+            l2.136-2.132l-49.56,94.419l145.77-79.928l-17.895-81.815l108.21-25.455l-0.204-94.904c-5.186,17.288-13.397,35.814-17.833,48.445
+            c-10.167,28.95-33.014,41.093-48.338,25.776c-7.979-7.987-13.914-31.387-15.156-47.634l99.048-100.611
+            c12.819-11.066,29.378-13.393,38.992-5.171c-0.673-13.188,5.422-28.427,17.532-40.539c12.712-12.711,28.85-18.755,42.467-17.334
+            l9.137-9.137L487.43,33.31L484.536,30.412z"/>
+
+          </svg>
+
+          Conciertos
+
+        </a>
+      </li>
+
+      <li class="nav-item hvr-underline-from-center">
+        <a id="contactoNavBar" class="nav-link grenze" href="#contacto" onclick="return false;" >
+          <svg class = "icono animate__bounceIn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+          Contacto</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- CARRUSEL -->
+
+  <div id="carouselHome" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselHome" data-slide-to="0" class="puntos grow active"></li>
+      <li data-target="#carouselHome" data-slide-to="1" class="puntos grow"></li>
+      <li data-target="#carouselHome" data-slide-to="2" class="puntos grow"></li>
+      <li data-target="#carouselHome" data-slide-to="3" class="puntos grow"></li>
+      <li data-target="#carouselHome" data-slide-to="4" class="puntos grow"></li>
+      <li data-target="#carouselHome" data-slide-to="5" class="puntos grow"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./img/carrousel/IronMaiden.jpg" class="d-block w-100" alt="Foto Iron Maiden">
+        <div class="carousel-caption IM d-none d-md-block">
+          <h5 class="IronMaiden text-left">Iron Maiden</h5>
+          <p class="SubIronMaiden text-left">Since 1975</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="./img/carrousel/metallica2.jpg" class="d-block w-100" alt="Foto Metallica">
+        <div class="carousel-caption d-none d-md-block MA">
+          <h5 class="Metallica">Metallica</h5>
+          <p class="SubMetallica ">Since 1981</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./img/carrousel/Sabaton.jpg" class="d-block w-100" alt="Foto Sabaton">
+        <div class="carousel-caption d-none d-md-block SN">
+          <h5 class="Sabaton text-left">Sabaton</h5>
+          <p class="SubSabaton text-left">Since 1999</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./img/carrousel/slipknot.jpg" class="d-block w-100" alt="Foto Slipknot">
+        <div class="carousel-caption d-none d-md-block ST">
+          <h5 class="slipknot text-left">Slipknot</h5>
+          <p class="SubSlipknot text-left">Since 1995</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./img/carrousel/paparoach.png" class="d-block w-100" alt="Foto Papa Roach">
+        <div class="carousel-caption d-none d-md-block PR">
+          <h5 class="paparoach">Papa Roach</h5>
+          <p class="SubPaparoach">Since 1993</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./img/carrousel/linkinpark.jpg" class="d-block w-100" alt="Foto Linkin Park">
+        <div class="carousel-caption d-none d-md-block LP">
+          <h5 class="linkinpark">Linkin Park</h5>
+          <p class="SubLinkinPark">1996 - 2017</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIN CARRUSEL -->
+
+
+
+  <div class="container-fluid">
+    <div class="row fondoVideos">
+      <div class="col-12 col-md-6 videos" >
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="https://www.youtube.com/embed/Jqmpb7m1CIg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 videos">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe  src="https://www.youtube.com/embed/WHni61ShlEs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 videos" >
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="https://www.youtube.com/embed/G9kz-tag04U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 videos" >
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="https://www.youtube.com/embed/8DiWzvE52ZY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 videos" >
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="https://www.youtube.com/embed/sjN-NGsRg9g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 videos" >
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe  src="https://www.youtube.com/embed/tqvvaY2LvuI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="titulos">
+    <h1 data-bottom-top="transform: scale(0)" data-bottom="transform: scale(1)" class="text-center  russo" id="grupos">GRUPOS</h1>
+  </div>
+
+
+  <!-- PARALLAX 1  -->
+
+  <div class="section" id="section0">
+    <div class=" parallax-window parallaxInfo"  id="grupos"  data-speed = "0" data-parallax="scroll" data-image-src="./img/Slipknot2.jpeg">
+      <div class="container-fluid ">
+        <div class="col-12 text-center contenido">
+          <div data-bottom-top="transform: scale(0.75); opacity: 0" data--100-bottom="transform: scale(1); opacity: 1" class="text-center white ">
+            <h1 id="Slipknot" class="textGrenze white gruposSlipknot">SLIPKNOT</h1>
+          </div>
+          <p class="white text-center ">Slipknot es una banda estadounidense de metal alternativo formada en 1995 en Des Moines, Iowa, Estados Unidos. Desde el año 1999 hasta 2010 mantuvo su formación más exitosa después de diversos cambios en la misma. Sus integrantes en la actualidad son Corey Taylor, Craig Jones, Jim Root, Mick Thomson, Shawn Crahan y Sid Wilson. Slipknot es conocida por las máscaras características de cada uno de sus miembros, que cambia conforme han sacado más discografía.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- data-100-bottom-top="opacity: 0" data-center-top="opacity: 1"class="white text-center " -->
+
+  <!-- PARALLAX 2 -->
+  <div class="section" id="section1">
+    <div class="parallax-window parallaxInfo" data-speed = "0" data-parallax="scroll" data-image-src="./img/PapaRoach.jpeg">
+      <div class="container-fluid ">
+        <div class="col-12 contenido">
+          <div class="text-center white" data-bottom-top="transform: scale(0.75); opacity: -1" data--100-bottom="transform: scale(1); opacity: 1">
+            <h1 id = "Papa_Roach" class="textGrenze white gruposPapaRoach ">PAPA ROACH</h1>
+          </div>
+          <p class="white text-center ">Papa Roach es una banda estadounidense de rock fundada en 1993 en Vacaville, California. Se dio a conocer internacionalmente en el año 2000, con su segundo álbum, Infest, reconocido tres veces como disco de platino. Los tres álbumes siguientes, continuaron su éxito: Lovehatetragedy en el año 2002, Getting Away With Murder en 2004 y The Paramour Sessions en 2006. A estos trabajos, les siguieron Metamorphosis en 2009, The Connection en 2012, F.E.A.R. en 2015, Crooked Teeth en 2017 y, dos años después, el último álbum de Papa Roach hasta la fecha, Who Do You Trust?.
+            En sus primeros años, la banda era descrita como nu metal y rap metal. Con el tiempo, la agrupación añadió otros sonidos a su música, tales como el hard rock, el metal y el rock alternativo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- PARALLAX 3 -->
+  <div class="section" id="section2">
+    <div class="parallax-window parallaxInfo" data-parallax="scroll" data-speed = "0"  data-image-src="./img/Metallica.jpeg">
+      <div class="container-fluid">
+        <div class="col-12 contenido">
+          <div data-bottom-top="transform: scale(0.75) , translateY(0px); opacity: 0" data--100-bottom="transform: scale(1) , translateY(0px); opacity: 1"  class="text-center white">
+            <h1 class="textGrenze white gruposPapaRoach">METALLICA</h1>
+          </div>
+          <p class="white text-center">Metallica es una banda estadounidense de heavy metal originaria de Los Ángeles, pero con base en San Francisco desde febrero de 1983. Fue fundada en 1981 en Los Ángeles por Lars Ulrich y James Hetfield, a los que se añadieron Kirk Hammet y Cliff Burton. Por otra parte, el 27 de septiembre de 1986, fue la muerte de Cliff Burton en un accidente de autobús en Suecia, durante una de sus giras, esto provocó la entrada al grupo de Jason Newsted, quien, tras su abandono quince años más tarde, sería sustituido por el bajista actual, Robert Trujillo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PARALLAX 4 -->
+  <div class="section" id="section3">
+    <div class="parallax-window parallaxInfo" data-speed = "0" data-parallax="scroll" data-image-src="./img/Megadedeth.jpg" alt="no sale">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 contenido">
+            <div data-bottom-top="transform: scale(0.75); opacity: 0" data--100-bottom="transform: scale(1); opacity: 1"  class="text-center white">
+              <h1 class="textGrenze white ">MEGADETH</h1>
+            </div>
+            <p class="white text-center">Megadeth es una banda estadounidense de thrash metal, formada en Los Ángeles, California. Fue creada en 1983 por Dave Mustaine (vocalista, guitarrista y compositor principal), después de que fuera expulsado de Metallica, donde ocupaba el puesto de guitarrista principal. Es comúnmente mencionada como una de los cuatro grandes del thrash metal, junto a Metallica, Slayer y Anthrax.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARALLAX 5 -->
+  <div class="section" id="section4">
+    <div class="parallax-window parallaxInfo" data-speed = "0" data-parallax="scroll" data-image-src="img/linkinpark.jpg" alt="no sale">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 contenido">
+            <div data-bottom-top="transform: scale(0.75); opacity: 0" data--100-bottom="transform: scale(1); opacity: 1"  class="text-center white">
+              <h1 class="textGrenze white ">LINKIN PARK</h1>
+            </div>
+            <p class="white text-center">Linkin Park es una banda estadounidense de Nu Metal procedente de Agoura Hills, California. Se formó en 1996 e inicialmente estaba integrada por Mike Shinoda, Dave Farrell, Joe Hahn, Brad Delson, Rob Bourdon y Chester Bennington, este último como voz principal. La banda ha vendido 100 millones de discos y obtuvo dos premios Grammy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid galeria">
+    <div class="gallery" enableKeyboard = "true">
+      <div class="row">
+        <div class="col-6 col-md-2 col-lg-1 hvr-reveal" data-bottom-top="transform: translateX(-150px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+          <!-- <a href="img/Galeria/Metallica/Metallica1.jpeg" data-title="Lars Ulrich en Wizink Center Madrid" data-lightbox = "gallery"> -->
+            <img src="img/Galeria/Metallica/Thumb/Metallica1.jpg" alt=""/>
+          <!-- </a> -->
+        </div>
+
+        <div class="col-6 col-md-2 col-lg-1  hvr-reveal " data-bottom-top="transform: translateX(-160px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+          <!-- <a href="img/Galeria/Metallica/Metallica2.jpeg" data-title="Kirk Hammett en Wizink Center Madrid" data-lightbox = "gallery"> -->
+            <img src="img/Galeria/Metallica/Thumb/Metallica2.jpg" alt="" title=""/>
+          <!-- </a> -->
+        </div>
+
+        <div class="col-6 col-md-2 col-lg-1 ">
+          <div class="h-50 col-12 hvr-reveal "  data-bottom-top="transform: translateX(-170px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+            <a href="img/Galeria/Metallica/Metallica3.JPG" data-title="James Hetfield y Kirk Hammett en Wizink Center Madrid"  data-lightbox = "gallery"><img src="img/Galeria/Metallica/Thumb/Metallica3.jpg" alt="" title=""/></a>
+          </div>
+          <div class="h-50 col-12 hvr-reveal " data-bottom-top="transform: translateX(-170px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+            <a href="img/Galeria/Download/Download1.JPG" data-title="Slipknot en la Caja Magica Madrid" data-lightbox = "gallery"><img src="img/Galeria/Download/Thumb/Download1.jpg" alt="" title=""/></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-2 col-lg-1  hvr-reveal " data-bottom-top="transform: translateX(-180px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+          <a href="img/Galeria/PapaRoach/HU1.jpeg" data-title="Johnny 3 Tears en la Riviera Madrid" data-lightbox = "gallery"><img src="img/Galeria/PapaRoach/HU1.jpeg" alt="" title=""/></a>
+        </div>
+        <div class="col-6 col-md-2 col-lg-1  hvr-reveal " data-bottom-top="transform: translateX(-190px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+          <a href="img/Galeria/Sabaton/Sabaton1.jpeg" data-title="Joakim Broden en El palacio Vistalegre Madrid" data-lightbox = "gallery"><img src="img/Galeria/Sabaton/Sabaton1.jpeg" alt="" title=""/></a>
+        </div>
+        <div class="col-6 col-md-2 col-lg-1 ">
+          <div class="h-50 col-12 hvr-reveal " data-bottom-top="transform: translateX(-200px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+            <a href="img/Galeria/PapaRoach/paparoach1.JPG" data-title="Papa Roach en la Riviera Madrid" data-lightbox = "gallery"><img src="img/Galeria/PapaRoach/Thumb/paparoach1.jpg" alt="" title=""/></a>
+          </div>
+          <div class=" h-50 col-12 hvr-reveal " data-bottom-top="transform: translateX(-220px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+            <a href="img/Galeria/Download/Download2.JPG" data-title="Corey Taylor y Mick Thomson en la Caja Magica Madrid" data-lightbox = "gallery"><img src="img/Galeria/Download/Thumb/Download2.jpg" alt="" title=""/></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 col-lg-1 ">
+          <div class="h-50 col-12 hvr-reveal " data-bottom-top="transform: translateX(210px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+            <a href="img/Galeria/PapaRoach/HU2.jpeg" data-title="Daniel Rose Murillo, Johnny 3 Tears y Charlie Scene en la Riviera Madrid" data-lightbox = "gallery"><img src="img/Galeria/PapaRoach/Thumb/HU2.jpg" alt="" title=""/></a>
+          </div>
+          <div class="h-50 col-12 hvr-reveal " data-bottom-top="transform: translateX(200px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+            <a href="img/Galeria/Sabaton/Sabaton2.jpeg" data-title="Sabaton en El Palacio Vistalegre Madrid" data-lightbox = "gallery"><img src="img/Galeria/Sabaton/Thumb/Sabaton2.jpg" alt="" title=""/></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 col-lg-1  hvr-reveal " data-bottom-top="transform: translateX(190px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+          <a href="img/Galeria/PapaRoach/paparoach2.jpeg" data-title="Jacoby Shaddix en La Riviera Madrid" data-lightbox = "gallery"><img src="img/Galeria/PapaRoach/paparoach2.jpeg" alt="" title=""/></a>
+        </div>
+        <div class="col-6 col-md-2 col-lg-1 ">
+          <div class="h-50 col-12 hvr-reveal " data-bottom-top="transform: translateX(180px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+            <a href="img/Galeria/IronMaiden/IronMaiden1.JPG" data-title="Iron Maiden en el Wanda Metropolitano Madrid" data-lightbox = "gallery"><img src="img/Galeria/IronMaiden/Thumb/IronMaiden1.jpg" alt="" title=""/></a>
+          </div>
+          <div class="h-50 col-12 hvr-reveal " data-bottom-top="transform: translateX(180px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+            <a href="img/Galeria/IronMaiden/IMG_1115.jpg" data-title="Iron Maiden en el Wanda Metropolitano Madrid" data-lightbox = "gallery"><img src="img/Galeria/IronMaiden/Thumb/IMG_1115.jpeg" alt="" title=""/></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 col-lg-1  hvr-reveal " data-bottom-top="transform: translateX(170px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+          <a href="img/Galeria/PapaRoach/paparoach3.jpeg" data-title="Jacoby Shaddix en La Riviera Madrid" data-lightbox = "gallery"><img src="img/Galeria/PapaRoach/paparoach3.jpeg" alt="" title=""/></a>
+        </div>
+        <div class="col-6 col-md-2 col-lg-1  hvr-reveal " data-bottom-top="transform: translateX(160px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+          <a href="img/Galeria/Sabaton/Sabaton3.jpeg" data-title="Elize Ryd en El Palacio Vistalegre Madrid" data-lightbox = "gallery"><img src="img/Galeria/Sabaton/Sabaton3.jpeg" alt="" title=""/></a>
+        </div>
+        <div class="col-6 col-md-2 col-lg-1  hvr-reveal " data-bottom-top="transform: translateX(150px); opacity : -1" data--100-bottom="transform: translateX(0px); opacity: 1;">
+          <a href="img/Galeria/Metallica/Metallica4.jpeg" data-title="James Hetfield en El Wizink Center Madrid" data-lightbox = "gallery"><img src="img/Galeria/Metallica/Metallica4.jpeg" alt="" title=""/></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="titulos">
+    <h1 data-bottom-top="transform: scale(0)" data-bottom="transform: scale(1)" class="text-center  russo" id="conciertos">CONCIERTOS</h1>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <h1 data-bottom-top="transform: scale(0)" data-bottom="transform: scale(1)" class="textGrenze text-center fechaConciertos" id="metallicaFecha">Metalica 05/02/2018</h1>
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <h4 data-bottom-top="transform: scale(0)" data-bottom="transform: scale(1)" class="textGrenze text-center">Parte I</h4>
+            <ol class="listas">
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)" class="text-center">Hardwired</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)" class="text-center">Atlas,Rise!</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)" class="text-center">Seek And Destroy</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)" class="text-center">Harvester of Sorrow</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)" class="text-center">Fade to Black</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)" class="text-center">Now That We're Dead</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)" class="text-center">Dream No More</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)" class="text-center">For Whom The Bell Tolls</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)" class="text-center">Halo on Fire</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)" class="text-center">Los Rockeros van al Infierno (Baron Rojo Cover)</li>
+            </ol>
+          </div>
+          <div class="col-md-6 col-12">
+            <h4 class="textGrenze text-center">Parte II</h4>
+            <ol class="listas text-center">
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Last Caress</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Creeping Death</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Moth Into Flame</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Sad But True</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">One</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Master of Puppets</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Blackened</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Nothing Else Matters</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Enter Sandman</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <h1 data-bottom-top="transform: scale(0)" data-bottom="transform: scale(1)" class="textGrenze text-center fechaConciertos">Slipknot 29/06/2019</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h4 data-bottom-top="transform: scale(0)" data-bottom="transform: scale(1)" class="textGrenze text-center">Parte I</h4>
+              <ol class="listas text-center">
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">(515)</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">People=Shit</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">(sic)</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Get This</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Unsainted</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Disasterpiece</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Before I Forget</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Heretic Anthem</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Psychosocial</li>
+              </ol>
+            </div>
+            <div class="col-12 col-md-6">
+              <h4 data-bottom-top="transform: scale(0)" data-bottom="transform: scale(1)"  class="textGrenze text-center">Parte II</h4>
+              <ol class="listas text-center">
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Devil In I</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Prosthetics</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Vermilion</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Custer</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Sulfur</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">All Out Life</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Duality</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Spit It Out</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Surfacing</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-window parallaxSabaton" data-parallax="scroll" data-image-src="./img/Sabaton.JPG">
+
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <h1 class="textGrenze text-center" id="metallicaFecha">PAPA ROACH 17/02/2020</h1>
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <h4 class="textGrenze text-center">Parte I</h4>
+            <ol class="listas text-center">
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Dead Cell</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">I Suffer Well</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Blood Brothers</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Help</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Between Angels and Insects</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Renegade Music</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Broken Home</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Elevate</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Feel Like Home</li>
+            </ol>
+          </div>
+          <div class="col-md-6 col-12">
+            <h4 class="textGrenze text-center">Parte II</h4>
+            <ol class="listas text-center">
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Ending</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Scars</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Drum Solo</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Getting Away With Murder</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Firestarter</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">...To Be Loved</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Who Do You Trust?</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Last Resort</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Born For Greatness</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 ">
+        <h1 class="textGrenze text-center">SABATON 05/02/2020</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h4 class="textGrenze text-center">Parte I</h4>
+              <ol class="listas text-center">
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Ghost Division</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Great War</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Attack of the Dead Men</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Seven Pilars of Wisdom</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Lost Battalion</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Red Baron</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Last Stand</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">82nd All The Way</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Nigh Witches</li>
+              </ol>
+            </div>
+            <div class="col-12 col-md-6">
+              <h4 class="textGrenze text-center">Parte II</h4>
+              <ol class="listas text-center">
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Angels Calling</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Fields of Verdun</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Price of a Mile</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Dominium Maris Baltici</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Lion From the North</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Carolus Rex</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Primo Victoria</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Bismarck</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Swedish Pagans</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">To Hell and Back</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallaxSabaton parallax-window " data-parallax="scroll" data-image-src="./img/Scorpions.jpeg">
+
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <h1 class="textGrenze text-center" id="metallicaFecha">SCORPIONS 28/06/2019</h1>
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <h4 class="textGrenze text-center">Parte I</h4>
+            <ol class="listas text-center">
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Going Out With a Bang</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Make It Real</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Is There Anybody There?</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Zoo</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Coast to Coast</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Top of the Bill / Steamrock Fever / Speedy's Coming / Catch Your Train</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">We Built This House</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Delicate Dance</li>
+            </ol>
+          </div>
+          <div class="col-md-6 col-12">
+            <h4 class="textGrenze text-center">Parte II</h4>
+            <ol class="listas text-center">
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Send Me an Angel</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Wind of Change</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Bad Boys Running Wild / I'm Leaving You / Tease Me Please Me</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Drum Solo</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Blackout</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Big City Nights</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Still Loving You</li>
+              <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Rock You Like a Hurricane</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 ">
+        <h1 class="textGrenze text-center">IRON MAIDEN 14/07/2018</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h4 class="textGrenze text-center">Parte I</h4>
+              <ol class="listas text-center">
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Aces High</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Where Eagles Dare</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">2 Minutes to Midnight</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Clansman</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Trooper</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Revelations</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">For The Greater Good of God</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Wicker Man</li>
+
+              </ol>
+            </div>
+            <div class="col-12 col-md-6">
+              <h4 class="textGrenze text-center">Parte II</h4>
+              <ol class="listas text-center">
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Sign of the Cross</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Flight of Icarus</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Fear of the Dark</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Number of the Beast</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Iron Maiden</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">The Evil that Men do</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Hallowed Be Thy Name</li>
+                <li data-bottom-top="transform: scale(0)" data--100-bottom="transform: scale(1)">Run to the Hills</li>
+
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="titulos">
+    <h1 data-bottom-top="transform: scale(0)" data-bottom="transform: scale(1)" class="text-center russo " id="contacto">CONTACTO</h1>
+  </div>
+
+  <div class="parallax-window parallaxIronMaiden" data-parallax="scroll" data-image-src="./img/IronMaiden.jpeg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 ">
+          <img src="./img/DiegoVinals.jpeg" class="img-fluid fotodiego"  alt="Foto Mia">
+        </div>
+        <div class="col-12 col-md-6">
+          <h1 class="text-center miNombre textGrenze">Diego Vinals</h1>
+          <p class="datos text-center datos">
+            Nombre: Diego Vinals Lage
+            <br>Fecha de Nacimiento: 27/10/1998
+            <br>Universidad: Francisco de Vitoria
+            <br>Titulo: Ingenieria Informatica
+            <br>Asignatura: Desarrollo Web
+            <br>Curso: 2
+            <br>Clase: A
+          </p>
+          <div class="embed-responsive divMusic">
+            <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0"  class="appleMusic" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/fortis-fortuna-adiuvat/1532862937?l=es"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="titulos">
+    <h1 data-bottom-top="transform: scale(0)" data-bottom="transform: scale(1)" class="text-center russo ">ESCRÍBEME</h1>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <form class=""  method="post">
+          <div class="container-fluid form">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <label class="" for="nombre">Nombre</label>
+                  </div>
+                  <div class="col-12 text-center">
+                    <input class="text-center inputForm" type="text" name="nombre" value="">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <label class="" for="apellidos">Apellidos</label>
+                  </div>
+                  <div class="col-12 text-center">
+                    <input class="text-center inputForm" type="text" name="apellidos" value="">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <label for="nac">Fecha de Nacimiento</label>
+                  </div>
+                  <div class="col-12 text-center">
+                    <input class="text-center inputForm" type="date" name="nac" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <label for="mail">Email</label>
+                  </div>
+                  <div class="col-12 text-center">
+                    <input id="mail "class="inputForm emailForm text-center" type="email" name="mail" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <label for="grupo">Grupo a añadir</label>
+                  </div>
+                  <div class="col-12 text-center">
+                    <input id="grupo "class="inputForm text-center" type="text" name="text" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <label for="mensaje">Mensaje</label>
+                  </div>
+                  <div class="col-12 text-center">
+                    <textarea class="form-control form-control-sm" id="mensaje" rows="3"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 botonForm">
+                <input id="botonForm" disabled class = " btn btn-primary form" type="submit"  name="boton" value="Enviar">
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-12 col-md-6">
+        <h2 class="text-center">Universidad</h2>
+        <div class="map-responsive text-center">
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe src="https://maps.google.com/maps?q=univesidad%20francisco%20de%20vitoria&t=&z=15&ie=UTF8&iwloc=&output=embed" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Politica de Cookies</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Te gustan las cookies? &#x1F36A; Usamos cookies para asegurarnos de que obtenga la mejor experiencia en nuestro sitio web. <a href="https://cookiesandyou.com/" target="_blank">Saber Mas</a>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button id="cookies" type="" class="btn btn-primary">Aceptar Cookies</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <footer>
+    <div class="container-fluid">
+      <div class="col-12 footer">
+        <div class="row">
+          <p class="col-12 col-md-6 text-center ">© 2020 Copyright: Diego Vinals Lage</p>
+          <p class="col-12 col-md-6 text-center ">Curso: 2ºA</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/snap.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="./js/skrollr.min.js"></script>
+
+
+</body>
+
+</html>

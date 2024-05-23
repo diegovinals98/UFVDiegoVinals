@@ -1,0 +1,6 @@
+
+http://complubot.com/inicio/proyectos/compluino-03 ChangeLog
+
+
+2017-10-01	v1.0.0  	info@complubot.com
+  * Primera versión pública de las librerías del robot Compluino 03

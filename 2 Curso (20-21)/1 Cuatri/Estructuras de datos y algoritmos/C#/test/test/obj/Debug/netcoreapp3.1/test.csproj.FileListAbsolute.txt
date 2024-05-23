@@ -1,0 +1,12 @@
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/bin/Debug/netcoreapp3.1/test.deps.json
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/bin/Debug/netcoreapp3.1/test.runtimeconfig.json
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/bin/Debug/netcoreapp3.1/test.runtimeconfig.dev.json
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/bin/Debug/netcoreapp3.1/test.dll
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/bin/Debug/netcoreapp3.1/test.pdb
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/obj/Debug/netcoreapp3.1/test.csprojAssemblyReference.cache
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/obj/Debug/netcoreapp3.1/test.AssemblyInfoInputs.cache
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/obj/Debug/netcoreapp3.1/test.AssemblyInfo.cs
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/obj/Debug/netcoreapp3.1/test.csproj.CoreCompileInputs.cache
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/obj/Debug/netcoreapp3.1/test.dll
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/obj/Debug/netcoreapp3.1/test.pdb
+/Users/diegovinals/Desktop/UFV/Estructuras de datos y algoritmos/C#/test/test/obj/Debug/netcoreapp3.1/test.genruntimeconfig.cache

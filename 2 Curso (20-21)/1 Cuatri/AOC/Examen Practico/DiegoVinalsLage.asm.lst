@@ -1,0 +1,286 @@
+001   0000             			output "pruebalab.bin"
+002   0000             			org $8000
+003   8000             
+004   8000 F3          			di
+005   8001 31 00 00    			ld sp,0
+006   8004             
+007   8004 CD 9B 81    			call CLEARSCR				; Borra la pantalla
+008   8007 DD 21 EB 80 			ld ix, titulo				; Apunta al texto a imprimir (debe acabar en 0x00)
+009   800B 01 02 01    			ld bc, $0102				; Coordenada Y (0..23), Coordenada X (0..31)
+010   800E 3E 46       			ld a, $46					; Color bits (Flash, Brillo, 3*Paper, 3*Ink)
+011   8010 CD 8C 81    			call PRINTAT				; Imprime el texto en pantalla
+012   8013             
+013   8013 DD 21 BC 80 			ld ix, original				; Escribe "Texto original:"
+014   8017 01 00 06    			ld bc, $0600
+015   801A 3E 42       			ld a, $42
+016   801C CD 8C 81    			call PRINTAT
+017   801F DD 21 A3 80 			ld ix, texto 				; Escribe el texto original
+018   8023 01 00 08    			ld bc, $0800
+019   8026 3E 47       			ld a, $47
+020   8028 CD 8C 81    			call PRINTAT
+021   802B DD 21 CC 80 			ld ix, modificado			; Escribe "Texto modificado:"
+022   802F 01 00 0D    			ld bc, $0D00
+023   8032 3E 44       			ld a, $44
+024   8034 CD 8C 81    			call PRINTAT
+025   8037             
+026   8037 DD 21 88 80 			ld ix, minombre				; Escribe el nombre del estudiante
+027   803B 01 00 17    			ld bc, $1700
+028   803E 3E 43       			ld a, $43
+029   8040 CD 8C 81    			call PRINTAT
+030   8043             
+031   8043             
+032   8043             
+033   8043             ;-------------------------------------------------------------------------------------------------
+034   8043             ; Código del estudiante
+035   8043             
+036   8043             ; Parte 0: Escribe tu nombre en la etiqueta "minombre"
+037   8043             
+038   8043             ; Parte 1: Crea otra variable (texto2) en el código, reservando 32 bytes para ella.
+039   8043             ; copia mediante código el contenido de "texto" a texto2
+040   8043             texto2:  db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0   ; Resevamos 32 bytes para la variable texto2
+040   8043 0000000000000000000000000000000000000000000000000000000000000000
+041   8063             
+042   8063             
+043   8063 DD 21 A3 80 parte1:  ld ix, texto			; Metemos texto en ix
+044   8067 DD 7E 00    		ld a, (ix)				; metemos ix en a 
+045   806A 32 43 80    		ld (texto2), a  		; metemos en texto2, a
+046   806D 3C          		inc a       			; Incrementamos a para acceder a la siguiente letra
+047   806E FE 00       		cp 0 					; si es 0, repetimos parte1
+048   8070 28 F1       		jr z, parte1 			; No me funciona, esto es lo que tengo hecho.
+049   8072             
+050   8072             
+051   8072             ; Parte 2: Copia texto2 sobre texto, pero eliminando los espacios. No olvides poner el '0' final.
+052   8072 DD 21 43 80 parte2:  ld ix, texto2	    	; texto2 en ix
+053   8076 DD 7E 00    		ld a, (ix) 				; ix en a
+054   8079 FE 20       		cp $0020				; comparamos con el codigo ASCII del espacio que es 0x20
+055   807B 20 05       		jr nz, meterLetra  		; si no es el espacio llamamos a meterLetra, que mete la letra en texto
+056   807D 3C          		inc a   				; Incrementamos a
+057   807E FE 00       		cp 0 					; Comparamos con 0
+058   8080 20 F0       		jr nz, parte2			; Si no es 0, volvemos al princpio del bucle
+059   8082             		
+060   8082             
+061   8082             								
+062   8082 32 A3 80    meterLetra:  ld (texto), a
+063   8085 C9          			ret
+064   8086             			
+065   8086             
+066   8086             fincodigoalumno: 
+067   8086 18 0D       			jr imprimemodificado
+068   8088             
+069   8088             minombre:   defm	"Diego Vinals", 0		; Nombre y apellido (Sólo ASCII)
+069   8088 446965676F2056696E616C7300
+070   8095             ;-------------------------------------------------------------------------------------------------
+071   8095             
+072   8095             imprimemodificado: 			
+073   8095 DD 21 A3 80 			ld ix, texto				; Escribe el texto modificado
+074   8099 01 00 0F    			ld bc, $0F00
+075   809C 3E 47       			ld a, $47
+076   809E CD 8C 81    			call PRINTAT
+077   80A1             
+078   80A1 18 FE       fin:  		jr fin
+079   80A3             
+080   80A3             texto: 		defm "En un lugar de La Mancha", 0
+080   80A3 456E20756E206C75676172206465204C61204D616E63686100
+081   80BC             
+082   80BC             
+083   80BC             original: 	defm "Texto original:" , 0
+083   80BC 546578746F206F726967696E616C3A00
+084   80CC             modificado:  defm "Texto modificado sin espacios:", 0
+084   80CC 546578746F206D6F646966696361646F2073696E206573706163696F733A00
+085   80EB             titulo: 		defm "Prueba de laboratorio de AOC  ________________________________", 0
+085   80EB 507275656261206465206C61626F7261746F72696F20646520414F4320205F5F
+085   810B 5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F00
+086   812A             
+087   812A             			include "print_text.asm"
+001+  812A             ; -------------------------------
+002+  812A             ; ZX Spectrum Text print library
+003+  812A             ; Daniel León - AOC - UFV 2020
+004+  812A             ; -------------------------------
+005+  812A             
+006+  812A             
+007+  812A             ;-----------------------------------------------------------------------------------------
+008+  812A             ; PREP_PRT - Updates Print_Attr, SCR & ATTR Vars
+009+  812A             ;-----------------------------------------------------------------------------------------
+010+  812A 32 AD 81    PREP_PRT: 	LD (PRINT_ATTR),A			; Set Attribute
+011+  812D CD 33 81    PREP_PRT_2: 	CALL CRtoSCREEN
+012+  8130 C3 45 81    			JP CRtoATTR				
+013+  8133             ;-----------------------------------------------------------------------------------------
+014+  8133             
+015+  8133             ;-----------------------------------------------------------------------------------------
+016+  8133             ; CRtoSCREEN - Converts a scr char coord into a SCREEN Address   b,c = y,x positions
+017+  8133             ;	IN  - B=Row, C=Column
+018+  8133             ;	OUT - HL=Address in screen also stored in (SCR_CUR_PTR)
+019+  8133             ;	Conversion:
+020+  8133             ;			Row FFfff   Column CCCCC
+021+  8133             ;			HL=%010FF000 fffCCCCC
+022+  8133             ;-----------------------------------------------------------------------------------------
+023+  8133             CRtoSCREEN: 
+024+  8133 78          			LD A,B						; %___FFfff
+025+  8134 F6 40       			OR #40						; %010FFfff
+026+  8136 E6 F8       			AND #F8						; %010FF000
+027+  8138 67          			LD H,A
+028+  8139             	
+029+  8139 78          			LD A,B						; %___FFfff
+030+  813A E6 07       			AND #7						; %00000fff
+031+  813C 0F          			RRCA						; %f00000ff
+032+  813D 0F          			RRCA						; %ff00000f
+033+  813E 0F          			RRCA						; %fff00000
+034+  813F B1          			OR C						; %fffCCCCC
+035+  8140 6F          			LD L,A
+036+  8141 22 A9 81                LD (SCR_CUR_PTR),HL			; Update Variable
+037+  8144 C9                      RET
+038+  8145             ; ---------------------------------------------------------------------------------------- 
+039+  8145             
+040+  8145             
+041+  8145             
+042+  8145             ;-----------------------------------------------------------------------------------------
+043+  8145             ; CRtoATTR - Converts a screen char coord  into a ATTR Address  b,c = y,x positions
+044+  8145             ;	IN  - B=Row, C=Column
+045+  8145             ;	OUT - HL=Address in screen also stored in (SCR_ATTR_PTR)
+046+  8145             ;	Conversion:
+047+  8145             ;			Row FFfff   Column CCCCC
+048+  8145             ;			HL=%010110FF fffCCCCC
+049+  8145             ;-----------------------------------------------------------------------------------------
+050+  8145             CRtoATTR: 	
+051+  8145 78          			LD A,B						; %___FFfff
+052+  8146 0F          			RRCA						; %f000FFff
+053+  8147 0F          			RRCA						; %ff000FFf
+054+  8148 0F          			RRCA						; %fff000FF
+055+  8149 6F          			LD L,A
+056+  814A E6 03       			AND 3						; %000000FF	value of FF can be only 00,01,10
+057+  814C F6 58       			OR #58						; %010110FF value will be #58, #59 or #5A
+058+  814E 67          			LD H,A
+059+  814F             
+060+  814F 7D          			LD A,L						; %fff000FF
+061+  8150 E6 E0       			AND #E0						; %fff00000
+062+  8152 B1          			OR C						; %fffCCCCC
+063+  8153 6F          			LD L,A
+064+  8154             
+065+  8154 22 AB 81                LD (SCR_ATTR_PTR),HL		; Update Variable
+066+  8157 C9                      RET
+067+  8158             ; ----------------------------------------------------------------------------------------
+068+  8158             
+069+  8158             
+070+  8158             
+071+  8158             ; ----------------------------------------------------------------------------------------   
+072+  8158             ; PRINTCHNUM - Prints Char Number N (stored in A)
+073+  8158             ;----------------------------------------------------------------------------------------- 
+074+  8158             PRINTCHNUM: 	;SUB 32						; Adjust Ascii to charset
+075+  8158 26 00       			LD H,0						; Multiply value by 8 to get to right Char in Charset
+076+  815A 6F          			LD L,A
+077+  815B 29          			ADD HL,HL
+078+  815C 29          			ADD HL,HL
+079+  815D 29          			ADD HL,HL
+080+  815E 11 AE 80    			LD DE, CHARSET-(8*32)		; Optimize in compile time (instead of sub 32)
+081+  8161 19          			ADD HL,DE
+082+  8162 EB          			EX  DE,HL					;Value in DE
+083+  8163             			; Continues to printchar below
+084+  8163             ; ----------------------------------------------------------------------------------------
+085+  8163             
+086+  8163             		
+087+  8163             ; ----------------------------------------------------------------------------------------   
+088+  8163             ; PRINTCHAR - Prints Char  (DE points to the char. Uses HL as last Cur Pointer)
+089+  8163             ; ----------------------------------------------------------------------------------------  
+090+  8163             PRINTCHAR: 
+091+  8163 06 08       			LD B,8						; 8 Lines per char
+092+  8165 2A A9 81                LD HL, (SCR_CUR_PTR)		; Load Cursor Pointer y,x 
+093+  8168                         
+094+  8168 1A          BYTEPCHAR: 	LD A,(DE)					; Get Char to be printed, first line
+095+  8169 77          			LD (HL),A					; Move to Printing location           
+096+  816A 24                      INC H						; inc H so next line in char (ZX Spectrum Screen RAM)
+097+  816B 13                      INC DE 						; next line to be printed
+098+  816C 10 FA                   DJNZ BYTEPCHAR				; Repeat 8 lines
+099+  816E 3A AD 81                LD A,(PRINT_ATTR) 			; Load Attributes to print char with
+100+  8171 2A AB 81                LD HL, (SCR_ATTR_PTR)		
+101+  8174 77                      LD (HL),A
+102+  8175 21 AB 81                LD HL, SCR_ATTR_PTR			; Get pointer to ATTR
+103+  8178 34                      INC (HL)					; Move Attribute cursor to next char
+104+  8179 21 A9 81    			LD HL, SCR_CUR_PTR
+105+  817C 34          			INC (HL)					; update Cursor pointer to next position
+106+  817D C9                      RET
+107+  817E             ; ----------------------------------------------------------------------------------------  
+108+  817E             
+109+  817E             
+110+  817E             
+111+  817E             ; ----------------------------------------------------------------------------------------   
+112+  817E             ; INK2PAPER - moves ink of attribute stored in (PRINT_ATTR) to paper and sets ink to 0
+113+  817E             ; 				Sets bright 1 and flash 0
+114+  817E             ; ---------------------------------------------------------------------------------------- 
+115+  817E 3A AD 81    INK2PAPER: 	LD A, (PRINT_ATTR)		    ; Get storedAttribute         
+116+  8181 E6 07                   AND 7						; get Attr INK in A
+117+  8183 07          			RLCA
+118+  8184 07          			RLCA
+119+  8185 07          			RLCA						; move Ink to Paper
+120+  8186 F6 40       			OR 64						; ink 0 bright 1
+121+  8188 32 AD 81    			LD (PRINT_ATTR),A		    ; Get storedAttribute     
+122+  818B C9          			RET
+123+  818C             ; ---------------------------------------------------------------------------------------- 
+124+  818C             
+125+  818C             
+126+  818C             ; ----------------------------------------------------------------------------------------   
+127+  818C             ; PRINTAT - Print a string in a position and attributes as per registers:
+128+  818C             ;		IN	A	: Bit 7=1 For Flash / Bit 6=1 For Brigh / Bit 5,4,3 for Paper / Bit 2,1,0 for Ink
+129+  818C             ;		IN	B	: Row 0..23
+130+  818C             ;		IN	C	: Column 0..31
+131+  818C             ;		IN	IX	: Address of text
+132+  818C             ; ---------------------------------------------------------------------------------------- 
+133+  818C CD 2A 81    PRINTAT: 	CALL PREP_PRT				; Update Attribute var &Screen & Attributes pointers
+134+  818F             ; ---------------------------------------------------------------------------------------- 
+135+  818F             ;		VVV Do not move PRINTSTR below as PRINTAT continues into PRINTSTR routine
+136+  818F             ; ----------------------------------------------------------------------------------------   
+137+  818F             ; PRINTSTR - Prints String - IX Points to the String start
+138+  818F             ; ----------------------------------------------------------------------------------------      
+139+  818F DD 7E 00    PRINTSTR:    LD A,(IX)					; A Contains first char to print
+140+  8192 B7          			OR A						; check for end of string (0)
+141+  8193 C8          			RET Z						; Finish printing if 0
+142+  8194 CD 58 81    			CALL PRINTCHNUM			
+143+  8197 DD 23       			INC IX						; Move to next char in string
+144+  8199 18 F4       			JR PRINTSTR					; Start over printing sequence	
+145+  819B             ; ----------------------------------------------------------------------------------------  
+146+  819B             
+147+  819B 21 00 40    CLEARSCR: 	LD HL,$4000					; Erases screen by writing 0 to all pixels and attributes
+148+  819E 11 01 40    			LD DE,$4001
+149+  81A1 01 FF 1A    			LD BC,6911
+150+  81A4 36 00       			LD (HL),0
+151+  81A6 ED B0       			LDIR
+152+  81A8 C9          			RET
+153+  81A9             
+154+  81A9             
+154+  81A9             SCR_CUR_PTR 
+155+  81A9 00 00         	db $00, $00				; Cursor Pointer in Screen (2 bytes) (HL)
+156+  81AB 00 00       SCR_ATTR_PTR:  	db $00, $00				; Attr Pointer in Screen (2 bytes) (HL)
+157+  81AD 00          PRINT_ATTR: 		db $00					; Attribute used by printchar routine (1 byte)
+158+  81AE             
+159+  81AE             CHARSET:  incbin "charset.bin"			; Charset used
+160+  84AE             
+161+  84AE             
+
+Value    Label
+------ - -----------------------------------------------------------
+0x819B   CLEARSCR
+0x80EB   titulo
+0x818C   PRINTAT
+0x80BC   original
+0x80A3   texto
+0x80CC   modificado
+0x8088   minombre
+0x8043   texto2
+0x8063   parte1
+0x8072   parte2
+0x8082   meterLetra
+0x8086 X fincodigoalumno
+0x8095   imprimemodificado
+0x80A1   fin
+0x812A   PREP_PRT
+0x81AD   PRINT_ATTR
+0x812D X PREP_PRT_2
+0x8133   CRtoSCREEN
+0x8145   CRtoATTR
+0x81A9   SCR_CUR_PTR
+0x81AB   SCR_ATTR_PTR
+0x8158   PRINTCHNUM
+0x81AE   CHARSET
+0x8163 X PRINTCHAR
+0x8168   BYTEPCHAR
+0x817E X INK2PAPER
+0x818F   PRINTSTR

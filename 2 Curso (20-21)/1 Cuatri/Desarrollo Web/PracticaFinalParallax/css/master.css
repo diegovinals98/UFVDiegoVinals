@@ -1,0 +1,900 @@
+
+@media (min-width: 0px){
+
+
+  /* GALERIA */
+  .test23{
+    /* position: fixed;
+    top: 25%; */
+    /* border-style: solid;
+    border-color: white;
+    display: inline-block;
+    vertical-align: middle; */
+    /* min-height: 100%;
+
+    display: flex;
+    align-items: center; */
+  }
+
+
+
+  .parallaxInfo{
+    height: 100vh;
+  }
+
+  .map-responsive{
+    overflow:hidden;
+    padding-bottom:50%;
+    position:relative;
+    height:0;
+    border-radius: 15px;
+  }
+  .map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    border-radius: 15px;
+  }
+
+  .appleMusic{
+    width:100%;
+    overflow: hidden;
+    background: transparent;
+  }
+  .divMusic{
+    height: 500px;
+    margin-top: 5%;
+  }
+
+
+  .videos{
+    padding: 0px;
+    margin-top: 4%;
+
+  }
+
+  .fondoVideos{
+    background-color: red;
+  }
+
+
+  .container-fluid .gallery img {
+
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .container-fluid .gallery div {
+    padding: 1px;
+  }
+
+  .galeria{
+    background-color: black;
+    border-style: solid;
+    border-width: 5px;
+    border-color: red;
+  }
+
+
+  .galeria img:hover{
+    opacity: 0.6;
+    scale: 1.05;
+    transition: 0.5s;
+  }
+
+  /* Reveal */
+  .hvr-reveal {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+  }
+  .hvr-reveal:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-color: #2098D1;
+    border-style: solid;
+    border-width: 0;
+    -webkit-transition-property: border-width;
+    transition-property: border-width;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-reveal:hover:before, .hvr-reveal:focus:before, .hvr-reveal:active:before {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    border-width: 4px;
+  }
+
+  html {
+    position: relative;
+    scroll-behavior: smooth;
+
+    overflow-x:  hidden;
+  }
+
+  body{
+    position: relative;
+
+    scroll-behavior: smooth;
+  }
+
+
+
+  .russo{
+    font-family: 'Russo One', sans-serif;
+    font-size: 50px;
+  }
+  label , h2{
+    font-family: 'Amatic SC', cursive;
+  }
+  p , h5 , button , .form{
+    font-family: 'Special Elite', cursive;
+  }
+
+  h2{
+    margin-top: 3%;
+  }
+
+  .inputForm{
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: solid;
+    border-color: black;
+    width: 75%;
+    font-size: 20px;
+    margin-bottom: 5%;
+  }
+
+  .listas{
+    padding: 0px;
+    font-family: 'Special Elite', cursive;
+  }
+
+  .invertir {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+  }
+  .nav-link{
+    cursor: pointer;
+    background-color: !important ransparent;
+    color: !important black;
+  }
+
+  .parallaxIronMaiden{
+    height: 1400px;
+  }
+  .parallaxContacto{
+    height: auto;
+    margin-bottom: 10%;
+  }
+  /* .centerParent{
+  height: 1000vh;
+  } */
+
+
+  .parallaxMetallica{
+    height: 500px;
+  }
+
+  .parallaxSabaton{
+    height: 200px;
+  }
+
+
+  .fotodiego{
+    margin-top: 10%;
+    border-radius: 15px;
+  }
+
+  .miNombre{
+    margin-top: 10%;
+    color: white;
+    font-size: 50px;
+    background-color: black;
+    text-shadow: 0px 3px 0px #b2a98f,
+    0px 14px 10px rgba(0,0,0,0.15),
+    0px 24px 2px rgba(0,0,0,0.1),
+    0px 34px 30px rgba(0,0,0,0.1);
+  }
+
+  .textGrenze{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+  }
+
+
+  li{
+    list-style: none;
+  }
+
+  .grow {
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+  .grow:hover, .grow:focus, .grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.4);
+
+  }
+
+  footer {
+    background-color: #f6f6f6;
+    color: #888888;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .footer {
+    padding: 5px;
+  }
+  .menu {
+    fill: black;
+  }
+  .imagen{
+    width: 100%;
+    height: auto;
+  }
+  .grenze{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .grenze2{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    text-align: center;
+  }
+  .practicafinal{
+    font-family: 'Metal Mania' ;
+    margin-bottom: 0px;
+  }
+
+
+  .carousel-indicators{
+    margin-bottom: -5px;
+  }
+  .carousel-indicators li {
+
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 5px;
+    width: 40px;
+    border-radius: 10%;
+    background-color: white;
+    opacity: 100%;
+  }
+
+  .carousel-indicators li:hover {
+
+
+  }
+
+  .carousel-indicators li.active  {
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 5px;
+    width: 40px;
+    border-radius: 10%;
+    background-color: red;
+  }
+  .icono {
+    margin-right: 5px;
+    margin-bottom: 3px;
+  }
+
+  /* #scroll-spy{
+  position: relative;
+  } */
+  .navbar{
+    border-width: 1px;
+    background-color: white !important ;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius:  15px;
+    border-bottom-style: solid;
+  }
+  .navbar-light .navbar-toggler {
+    color: rgba(0,0,0,.5);
+    border-color: black;
+  }
+  .imagenes{
+    padding:  0px;
+  }
+  /* .container{
+  margin-top: 70px;
+  } */
+  .carousel{
+    margin-top: 48px;
+  }
+  .carousel-caption{
+    /* width: auto; */
+  }
+  /* IRON MAIDEN CARRUSEL */
+  .IronMaiden{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 10px;
+    margin-left: 20px;
+    text-align: center;
+    color: black;
+  }
+
+  .SubIronMaiden{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: -15px;
+    text-align: center;
+    color: black;
+  }
+
+  .IM{
+
+    position: absolute;
+    top:0px;
+    left: 0px;
+
+  }
+
+
+
+  div.white{
+
+    color: white;
+    position: relative;
+    /* top: 20%; */
+
+  }
+
+  h1.white{
+    font-size: 50px;
+    text-shadow: 0px 3px 0px #b2a98f,
+    0px 14px 10px rgba(0,0,0,0.15),
+    0px 24px 2px rgba(0,0,0,0.1),
+    0px 34px 30px rgba(0,0,0,0.1);
+  }
+
+  p.white{
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+
+  }
+  .datos{
+    position: relative;
+    width: 100%;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+
+  .botonForm{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+  .titulos{
+    background-color: #f2f5f5;
+    margin-bottom: -1%;
+    /* padding-top: 5px; */
+    margin-top: 50px;
+
+  }
+
+}
+/*Small devices (landscape phones, 576px and up)  sm */
+@media (min-width: 576px) {
+  .carousel-indicators li {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+
+  }
+
+  .carousel-indicators li.active  {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+
+  .carousel-indicators{
+    margin-bottom: 16px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up)  md*/
+@media (min-width: 768px) {
+  .titulos{
+    margin-top: 0px;
+  }
+  .divMusic{
+    height: 55%;
+    margin-top: 0%;
+  }
+  .datos{
+    margin-bottom: 0%;
+  }
+  .videos{
+    padding: 5px;
+    margin-top: 0%;
+
+  }
+
+  .parallaxMetallica{
+    height: 700px;
+  }
+  .parallaxSabaton{
+    height: !important 300px;
+  }
+
+  .parallaxIronMaiden{
+    height: 700px;
+  }
+
+
+  .carousel{
+    margin-top: 48px;
+  }
+
+  /* IRON MAIDEN CARRUSEL */
+  .IronMaiden{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+    margin-left: 7%;
+    color: black;
+    margin-top: 0%;
+  }
+
+  .SubIronMaiden{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 15px;
+    margin-left: 7%;
+    margin-top: -15px;
+    color: black;
+  }
+
+  .IM{
+
+    position: absolute;
+    top:0px;
+    left: 0px;
+
+  }
+  /* METALLICA */
+  .Metallica{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+    margin-left: 60%;
+    margin-top: 1%;
+    color: black;
+  }
+
+  .SubMetallica{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 15px;
+    margin-left: 60%;
+    margin-top: -65px;
+    color: black;
+  }
+
+  .MA{
+    position: absolute;
+    top:0px;
+    left: 0px;
+  }
+
+  /* SABATON */
+  .Sabaton{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+    margin-left: 5%;
+    color: black;
+  }
+
+  .SubSabaton{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 15px;
+    margin-left: 5%;
+    margin-top: -70px;
+    color: black;
+  }
+
+  .SN{
+    position: absolute;
+    top:50px;
+    left: 0px;
+  }
+  /* SLIPKNOT */
+
+  .slipknot{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+    margin-top: 1%;
+    margin-left: 25%;
+    color: white;
+  }
+
+  .SubSlipknot{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 15px;
+    margin-left: 30%;
+    margin-top: -20px;
+    color: white;
+  }
+
+  .ST{
+    position: absolute;
+    top:0px;
+    left: 0px;
+  }
+  /* PAPA ROACH */
+  .paparoach{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+    margin-top: 1%;
+    margin-left: 55%;
+    color: white;
+  }
+
+  .SubPaparoach{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 15px;
+    margin-left: 55%;
+    margin-top: -20px;
+    color: white;
+  }
+
+  .PR{
+    position: absolute;
+    top:0px;
+    left: 0px;
+  }
+  /* LINKIN PARK */
+  .linkinpark{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+    margin-top: 1%;
+    margin-left: 72%;
+    color: white;
+  }
+
+  .SubLinkinPark{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 15px;
+    margin-left: 72%;
+    margin-top: -70px;
+    color: white;
+  }
+
+  .LP{
+    position: absolute;
+    top:0px;
+    left: -10%;
+  }
+
+  .russo{
+    font-family: 'Russo One', sans-serif;
+    font-size: 90px;
+  }
+
+
+}
+
+/* Large devices (desktops, 992px and up)  lg */
+@media (min-width: 992px) {
+
+
+  .grenze2{
+    font-family: 'Grenze Gotisch', cursive;
+    font-family: 'Staatliches', cursive;
+    font-size: 90px;
+    text-align: center;
+  }
+
+  .carousel{
+    margin-top: 62px;
+  }
+
+  .nav-item{
+    margin-left: 75px;
+    margin-right: 75px;
+  }
+
+  .navbar{
+    border-width: 1px;
+    background-color: white !important ;
+    border-radius: 0px;
+    border-bottom-style: solid;
+  }
+
+  .navbar-nav{
+    text-align: center;
+  }
+  .musica{
+    margin-right: 10px;
+  }
+
+  /*Subrayado */
+  .hvr-underline-from-center {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    /* overflow: hidden; */
+  }
+  .hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: black;
+    height: 4px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+  }
+
+  /* Grow Shadow */
+  .hvr-grow-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+  }
+  .hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+
+  /* IRON MAIDEN CARRUSEL */
+  .IronMaiden{
+    font-size: 50px;
+    margin-top: 1%;
+  }
+
+  .SubIronMaiden{
+    font-size: 20px;
+    margin-top: -25px;
+  }
+
+  /* METALLICA */
+
+  .Metallica{
+    font-size: 50px;
+    margin-top: 1%;
+  }
+
+  .SubMetallica{
+    font-size: 20px;
+    margin-top: -25px;
+  }
+
+
+  /* SABATON */
+
+  .Sabaton{
+    font-size: 50px;
+    margin-left: 1%;
+  }
+
+  .SubSabaton{
+    font-size: 20px;
+    margin-left: 3%;
+    margin-top: -140px;
+  }
+
+  .SN{
+    top:100px;
+  }
+  /* SLIPKNOT */
+
+  .slipknot{
+    font-size: 50px;
+  }
+
+  .SubSlipknot{
+    font-size: 20px;
+    margin-top: -25px;
+  }
+
+  /* PAPA ROACH */
+  .paparoach{
+    font-size: 50px;
+  }
+
+  .SubPaparoach{
+    font-size: 20px;
+    margin-top: -25px;
+  }
+
+  /* LINKIN PARK */
+
+  .linkinpark{
+    font-size: 50px;
+  }
+
+  .SubLinkinPark{
+    font-size: 20px;
+    margin-top: -25px;
+  }
+
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)  xl */
+@media (min-width: 1200px) {
+
+  .titulos{
+    background-color: #f2f5f5;
+    margin-bottom: -1%;
+    padding-top: 5px;
+
+  }
+
+  /* IRON MAIDEN CARRUSEL */
+  .IronMaiden{
+    font-size: 100px;
+    margin-top: -2%;
+  }
+  /* METALLICA */
+  .Metallica{
+    font-size: 100px;
+    margin-top: -1%;
+  }
+
+
+  /* SABATON */
+  .Sabaton{
+    font-size: 100px;
+    margin-top: 0%;
+  }
+
+  .SN{
+    top:300px;
+  }
+  /* SLIPKNOT */
+
+  .slipknot{
+    font-size: 100px;
+    margin-top: -1%;
+  }
+  /* PAPA ROACH */
+  .paparoach{
+    font-size: 80px;
+    margin-top: 0%;
+  }
+
+  /* LINKIN PARK */
+  .linkinpark{
+    font-size: 80px;
+    margin-top: -1%;
+  }
+
+  div.white{
+
+    color: white;
+    position: relative;
+    /* top: 20%; */
+
+  }
+
+  h1.white{
+    font-size: 250px;
+    text-shadow: 0px 3px 0px #b2a98f,
+    0px 14px 10px rgba(0,0,0,0.15),
+    0px 24px 2px rgba(0,0,0,0.1),
+    0px 34px 30px rgba(0,0,0,0.1);
+
+  }
+
+  .fechaConciertos{
+    margin-top: 2%;
+  }
+
+
+
+
+
+  label{
+    font-size:30px;
+  }
+
+  .lb-dataContainer{
+    width: 100%!important ;
+  }
+
+  .lightbox .lb-image{
+    border: 4px solid #000 !important;
+  }
+
+  p.white{
+    background-color: black;
+  }
+  .form{
+    margin-top: 5%;
+  }
+  .botonForm .btn{
+    margin-top: 0px;
+  }
+  .contenido{
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+
+
+  .miNombre{
+
+    font-size: 100px;
+
+  }
+
+  .parallaxIronMaiden{
+    height: 1000px;
+  }
+
+  input[type="text"]
+  {
+    font-size:20px;
+  }
+
+
+
+
+}

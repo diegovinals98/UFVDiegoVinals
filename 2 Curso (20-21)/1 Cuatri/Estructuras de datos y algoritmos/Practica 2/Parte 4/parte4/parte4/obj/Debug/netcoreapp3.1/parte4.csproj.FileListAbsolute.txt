@@ -1,0 +1,12 @@
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/bin/Debug/netcoreapp3.1/parte4.deps.json
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/bin/Debug/netcoreapp3.1/parte4.runtimeconfig.json
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/bin/Debug/netcoreapp3.1/parte4.runtimeconfig.dev.json
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/bin/Debug/netcoreapp3.1/parte4.dll
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/bin/Debug/netcoreapp3.1/parte4.pdb
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/obj/Debug/netcoreapp3.1/parte4.csprojAssemblyReference.cache
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/obj/Debug/netcoreapp3.1/parte4.AssemblyInfoInputs.cache
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/obj/Debug/netcoreapp3.1/parte4.AssemblyInfo.cs
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/obj/Debug/netcoreapp3.1/parte4.csproj.CoreCompileInputs.cache
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/obj/Debug/netcoreapp3.1/parte4.dll
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/obj/Debug/netcoreapp3.1/parte4.pdb
+/Users/diegovinals/Desktop/OneDrive - UFV/2 Curso/1 Cuatri/Estructuras de datos y algoritmos/Practica 2/Parte 4/parte4/parte4/obj/Debug/netcoreapp3.1/parte4.genruntimeconfig.cache

@@ -1,0 +1,208 @@
+/* 
+div {
+    border-style: solid;
+    border-radius: 15px; 
+}  */
+
+
+#titulo {
+    text-align: center;
+    font-size: 40px;
+}
+
+.menu {
+    /* background-color: #333;
+    overflow: hidden; */
+    width: 100%;
+    padding: 00px;
+    /* text-align: center; */
+    border-radius: 15px;
+}
+.menu li {
+    display: inline;  
+    
+}
+
+.menuDerecha{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#menuIzquierda{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.menu a{
+
+    width: 23%;
+    margin-bottom: 30px;
+    font-size: 15px;
+    text-decoration: none;
+    float: left;
+    padding: 10px;
+    color: #fff;
+    background-color: #2175bc;    
+}
+
+.menu a:hover {
+    background-color: red;
+    color: black;
+}
+
+
+.menu a:active {
+    background-color: grey;
+    color: white;
+}
+
+
+
+
+
+.parrafo {
+    width: 70%;
+    text-align: justify;
+    padding-left: 5px;
+    float: left;
+}
+
+div p {
+    padding-left: 15px;
+}
+
+#imagenDerecha{
+    border-radius: 15px;
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin-left: 20px;
+}
+
+#imagenIzquierda{
+    border-radius: 15px;
+    float: left;
+    width: 300px;
+    height: 400px;
+    margin-left: 20px;
+}
+
+#texto {
+    float: left;
+}
+
+.tituloP {
+    text-align: left;
+    padding-left: 15px;
+}
+.footer {
+    width: 100%;
+    float: left;
+}
+
+.footer p {
+    /* float: left; */
+    text-align: center;
+    font-size: small;
+}
+
+.video video{
+    width: 50%;
+    height: 50%;
+    float: left; 
+}
+
+#videoExplicativo {
+    padding-left: 15px;
+    width: 100%;
+    float: left;
+}
+/* Formulario */
+
+.formulario {
+    /* width: 90%; */
+    float: right;
+    text-align: center;
+}
+
+form div {
+    width: 250px;
+    height: 50px;
+    margin: 0px auto;
+    float: left;
+    
+}
+
+#fechaNac {
+    margin-top: 3px;
+}
+
+#boton {
+    float: left;
+}
+
+#Mujer {
+    margin-left: 10px;
+}
+
+.Genero {
+    margin-left: 5px;
+}
+
+#Hombre {
+    margin-left: 10px;
+}
+
+form div label {
+    float: left;
+}
+
+form div input {
+    margin-top: 0px;
+    margin-left: 3px;
+    float: left;
+}
+
+/* News */
+
+#imgElPais {
+    float: left;
+    width: 40%;
+    height: 50%;
+    margin-left: 50px;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
+.textoNoticas {
+    float: left;
+    width: 50%;
+    text-align: justify;
+}
+
+.segundaNot {
+    margin-top: 500px;
+}
+
+#links {
+    float: left;
+   
+}
+
+
+.tabla{
+    width: 50%;
+    float: left;
+    border: 1px solid black;
+    
+}
+
+.tabla td {
+    text-align: center;
+
+}
+
+
+#fotos {
+    text-align: center;
+}
