@@ -1,0 +1,21 @@
+Pokémon,Tipo,PS,Ataque,Defensa,Ataque especial,Defensa especial,Velocidad
+TYPHLOSION,Fuego,2,3,2,4,2,4
+PONYTA,Fuego,2,3,2,2,2,3
+TORKOAL,Fuego,2,3,4,3,2,1
+ARCANINE,Fuego,3,5,3,4,3,4
+STARMIE,Agua,2,3,3,4,2,4
+PALKIA,Agua,3,4,3,5,3,4
+MILOTIC,Agua,3,2,2,4,3,3
+AZUMARILL,Agua,3,2,2,2,2,2
+LEAFEON,Planta,2,4,4,2,2,3
+ABOMASNOW,Planta,3,3,2,3,2,2
+CHERUBI,Planta,1,1,2,2,1,1
+BRELOOM,Planta,2,4,2,2,2,3
+JOLTEON,Eléctrico,2,2,2,4,3,5
+MAGNEZONE,Eléctrico,2,3,3,5,2,2
+PIKACHU,Eléctrico,1,2,1,2,1,3
+AMPHAROS,Eléctrico,3,3,3,5,4,3
+DUSKNOIR,Fantasma,1,3,4,2,4,2
+JIRATINA,Fantasma,4,4,3,4,3,3
+SPIRITOMB,Fantasma,2,3,3,3,3,1
+GENGAR,Fantasma,2,2,2,5,2,4
