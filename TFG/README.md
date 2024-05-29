@@ -14,7 +14,11 @@ Este repositorio contiene todos los documentos y el código fuente para el Proye
 - `/Gantt`: Versiones del Diagrama de Gantt que muestra el cronograma y las fases del proyecto.
 - `/TFG_Backend`: Código fuente y bibliotecas para la parte de backend del proyecto.
 - `/TFG_Frontend`: Código fuente y recursos para la interfaz de usuario.
-- `/Entrega FINAL`: Documentos de la entrega final del proyecto.
+- `/Entrega FINAL`: Documentos entregados del proyecto. 
+    - `/Actas`: Actas de las reuniones.
+    - `/Memoria`: Documentación completa de la memoria del proyecto.
+    - `/Codigo`: Código fuente del proyecto.
+    - `/Presentacion`: Presentación Final.
 - `/Presentacion 7 de Mayo`: Presentaciones y material utilizado para la presentación del 7 de Mayo.
 - `/Presentacion JUNIO`: Presentaciones y material preparado para la presentación en Junio.
 
